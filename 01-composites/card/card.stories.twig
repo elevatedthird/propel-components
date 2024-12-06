@@ -1,0 +1,28 @@
+{% stories card with {
+  title: 'Composites/Card'
+} %}
+  {% story default with {
+    name: '1. Default',
+  } %}
+    <div class="grid">
+      {% for i in 0..5 %}
+        <div class="g-col-4">
+          {% embed 'kinetic:card' with {
+            heading: "Card Heading"
+          } %}
+            {% block media %}
+              <img src="https://placehold.co/600x400" alt="">
+            {% endblock %}
+            {% block _body %}
+              <p>This is the card Body</p>
+            {% endblock %}
+            {% block _ctas %}
+              <a href="/" class="btn btn-primary">Link</a>
+            {% endblock %}
+          {% endembed %}
+        </div>
+      {% endfor %}
+    </div>
+
+  {% endstory %}
+{% endstories %}

@@ -1,0 +1,5 @@
+{% if attribute(attributes, 'addClass') is not defined %}
+  {% set attributes = create_attribute(attributes|default({})) %}
+{% endif %}
+
+{{ link(title, href, attributes.addClass(['link-' ~ style])) }}

@@ -1,0 +1,39 @@
+@include kinetic-make-containers($kinetic-containers);
+
+.layout {
+  --block-spacing: 80px;
+  padding: calc(var(--block-spacing) / 2) 0;
+
+  // This seems to be to remove padding for the content heading section but that lives on the sdc.
+  //&:first-child {
+  //  padding-top: 0;
+  //}
+
+  // @todo this should probably live with the block sdc
+  .block {
+    margin-bottom: var(--block-spacing);
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // @todo this should probably live with the section into sdc?
+  .block.block--section-intro {
+    --block-spacing: 16px;
+  }
+
+}
+
+// Example of how to override a section padding when background colors match. Collapse.
+@each $surface, $surface-map in $surfaces {
+  .layout.surface--#{$surface} + .layout.surface--#{$surface} {
+    padding-top: 0;
+  }
+  @each $surface-class, $surface-class-map in $surface-map {
+    .layout.surface--#{$surface}--#{$surface-class} + .layout.surface--#{$surface}--#{$surface-class} {
+      padding-top: 0;
+    }
+  }
+}

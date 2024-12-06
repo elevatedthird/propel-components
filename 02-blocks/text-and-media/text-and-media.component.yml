@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Text and Media"
+status: "stable"
+description: "Shows media and text content side by side with configurable order."
+slots:
+  _ctas:
+    title: 'CTAs'
+    description: 'The CTAs to be displayed in the card'
+  _description:
+    title: 'Description'
+    description: 'The description to be displayed in the card'
+  _media:
+    title: 'Media'
+    description: 'The media to be displayed in the card'
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      title: "Heading"
+      required: true
+    layout:
+      type: string
+      title: Alignment
+      enum:
+        - left
+        - right

@@ -1,0 +1,42 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./source/02-components/00-elements/link/link.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/*
+  Prints the color state for each tag presented or uses the default selectors
+  See /00-config/settings/_typography.scss
+ */
+.link-medium, .link-underline, .link-primary {
+  color: var(--link-color);
+  -webkit-text-decoration: var(--link-decoration);
+          text-decoration: var(--link-decoration);
+}
+.link-medium:hover, .link-underline:hover, .link-primary:hover {
+  color: var(--link-hover-color);
+}
+
+.link-primary {
+  --link-color: #1D4ED8;
+  --link-decoration: none;
+  --link-hover-color: #173ead;
+}
+
+.link-underline {
+  --link-color: #1D4ED8;
+  --link-decoration: underline;
+  --link-hover-color: #173ead;
+}
+
+.link-medium {
+  --link-color: #DBEAFE;
+  --link-decoration: none;
+  --link-hover-color: #173ead;
+  --link-font-weight: 500;
+  font-weight: var(--link-font-weight);
+}
+
+.surface--dark .link-primary, .surface--dark.priority .link-primary, .surface--dark-gray-900 .link-primary, .surface--dark-gray-800 .link-primary {
+  --link-color: white;
+  --link-hover-color: red;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic291cmNlLzAyLWNvbXBvbmVudHMvMDAtZWxlbWVudHMvbGluay9saW5rLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUE4QkE7OztFQUFBO0FDT0E7RUFFRTtFQUNBO1VBQUE7QUFqQ0Y7QUFrQ0U7RUFDRTtBQWhDSjs7QUFzQ0U7RUFoQkU7RUFBQTtFQUFBO0FBaEJKOztBQWdDRTtFQWhCRTtFQUFBO0VBQUE7QUFWSjs7QUEwQkU7RUFoQkU7RUFBQTtFQUFBO0VBQUE7RUFxQkU7QUF2Qk47O0FBaUNFO0VBQ0U7RUFDQTtBQTlCSixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8va2luZXRpYy8uL3NvdXJjZS8wMC1jb25maWcvc2Nzcy9taXhpbnMvX3R5cG9ncmFwaHkuc2NzcyIsIndlYnBhY2s6Ly9raW5ldGljLy4vc291cmNlLzAyLWNvbXBvbmVudHMvMDAtZWxlbWVudHMvbGluay9saW5rLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLy8vXG4vLy8gVGhpcyBmaWxlIHRyYW5zZm9ybXMgU0NTUyB2YXJzIGludG8gQ1NTIHZhcmlhYmxlcy5cbi8vL1xuXG4vLyBQcmludCBjc3MgdmFycy5cbi8vIG5hbWluZyBjb252ZW50aW9uIC0tay0te3Byb3BlcnR5fS0te3RhZ31cbkBtaXhpbiBwcmludC1jc3MtdmFycygkdHlwb2dyYXBoeSkge1xuICBAZWFjaCAkdGFnLCAkcnVsZXMgaW4gJHR5cG9ncmFwaHkge1xuICAgIEBlYWNoICRrZXksICRwcm9wIGluICRydWxlcyB7XG4gICAgICBAaWYgaW5kZXgoJHJmcy1wcm9wcywgJGtleSkge1xuICAgICAgICBAaW5jbHVkZSByZnMoJHByb3AsIC0tay0tdHlwb2dyYXBoeS0tI3ska2V5fS0jeyR0YWd9KTtcbiAgICAgIH1cbiAgICAgIEBlbHNlIHtcbiAgICAgICAgLS1rLS10eXBvZ3JhcGh5LS0jeyRrZXl9LSN7JHRhZ306ICN7JHByb3B9O1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG4vLyBEZWNsYXJlIGdsb2JhbCBjbGFzc2VzIGFuZCBydWxlcy5cbkBtaXhpbiBwcmludC10eXBvZ3JhcGh5LXJ1bGVzKCR0eXBvZ3JhcGh5KSB7XG4gIEBlYWNoICR0YWcsICRydWxlcyBpbiAkdHlwb2dyYXBoeSB7XG4gICAgI3skdGFnfSwgLiN7JHRhZ30ge1xuICAgICAgQGVhY2ggJGtleSwgJHByb3AgaW4gJHJ1bGVzIHtcbiAgICAgICAgI3ska2V5fTogdmFyKC0tay0tdHlwb2dyYXBoeS0tI3ska2V5fS0jeyR0YWd9KTtcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cblxuLypcbiAgUHJpbnRzIHRoZSBjb2xvciBzdGF0ZSBmb3IgZWFjaCB0YWcgcHJlc2VudGVkIG9yIHVzZXMgdGhlIGRlZmF1bHQgc2VsZWN0b3JzXG4gIFNlZSAvMDAtY29uZmlnL3NldHRpbmdzL190eXBvZ3JhcGh5LnNjc3NcbiAqL1xuQG1peGluIHRleHQtY29sb3ItcHJvZmlsZS10YXJnZXRzKCRrZXk6IGxpZ2h0KSB7XG4gICRwcm9maWxlOiBleHRlbmQtaW4tbWFwKCR0ZXh0LWNvbG9yLXByb2ZpbGVzLCAka2V5KTtcbiAgQGVhY2ggJHNlbGVjdG9yLCAkY29sb3IgaW4gJHByb2ZpbGUge1xuICAgIEBpZiAkc2VsZWN0b3IgPT0gZGVmYXVsdCB7XG4gICAgICAjeyRkZWZhdWx0LXRleHQtY29sb3ItcHJvZmlsZS10YXJnZXRzfSB7XG4gICAgICAgIGNvbG9yOiAkY29sb3I7XG4gICAgICB9XG4gICAgfSBAZWxzZSB7XG4gICAgICAjeyRzZWxlY3Rvcn0ge1xuICAgICAgICBjb2xvcjogJGNvbG9yO1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIiwiQHVzZSBcInNhc3M6bWFwXCI7XG5AdXNlIFwic2FzczpsaXN0XCI7XG5AdXNlIFwic2FzczptZXRhXCI7XG5AdXNlIFwic2FzczptYXRoXCI7XG5AdXNlIFwic2FzczpzdHJpbmdcIjtcbkBpbXBvcnQgXCIuL3Njc3MvX2luZGV4LnNjc3NcIjtcbi8vIExpbmtzLlxuLy8gU2VlIHNvdXJjZS8wMC1jb25maWcvc2Nzcy9zZXR0aW5ncy9fbGlua3Muc2NzcyBmb3IgQlMgdmFyaWFibGUgb3ZlcnJpZGVzLlxuXG4vLyBEZWZpbmUgYWxsIGxpbmsgdmFyaWFudHMgaGVyZS5cbiRraW5ldGljLWxpbmtzOiAoXG4gIHByaW1hcnk6KFxuICAgIGNvbG9yOiAkbGluay1jb2xvcixcbiAgICBkZWNvcmF0aW9uOiAkbGluay1kZWNvcmF0aW9uLFxuICAgIGhvdmVyLWNvbG9yOiAkbGluay1ob3Zlci1jb2xvcixcbiAgKSxcbiAgdW5kZXJsaW5lOihcbiAgICBleHRlbmQ6IHByaW1hcnksXG4gICAgZGVjb3JhdGlvbjogdW5kZXJsaW5lLFxuICApLFxuICBtZWRpdW06IChcbiAgICBleHRlbmQ6IHByaW1hcnksXG4gICAgY29sb3I6ICRzZWNvbmRhcnksXG4gICAgZm9udC13ZWlnaHQ6IDUwMFxuICApXG4pO1xuXG4vLyBOYW1pbmcgY29udmVudGlvbjogbGluay17cHJvcGVydHktbmFtZX1cbkBtaXhpbiBsaW5rKCRsaW5rLWtleTogZGVmYXVsdCkge1xuICAkbGluay1jb25mOiBleHRlbmQtaW4tbWFwKCRraW5ldGljLWxpbmtzLCAkbGluay1rZXkpO1xuXG4gIEBlYWNoICRwcm9wLCAkcnVsZSBpbiAkbGluay1jb25mIHtcbiAgICAtLWxpbmstI3skcHJvcH06ICN7JHJ1bGV9O1xuICB9XG59XG5cbi8vIEdlbmVyYXRlIHV0aWxpdHkgY2xhc3NlcyBmb3IgbGlua3MuXG4lbGluayB7XG4gIC8vIERlZmluZSBCYXNlIGxpbmsgQ1NTIHJ1bGVzLlxuICBjb2xvcjogdmFyKC0tbGluay1jb2xvcik7XG4gIHRleHQtZGVjb3JhdGlvbjogdmFyKC0tbGluay1kZWNvcmF0aW9uKTtcbiAgJjpob3ZlciB7XG4gICAgY29sb3I6IHZhcigtLWxpbmstaG92ZXItY29sb3IpO1xuICB9XG59XG5cbi8vIEFzc2lnbiBDU1MgdmFyaWFibGVzIHRvIGVhY2ggcnVsZS5cbkBlYWNoICRsaW5rLWtleSwgJHZhbHVlIGluICRraW5ldGljLWxpbmtzIHtcbiAgLmxpbmstI3skbGluay1rZXl9IHtcbiAgICBAaW5jbHVkZSBsaW5rKCRsaW5rLWtleSk7XG5cbiAgICAvLyBQdXQgY3VzdG9tIHZhcmlhbnQgcnVsZXMgaGVyZS5cbiAgICBAaWYgJGxpbmsta2V5ID09ICdtZWRpdW0nIHtcbiAgICAgIGZvbnQtd2VpZ2h0OiB2YXIoLS1saW5rLWZvbnQtd2VpZ2h0KTtcbiAgICB9XG5cbiAgICAvLyBFeHRlbmQgdGhlIGJhc2Ugc3R5bGVzLlxuICAgIEBleHRlbmQgJWxpbms7XG4gIH1cbn1cblxuLy8gU3VyZmFjZXMgSW50ZWdyYXRpb24uXG5AaW5jbHVkZSBpbnRlZ3JhdGUtdG8tc3VyZmFjZShkYXJrKSB7XG4gIC5saW5rLXByaW1hcnkge1xuICAgIC0tbGluay1jb2xvcjogd2hpdGU7XG4gICAgLS1saW5rLWhvdmVyLWNvbG9yOiByZWQ7XG4gIH1cbn1cbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

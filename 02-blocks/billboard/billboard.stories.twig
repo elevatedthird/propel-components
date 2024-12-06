@@ -1,0 +1,55 @@
+{% stories card with {
+  title: 'Blocks/Billboard',
+  argTypes: {
+    alignment: {
+      control: 'radio',
+      options: {
+        left: 'left',
+        right: 'right',
+        center: 'center',
+      }
+    }
+  }
+} %}
+  {% story default with {
+    name: '1. Default',
+    args: {
+      _description: "<p>this <strong>is</strong> the description.</p>",
+      alignment: "left",
+    }
+  } %}
+
+    {% embed 'kinetic:layout--one-column' %}
+      {% block first %}
+        {#  a little workaround to ensure a rendered string unstead of plain  #}
+        {% set _description %}
+          {{ _description|raw }}
+        {% endset %}
+        {% embed 'kinetic:billboard' with
+          {
+            alignment: alignment,
+            heading: 'This is the heading',
+            heading_tag: 'h3',
+            _description: _description
+          } only %}
+          {% block _media %}
+            <img src="https://placehold.co/600x400" alt="">
+          {% endblock %}
+          {% block _description %}
+            {{ _description }}
+          {% endblock %}
+          {% block _ctas %}
+            {{ include('kinetic:link--button', {
+              title: 'Link',
+              attributes: create_attribute({href: '/', class:['btn', 'btn-primary']}),
+            }, with_context = false )}}
+            {{ include('kinetic:link--button', {
+              title: 'Link',
+              attributes: create_attribute({href: '/', class:['btn', 'btn-outline']}),
+            }, with_context = false )}}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endstory %}
+{% endstories %}

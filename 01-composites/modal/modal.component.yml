@@ -1,0 +1,16 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Modal
+status: stable
+description: A bootstrap modal. Providing a trigger and a dialog.
+props:
+  type: object
+  properties:
+    test:
+      type: string
+      title: Test
+      description: test prop
+libraryOverrides:
+  dependencies:
+    - >-
+      kinetic/partials.vendors.vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c.js
