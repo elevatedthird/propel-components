@@ -1,0 +1,5 @@
+import{s as r}from"./section-C3X6Cxy3.js";import"./twig-TIIEE6v_.js";import"./_commonjsHelpers-_d1bhYXs.js";const n={title:"03-formations/section",tags:["autodocs"],parameters:{docs:{description:{component:"An easy wrapper to use for creating sections. Either Via layout builder or to mimic layout build on a structured page."},source:{code:"drush propel:add section"}}},argTypes:{layout_class:{description:"The layout class to use for this section",control:{type:"text"}},layout_id:{description:"The layout ID to use for this section",control:{type:"text"}},settings:{control:"object"},wrapper_classes:{description:"Classes to add to the wrapper",control:"object"},inner_wrapper_classes:{description:"Classes to add to the inner wrapper",control:"object"}},component:r},t={args:{text:"Click me"}};var e,o,s;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  args: {
+    text: 'Click me'
+  }
+}`,...(s=(o=t.parameters)==null?void 0:o.docs)==null?void 0:s.source}}};const p=["Default"];export{t as Default,p as __namedExportsOrder,n as default};

@@ -1,0 +1,10 @@
+import{t as d,D as m,T as n,a as f}from"./twig-TIIEE6v_.js";import"./_commonjsHelpers-_d1bhYXs.js";const g=function(r){const t={"kinetic:badge":"./components/00-elements/badge/badge.twig","kinetic:title":"./components/01-composites/title/title.twig"};r.extendFunction("include",(s,u)=>{const i=t[s];if(!i)throw new Error(`Template ${s} not found`);return r.twig({id:s,href:i,async:!1}).render(u)})};g(n);const w=e=>e.extendFilter("clean_unique_id",()=>r=>r.split(" ").reverse().join(" "));w(n);f(n);n.cache(!1);const a=e=>e,y=(e={})=>{const r=d.twig({id:"/home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig",data:[{type:"raw",value:`
+
+<form`,position:{start:150,end:157}},{type:"output",position:{start:157,end:173},stack:[{type:"Twig.expression.type.variable",value:"attributes",match:["attributes"],position:{start:157,end:173}}]},{type:"raw",value:`>
+  `,position:{start:173,end:177}},{type:"output",position:{start:177,end:191},stack:[{type:"Twig.expression.type.variable",value:"children",match:["children"],position:{start:177,end:191}}]},{type:"raw",value:`
+</form>
+`,position:{start:191,end:191}}],precompiled:!0});r.options.allowInlineIncludes=!0;try{let t=e.defaultAttributes?e.defaultAttributes:[];return Array.isArray(t)||(t=Object.entries(t)),a(r.render({attributes:new m(t),...e}))}catch(t){return a("An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig: "+t.toString())}},k={title:"00-elements/form",tags:["autodocs"],parameters:{docs:{description:{component:"A Form."},source:{code:"drush propel:add form"}}},argTypes:{},component:y},o={args:{text:"Click me"}};var p,c,l;o.parameters={...o.parameters,docs:{...(p=o.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    text: 'Click me'
+  }
+}`,...(l=(c=o.parameters)==null?void 0:c.docs)==null?void 0:l.source}}};const v=["Default"];export{o as Default,v as __namedExportsOrder,k as default};
