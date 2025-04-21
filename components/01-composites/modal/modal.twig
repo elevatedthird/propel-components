@@ -1,0 +1,13 @@
+<div {{ attributes }}>
+  {% set toggle_id = "modal" %}
+  {% set target_id = toggle_id ~ "--" ~ random() %}
+  {{ include('kinetic:trigger', { target_id: target_id, toggle_id: toggle_id, text: trigger_text }, with_context: false ) }}
+  {% embed "kinetic:dialog" with {
+    "target_id": target_id,
+    "modal_title": modal_title
+   } only %}
+    {% block modal_body %}
+      {{ modal_body }}
+    {% endblock %}
+   {% endembed %}
+</div>

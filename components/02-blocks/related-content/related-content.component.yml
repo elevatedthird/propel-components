@@ -1,0 +1,34 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "related content"
+status: "stable"
+group: Blocks
+description: "displays related content for a node"
+slots:
+  items:
+    title: 'Items'
+    description: 'related content items'
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The title of the related content block
+    href:
+      type: string
+      title: URL
+      description: URL to full list of related content
+    link_text:
+      type: string
+      title: Link text
+      description: Link text
+    columns:
+      type: integer
+      title: Columns
+      description: Number of columns to display related content in
+      default: 3
+    gap:
+      type: boolean
+      title: Gap
+      description: Gap between related content items in pixels
+      default: true

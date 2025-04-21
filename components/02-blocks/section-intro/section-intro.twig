@@ -1,0 +1,32 @@
+
+{% set attributes = create_attribute() %}
+
+{# Set Alignment #}
+{% if alignment == 'center' %}
+  {% set attributes = attributes.addClass('text-center') %}
+{% elseif alignment == 'left' %}
+  {% set attributes = attributes.addClass('text-start') %}
+{% elseif alignment == 'right' %}
+  {% set attributes = attributes.addClass('text-end') %}
+{% endif %}
+
+<div {{ attributes.addClass('section-intro') }} >
+  {{ include('kinetic:title', {
+    heading: heading,
+    eyebrow: eyebrow,
+    heading_style: 'h2',
+    heading_tag: 'h2',
+  }, with_context: false) }}
+
+  {% if description is not empty %}
+    <div class="mt-4">
+      {{ description }}
+    </div>
+  {% endif %}
+
+  {% if ctas is not empty %}
+    <div class="mt-4">
+      {{ ctas }}
+    </div>
+  {% endif %}
+</div>

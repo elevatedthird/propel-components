@@ -1,0 +1,29 @@
+{
+  "name": "propel-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "stories": "node generate-stories.js",
+    "start": "storybook dev -p 6006 --no-open",
+    "cc": "rm -rf node_modules/.cache",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/html": "^8.6.12",
+    "@storybook/html-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "storybook": "^8.6.12",
+    "vite": "^6.3.1",
+    "vite-plugin-twig-drupal": "^1.6.0",
+    "yaml": "^2.7.1"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "accordion-js": "^3.4.0",
+    "tailwindcss": "^4.1.4"
+  }
+}

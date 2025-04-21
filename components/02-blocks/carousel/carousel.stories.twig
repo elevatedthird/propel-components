@@ -1,0 +1,42 @@
+{% stories card with {
+  title: 'Blocks/Carousel',
+} %}
+  {% story default with {
+    name: '1. Default',
+  } %}
+    {% embed 'kinetic:layout--one-column' %}
+      {% block first %}
+        {% embed 'kinetic:carousel' with {_items: content.field_items, item_count: content.field_items['#items']|length} only %}
+          {% block _items %}
+            {% for i in 0..5 %}
+              {% embed 'kinetic:glide-slide' %}
+                {% block item %}
+                  {% embed 'kinetic:card' with {
+                    heading: "Card Heading " ~ i
+                  } %}
+                    {% block media %}
+                      <img src="https://placehold.co/600x400" alt="">
+                    {% endblock %}
+                    {% block _body %}
+                      <p>This is the card Body</p>
+                    {% endblock %}
+                    {% block _ctas %}
+                      {{ include('kinetic:link--button', {
+                        title: 'Link',
+                        attributes: create_attribute({href: '/', class:['btn', 'btn-primary']}),
+                      }, with_context: false )}}
+                      {{ include('kinetic:link--button', {
+                        title: 'Link',
+                        attributes: create_attribute({href: '/', class:['btn', 'btn-outline']}),
+                      }, with_context: false )}}
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
+            {% endfor %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endstory %}
+{% endstories %}

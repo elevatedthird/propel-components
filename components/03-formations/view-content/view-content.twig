@@ -1,0 +1,28 @@
+{% if exposed %}
+  <div class="mb-12">
+    {{ exposed }}
+  </div>
+{% endif %}
+
+{% if rows %}
+{# {{ dump(rows)}} #}
+  {# Views infinte scroll adds extra div. #}
+  {% set infinite_scroll_attributes = rows['#theme_wrappers']['container']['#attributes']|default({}) %}
+  {% set content_attributes = create_attribute(infinite_scroll_attributes) %}
+  {% set classes = ['grid-cols-1', 'grid'] %}
+  {% if gap != 0 %}
+    {% set classes = classes|merge(['gap-6']) %}
+  {% endif %}
+  {% if columns == 3 %}
+    {% set classes = classes|merge(['md:grid-cols-3']) %}
+  {% endif %}
+  <div {{ content_attributes.addClass(classes) }}>
+    {{ rows }}
+  </div>
+{% elseif empty %}
+  {{ empty }}
+{% else %}
+  <div class="mt-8">
+     <p class="h4"> Sorry, no results match your filter criteria. </p>
+  </div>
+{% endif %}

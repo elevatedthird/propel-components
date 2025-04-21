@@ -1,0 +1,23 @@
+<!-- Mock Drupal and Drupalsettings -->
+<script>
+  window.drupalSettings = {};
+  window.Drupal = {
+    behaviors: {},
+    attachBehaviors: (context, settings) => {
+      context = context || document;
+      settings = settings || drupalSettings;
+      const behaviors = Drupal.behaviors;
+      Object.keys(behaviors || {}).forEach( (i) => {
+        if (typeof behaviors[i].attach === 'function') {
+          behaviors[i].attach(context, settings);
+        }
+      });
+    },
+  };
+  // Mock Drupal's once library too.
+  window.once = (_, selector) => document.querySelectorAll(selector);
+  // Attach behaviors on load.
+  document.addEventListener('DOMContentLoaded', () => {
+    Drupal.attachBehaviors(document, window.drupalSettings);
+  })
+</script>

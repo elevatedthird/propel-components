@@ -1,0 +1,13 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "View"
+status: "stable"
+description: "A Drupal View."
+slots:
+  view_content:
+    title: View content
+props:
+  type: object
+  properties:
+    pager:
+      type: array
+      title: View Pager

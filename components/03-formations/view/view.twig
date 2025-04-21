@@ -1,0 +1,16 @@
+<div {{ attributes.addClass(classes).addClass('view') }}>
+  <div class="view__content">
+    {% block view_content %}
+    {% endblock %}
+  </div>
+  {% if more %}
+   <div class="mt-8 flex items-center justify-center">
+    {{ more }}
+    </div>
+  {% endif %}
+  {% if pager %}
+    <div class="mt-8">
+      {{ pager }}
+    </div>
+  {% endif %}
+</div>

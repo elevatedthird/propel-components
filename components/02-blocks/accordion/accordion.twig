@@ -1,0 +1,8 @@
+{% if behavior_name %}
+  {% set attributes = attributes.setAttribute('data-behavior-name', behavior_name) %}
+{% endif %}
+
+<div {{ attributes.addClass('accordion') }}>
+  {{ accordion_items }}
+</div>
+

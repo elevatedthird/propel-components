@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@utility btn-primary {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+@utility btn-secondary {
+  @apply bg-gray-500 text-white font-bold py-2 px-4 rounded;
+}
+
+@utility btn-tertiary {
+  @apply bg-red-500 text-white font-bold py-2 px-4 rounded;
+}

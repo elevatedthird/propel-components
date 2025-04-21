@@ -1,0 +1,23 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Page"
+status: "stable"
+description: "Page template for structured pages."
+slots:
+  related_content:
+    title: "Related content"
+    description: "Related content."
+  content:
+    title: "Page content"
+    description: "Main page content."
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      description: "Page title."
+    date:
+      type: string
+      description: "Formatted publish date."
+    type:
+      type: string
+      description: "Page type."

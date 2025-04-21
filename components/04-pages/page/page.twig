@@ -1,0 +1,29 @@
+<article{{ attributes }}>
+  {% set banner_content %}
+    <h1 class="h2 !font-body font-bold"> {{ title }} </h1>
+  {% endset %}
+  {{ include('kinetic:banner', {
+    text: banner_content,
+    content_width: 'narrow',
+  }, with_context: false) }}
+
+  <section class="container max-w-5xl py-25">
+    {{ content }}
+  </section>
+  {# Related content. #}
+  {% if related_content and related_content.content is not empty %}
+    <section class="bg-lighter-gray py-25">
+      <div class="container">
+        {{ include('kinetic:related-content', {
+          items: related_content.content,
+          title: related_content.title,
+          link_text: related_content.link_text,
+          href: related_content.href,
+          columns: related_content.columns|default(3),
+          gap: related_content.gap|default(1),
+        }, with_context: false) }}
+      </div>
+    </section>
+  {% endif %}
+
+</article>

@@ -1,0 +1,18 @@
+{% set heading_id =  accordion_id ~ "--" ~ "heading"|clean_unique_id %}
+{% set target_id =  accordion_id ~ "--" ~ "collapse"|clean_unique_id %}
+{% set heading_level = heading_level|default(5) %}
+{% set open = false %}
+
+<div{{ attributes.addClass('ac py-4 border') }}>
+  <h{{ heading_level }} class="ac-header font-bold relative" id="{{ heading_id }}">
+    <button class="ac-trigger  {{ open ? '' : 'collapsed' }} pe-4" type="button">
+      {{ heading }}
+      <div class="expand-accordion w-[16px] h-[9px] absolute right-[8px] top-1/2 transform -translate-y-1/2 rotate-180 group-[.is-active]:rotate-0"></div>
+    </button>
+  </h{{ heading_level }}>
+  <div id="{{ target_id }}" class="ac-panel overflow-hidden" aria-labelledby="{{ heading_id }}">
+    <div class="ac-text text-formatted pt-3 leading-[1.5]">
+        {{ body }}
+    </div>
+  </div>
+</div>

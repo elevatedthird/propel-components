@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "View Content"
+status: "stable"
+description: "Views Content."
+props:
+  type: object
+  properties:
+    rows:
+      type: array
+    empty:
+      type: string
+    columns:
+      type: integer
+      title: "Columns"
+    gap:
+      type: integer
+      title: "Grid gap"
