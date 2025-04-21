@@ -1,6 +1,14 @@
 # Propel Components
 This project contains a repo of SDCs for building sites.
 
+## Local development
+```
+nvm use
+npm install
+npm start
+npm run stories # generate stories.js files
+```
+
 ## Prereqs.
 - Kinetic theme installed
 - Using Tailwind 4
