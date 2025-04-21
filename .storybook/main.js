@@ -11,6 +11,10 @@ const config = {
   "framework": {
     "name": "@storybook/html-vite",
     "options": {}
-  }
+  },
+  async viteFinal(config) {
+    config.base = process.env.BASE_PATH || config.base;
+    return config;
+  },
 };
 export default config;
