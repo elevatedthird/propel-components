@@ -7,7 +7,7 @@
     "stories": "node generate-stories.js",
     "start": "storybook dev -p 6006 --no-open",
     "cc": "rm -rf node_modules/.cache",
-    "build": "export BASE_PATH=/propel-components && storybook build --output-dir dist"
+    "build": "export BASE_PATH=/propel-components && storybook build --output-dir dist && touch ./dist/.nojekyll"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
