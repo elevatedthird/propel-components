@@ -14,10 +14,13 @@ export default {
       }
     },
   },
-  argTypes: {"open":{"description":"The key of the intially opened item, or false.","control":"boolean"},"behavior_name":{"control":{"type":"text"}}},
+  argTypes: {"open":{"control":{"type":"boolean"},"type":{"required":false,"name":""},"description":"The key of the intially opened item, or false.","table":{"type":{"summary":"boolean"}}},"behavior_name":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: accordion,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    open: false,
+    behavior_name: ""
+},
 };

@@ -19,5 +19,5 @@ export default {
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {},
 };

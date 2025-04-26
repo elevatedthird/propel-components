@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"item_count":{"control":{"type":"number"}}},
+  argTypes: {"item_count":{"control":{"type":"number"},"type":{"required":false,"name":""},"table":{"type":{"summary":"number"}}}},
   component: carousel,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    item_count: 0
+},
 };

@@ -14,10 +14,15 @@ export default {
       }
     },
   },
-  argTypes: {"rows":{"control":"object"},"empty":{"control":{"type":"text"}},"columns":{"control":{"type":"number"}},"gap":{"control":{"type":"number"}}},
+  argTypes: {"rows":{"control":{"type":"object"},"type":{"required":false,"name":""},"table":{"type":{"summary":"array"}}},"empty":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"columns":{"control":{"type":"number"},"type":{"required":false,"name":""},"table":{"type":{"summary":"number"}}},"gap":{"control":{"type":"number"},"type":{"required":false,"name":""},"table":{"type":{"summary":"number"}}}},
   component: view_content,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    rows: {},
+    empty: "",
+    columns: 0,
+    gap: 0
+},
 };

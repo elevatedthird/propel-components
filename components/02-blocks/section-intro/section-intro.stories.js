@@ -14,10 +14,16 @@ export default {
       }
     },
   },
-  argTypes: {"eyebrow":{"control":{"type":"text"}},"heading":{"control":{"type":"text"}},"heading_style":{"control":"select","options":["h2","h3","h4","h5"]},"alignment":{"control":"select","options":["left","right","center"]},"description":{"description":"The description to be displayed in the section intro","control":{"type":"text"}}},
+  argTypes: {"eyebrow":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading_style":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h2","h3","h4","h5"]},"alignment":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["left","right","center"]},"description":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The description to be displayed in the section intro","table":{"type":{"summary":"text"}}}},
   component: section_intro,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    eyebrow: "",
+    heading: "",
+    heading_style: "h2",
+    alignment: "left",
+    description: ""
+},
 };

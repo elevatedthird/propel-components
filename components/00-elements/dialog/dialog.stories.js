@@ -14,10 +14,13 @@ export default {
       }
     },
   },
-  argTypes: {"modal_title":{"description":"title to show in this modal","control":{"type":"text"}},"behavior_name":{"control":{"type":"text"}}},
+  argTypes: {"modal_title":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"title to show in this modal","table":{"type":{"summary":"text"}}},"behavior_name":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: dialog,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    modal_title: "",
+    behavior_name: ""
+},
 };

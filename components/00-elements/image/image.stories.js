@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"view_mode":{"control":{"type":"text"}}},
+  argTypes: {"view_mode":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: image,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    view_mode: ""
+},
 };

@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"behavior_name":{"control":{"type":"text"}}},
+  argTypes: {"behavior_name":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: tabs,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    behavior_name: ""
+},
 };

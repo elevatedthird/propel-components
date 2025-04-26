@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"classes":{"control":"object"}},
+  argTypes: {"classes":{"control":{"type":"object"},"type":{"required":false,"name":""},"table":{"type":{"summary":"array"}}}},
   component: ctas,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    classes: {}
+},
 };

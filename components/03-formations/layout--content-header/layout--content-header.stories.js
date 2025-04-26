@@ -14,10 +14,16 @@ export default {
       }
     },
   },
-  argTypes: {"layout_class":{"description":"The layout class to use for this section","control":{"type":"text"}},"layout_id":{"description":"The layout ID to use for this section","control":{"type":"text"}},"settings":{"control":"object"},"wrapper_classes":{"description":"Classes to add to the wrapper","control":"object"},"inner_wrapper_classes":{"description":"Classes to add to the inner wrapper","control":"object"}},
+  argTypes: {"layout_class":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The layout class to use for this section","table":{"type":{"summary":"text"}}},"layout_id":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The layout ID to use for this section","table":{"type":{"summary":"text"}}},"settings":{"control":{"type":"object"},"type":{"required":false,"name":""},"table":{"type":{"summary":"object"}}},"wrapper_classes":{"control":{"type":"object"},"type":{"required":false,"name":""},"description":"Classes to add to the wrapper","table":{"type":{"summary":"array"}}},"inner_wrapper_classes":{"control":{"type":"object"},"type":{"required":false,"name":""},"description":"Classes to add to the inner wrapper","table":{"type":{"summary":"array"}}}},
   component: layout__content_header,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    layout_class: "",
+    layout_id: "",
+    settings: {},
+    wrapper_classes: {},
+    inner_wrapper_classes: {}
+},
 };

@@ -2,4 +2,4 @@
   {% set attributes = create_attribute(attributes|default({})) %}
 {% endif %}
 
-{{ link(title, href, attributes.addClass(['link-' ~ style])) }}
+{{ link(title, href, attributes.addClass([variant])) }}

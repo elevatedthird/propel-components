@@ -14,10 +14,16 @@ export default {
       }
     },
   },
-  argTypes: {"title":{"description":"The title of the related content block","control":{"type":"text"}},"href":{"description":"URL to full list of related content","control":{"type":"text"}},"link_text":{"description":"Link text","control":{"type":"text"}},"columns":{"description":"Number of columns to display related content in","control":{"type":"number"}},"gap":{"description":"Gap between related content items in pixels","control":"boolean"}},
+  argTypes: {"title":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The title of the related content block","table":{"type":{"summary":"text"}}},"href":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"URL to full list of related content","table":{"type":{"summary":"text"}}},"link_text":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Link text","table":{"type":{"summary":"text"}}},"columns":{"control":{"type":"number"},"type":{"required":false,"name":""},"description":"Number of columns to display related content in","table":{"defaultValue":{"summary":3},"type":{"summary":"number"}}},"gap":{"control":{"type":"boolean"},"type":{"required":false,"name":""},"description":"Gap between related content items in pixels","table":{"defaultValue":{"summary":true},"type":{"summary":"boolean"}}}},
   component: related_content,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    title: "",
+    href: "",
+    link_text: "",
+    columns: 3,
+    gap: true
+},
 };

@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"heading":{"control":{"type":"text"}}},
+  argTypes: {"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: card,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    heading: ""
+},
 };

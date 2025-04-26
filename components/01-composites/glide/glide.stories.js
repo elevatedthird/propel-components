@@ -14,10 +14,16 @@ export default {
       }
     },
   },
-  argTypes: {"show_arrows":{"control":"boolean"},"show_bullets":{"control":"boolean"},"item_count":{"control":{"type":"number"}},"classes":{"control":"object"},"behavior_name":{"control":{"type":"text"}}},
+  argTypes: {"show_arrows":{"control":{"type":"boolean"},"type":{"required":false,"name":""},"table":{"type":{"summary":"boolean"}}},"show_bullets":{"control":{"type":"boolean"},"type":{"required":false,"name":""},"table":{"type":{"summary":"boolean"}}},"item_count":{"control":{"type":"number"},"type":{"required":false,"name":""},"table":{"type":{"summary":"number"}}},"classes":{"control":{"type":"object"},"type":{"required":false,"name":""},"table":{"type":{"summary":"array"}}},"behavior_name":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
   component: glide,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    show_arrows: false,
+    show_bullets: false,
+    item_count: 0,
+    classes: {},
+    behavior_name: ""
+},
 };

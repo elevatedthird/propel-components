@@ -14,10 +14,13 @@ export default {
       }
     },
   },
-  argTypes: {"id":{"description":"The machine id of the pane.","control":{"type":"text"}},"show_active":{"description":"The default tab that should be active","control":{"type":"number"}}},
+  argTypes: {"id":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The machine id of the pane.","table":{"type":{"summary":"text"}}},"show_active":{"control":{"type":"number"},"type":{"required":false,"name":""},"description":"The default tab that should be active","table":{"type":{"summary":"number"}}}},
   component: tabs_item,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    id: "",
+    show_active: 0
+},
 };

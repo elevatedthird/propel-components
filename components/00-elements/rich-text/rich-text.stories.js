@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Formatted text field',
+        component: 'A wrapper that adds the text-formatted class around the CKEditor output.',
       },
       source: {
         code: 'drush propel:add rich-text',
@@ -19,5 +19,5 @@ export default {
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {},
 };

@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"test":{"description":"test prop","control":{"type":"text"}}},
+  argTypes: {"test":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"test prop","table":{"type":{"summary":"text"}}}},
   component: modal,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    test: ""
+},
 };

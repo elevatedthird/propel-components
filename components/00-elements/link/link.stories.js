@@ -7,17 +7,21 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'undefined',
+        component: 'Anchor tag.',
       },
       source: {
         code: 'drush propel:add link',
       }
     },
   },
-  argTypes: {"title":{"control":{"type":"text"}},"href":{"control":{"type":"text"}},"variant":{"control":"select","options":["nolink"]},"style":{"control":"select","options":["primary","underline"]}},
+  argTypes: {"title":{"control":{"type":"text"},"type":{"required":true,"name":""},"table":{"type":{"summary":"text"}}},"href":{"control":{"type":"text"},"type":{"required":true,"name":""},"table":{"type":{"summary":"text"}}},"variant":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"defaultValue":{"summary":"link"},"type":{"summary":"text"}},"options":["link","link-next","link-prev"]}},
   component: link,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    title: "Link text",
+    href: "#",
+    variant: "link"
+},
 };

@@ -14,10 +14,12 @@ export default {
       }
     },
   },
-  argTypes: {"pager":{"control":"object"}},
+  argTypes: {"pager":{"control":{"type":"object"},"type":{"required":false,"name":""},"table":{"type":{"summary":"array"}}}},
   component: view,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    pager: {}
+},
 };

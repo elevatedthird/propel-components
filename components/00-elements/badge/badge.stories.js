@@ -7,17 +7,19 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'undefined',
+        component: 'A badge.',
       },
       source: {
         code: 'drush propel:add badge',
       }
     },
   },
-  argTypes: {"text":{"control":{"type":"text"}},"style":{"control":"select","options":["light","dark"]}},
+  argTypes: {"text":{"control":{"type":"text"},"type":{"required":true,"name":""},"table":{"type":{"summary":"text"}}}},
   component: badge,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    text: "badge text"
+},
 };

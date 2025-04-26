@@ -1,8 +1,10 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
 name: "Button"
 status: "stable"
+description: "A button."
 required:
-  - style
+  - text
+  - variant
 props:
   type: object
   properties:
@@ -10,10 +12,8 @@ props:
       type: "string"
     variant:
       type: 'string'
+      default: "btn-primary"
       enum:
-        - link
-    style:
-      type: string
-      enum:
-        - primary
-        - outline
+        - btn-primary
+        - btn-secondary
+        - btn-tertiary

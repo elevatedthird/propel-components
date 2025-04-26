@@ -14,10 +14,14 @@ export default {
       }
     },
   },
-  argTypes: {"title":{"description":"Page title.","control":{"type":"text"}},"date":{"description":"Formatted publish date.","control":{"type":"text"}},"type":{"description":"Page type.","control":{"type":"text"}}},
+  argTypes: {"title":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Page title.","table":{"type":{"summary":"text"}}},"date":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Formatted publish date.","table":{"type":{"summary":"text"}}},"type":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Page type.","table":{"type":{"summary":"text"}}}},
   component: page,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    title: "",
+    date: "",
+    type: ""
+},
 };

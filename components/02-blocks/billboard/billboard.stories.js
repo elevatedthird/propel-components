@@ -14,10 +14,15 @@ export default {
       }
     },
   },
-  argTypes: {"heading":{"control":{"type":"text"}},"heading_style":{"control":"select","options":["h1","h2","h3"]},"heading_tag":{"control":"select","options":["h1","h2","h3"]},"alignment":{"control":"select","options":["left","right","center"]}},
+  argTypes: {"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading_style":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h1","h2","h3"]},"heading_tag":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h1","h2","h3"]},"alignment":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["left","right","center"]}},
   component: billboard,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    heading: "",
+    heading_style: "h1",
+    heading_tag: "h1",
+    alignment: "left"
+},
 };

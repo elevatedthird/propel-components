@@ -14,10 +14,13 @@ export default {
       }
     },
   },
-  argTypes: {"heading":{"control":{"type":"text"}},"layout":{"control":"select","options":["left","right"]}},
+  argTypes: {"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"layout":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["left","right"]}},
   component: text_and_media,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    heading: "",
+    layout: "left"
+},
 };

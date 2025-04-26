@@ -14,10 +14,15 @@ export default {
       }
     },
   },
-  argTypes: {"eyebrow":{"control":{"type":"text"}},"heading":{"control":{"type":"text"}},"heading_tag":{"control":"select","options":["h1","h2","h3","h4","h5"]},"heading_style":{"control":"select","options":["h1","h2","h3","h4","h5"]}},
+  argTypes: {"eyebrow":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading_tag":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h1","h2","h3","h4","h5"]},"heading_style":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h1","h2","h3","h4","h5"]}},
   component: title,
 };
 
 export const Default = {
-  args: { text: 'Click me' },
+  args: {
+    eyebrow: "",
+    heading: "",
+    heading_tag: "h1",
+    heading_style: "h1"
+},
 };
