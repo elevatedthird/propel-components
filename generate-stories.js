@@ -4,10 +4,42 @@ import YAML from 'yaml';
 
 const __dirname = path.resolve();
 const COMPONENTS_DIR = path.join(__dirname, 'components');
+// List of components to exclude from story generation.
+const EXCLUDED_STORIES = [
+  'section',
+  'section-region'
+];
 /**
  * Template for the story file.
  */
-const STORY_TEMPLATE = (category, name, importName, description, argTypes) => `
+const STORY_TEMPLATE = (category, name, importName, description, argTypes) => {
+  const props = JSON.stringify(argTypes);
+  // Format the args.
+  const args = {};
+  for (const [key, value] of Object.entries(argTypes)) {
+    switch (value.control.type) {
+      case 'text':
+        args[key] = value.table.defaultValue ? value.table.defaultValue.summary : '';
+        break;
+      case 'number':
+        args[key] = value.table.defaultValue ? value.table.defaultValue.summary : 0;
+        break;
+      case 'boolean':
+        args[key] = value.table.defaultValue ? value.table.defaultValue.summary : false;
+        break;
+      case 'array':
+      case 'object':
+        args[key] = {};
+        break;
+      case 'select':
+        args[key] = value.options[0];
+        break;
+      default:
+        throw new Error(`Unknown control type: ${value.control}`);
+    }
+  }
+
+  return `
 import ${importName} from './${name}.twig';
 
 export default {
@@ -23,49 +55,69 @@ export default {
       }
     },
   },
-  argTypes: ${JSON.stringify(argTypes)},
+  argTypes: ${props},
   component: ${importName},
 };
 
 export const Default = {
-  args: { text: 'Click me' },
-};`;
+  args: ${JSON.stringify(args, null, 4).replace(/"([^"]+)":/g, '$1:')},
+};`
+};
 
 /**
- * Convert props in a component.yml file to argTypes for the story file.
- * @param {*} props 
+ * Convert a component.yml file to argTypes for the story file.
+ * @param {*} component metdatata from component.yml 
  * @returns {}
  */
-function convertComponentYamlToArgTypes(props) {
-  if (props === undefined) {
+function convertComponentYamlToArgTypes(metadata) {
+  if (!('props' in metadata)) {
     throw new Error('component props is undefined');
   }
   const argTypes = {};
-  if ('properties' in props) {
-    for (const [key, value] of Object.entries(props.properties)) {
+  if ('properties' in metadata.props) {
+    for (const [key, value] of Object.entries(metadata.props.properties)) {
       argTypes[key] = {
-        description: value.description,
+        control: {},
+        type: {
+          required: false,
+          name: '',
+        },
+        description: value?.description,
+        table: {}
       };
+      // Check for default value.
+      if (value?.default) {
+        argTypes[key].table.defaultValue = { summary: value.default };
+      }
+      // Check if required.
+      if ('required' in metadata) {
+        argTypes[key].type.required = metadata.required.includes(key);
+      }
+      // Set the controls based on the type.
       switch (value.type) {
         case 'string':
           argTypes[key].control = { type: 'text' };
+          argTypes[key].table.type = { summary: 'text' };
           break;
         case 'boolean':
-          argTypes[key].control = 'boolean';
+          argTypes[key].control = { type: 'boolean' };
+          argTypes[key].table.type = { summary: 'boolean' };
           break;
         case 'integer':
           argTypes[key].control = { type: 'number' };
+          argTypes[key].table.type = { summary: 'number' };
           break;
         case 'array':
         case 'object':
-          argTypes[key].control = 'object';
+          argTypes[key].control = { type: 'object' };
+          argTypes[key].table.type = { summary: value.type };
           break;
         default:
           throw new Error(`Unknown type: ${value.type}`);
       }
       // Check if enum is present.
       if (value.enum) {
-        argTypes[key].control = 'select';
+        argTypes[key].control = { type: 'select' };
         argTypes[key].options = value.enum;
       }
     }
@@ -87,6 +139,11 @@ async function walkDirectory(dir) {
     else if (entry.isFile() && entry.name.endsWith('component.yml')) {
       const parts = fullPath.split('/');
       const componentName = parts[parts.length - 2];
+      // Ignore excluded stories.
+      if (EXCLUDED_STORIES.includes(componentName)) {
+        console.log(`Skipping ${componentName} because it is in the excluded list.`);
+        continue;
+      }
       const componentCategory = parts[parts.length - 3];
       const storyFile = path.join(path.dirname(fullPath), `${componentName}.stories.js`);
       // try {
@@ -96,13 +153,11 @@ async function walkDirectory(dir) {
         // Attempt to read the component.yml file.
         const componentYml = await fs.readFile(fullPath, 'utf8');
         const componentData = YAML.parse(componentYml);
-        // console.log(componentData);
-        const { name, description, props } = componentData;
-        const argTypes = convertComponentYamlToArgTypes(props);
-        // process.exit(1);
+        const argTypes = convertComponentYamlToArgTypes(componentData);
         const importName = componentName.replace(/-/g, '_');
-        const content = STORY_TEMPLATE(componentCategory, componentName, importName, description, argTypes);
+        const content = STORY_TEMPLATE(componentCategory, componentName, importName, componentData.description, argTypes);
         await fs.writeFile(storyFile, content, 'utf8');
+        // console.log(componentData); process.exit(1);
         console.log(`Created: ${storyFile}`);
       // }
     }

@@ -6,17 +6,20 @@ This project contains a repo of SDCs for building sites.
 nvm use
 npm install
 npm start
-npm run stories # generate stories.js files
 ```
 
-## Prereqs.
-- Kinetic theme installed
-- Using Tailwind 4
+## Auto Generating Stories
+```
+npm run stories
+```
+You can exclude SDCs from generating a story file by adding the SDC name to the `EXCLUDED_STORIES` array in `generate-stories.js`.
+This is helpful for excluding sub components like accordion items, carousel slides etc.
 
-## Propel companion module.
-- TBD
+## Function Includes
+The [twig.js](https://github.com/twigjs/twig.js) library does not port over the function include syntax. If you are including a twig template within another,
+add your SDC to the `templateManifest` object in the `registerIncludeFunction` function in `vite.config.js`
 
-## Contributing.
+## Contribution Guidelines
 If you want to add your SDC, follow these rules:
 1. Must use tailwind V4
 2. CSS files must follow [name].module.css naming
