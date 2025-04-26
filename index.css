@@ -1,0 +1,228 @@
+/* https://tailwindcss.com/docs/theme#theme-variable-namespaces */
+/* https://tailwindcss.com/docs/hover-focus-and-other-states#appendix */
+
+@import "tailwindcss";
+
+/* Custom theme variables */
+@theme {
+  /* Colors */
+  --color-orange:           #F25929;
+  --color-dark-orange:      #E44919;
+  --color-navy:             #16215B;
+  --color-dark-navy:        #091241;
+  --color-blue:             #150DF7;
+  --color-dark-blue:        #0700CC;
+  --color-white:            #FFF;
+  --color-lighter-gray:     #F6F6FF;
+  --color-light-gray:       #E6E6F7;
+  --color-gray:             #667085;
+  --color-black:            #000;
+  --color-form-text: #525252;
+  --color-form-active: #1D4ED8;
+  --color-form-error: #B91C1C;
+  /* Breakpoints */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 58rem;
+  --breakpoint-xl: 64rem;
+  --breakpoint-2xl: 80rem;
+  /* Container */
+  /* SVGs as data URIs */
+  --icon-arrow-next: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy40Njk3IDUuNDY5NjdDMTMuNzYyNiA1LjE3Njc4IDE0LjIzNzQgNS4xNzY3OCAxNC41MzAzIDUuNDY5NjdMMjAuNTMwMyAxMS40Njk3QzIwLjgyMzIgMTEuNzYyNiAyMC44MjMyIDEyLjIzNzQgMjAuNTMwMyAxMi41MzAzTDE0LjUzMDMgMTguNTMwM0MxNC4yMzc0IDE4LjgyMzIgMTMuNzYyNiAxOC44MjMyIDEzLjQ2OTcgMTguNTMwM0MxMy4xNzY4IDE4LjIzNzQgMTMuMTc2OCAxNy43NjI2IDEzLjQ2OTcgMTcuNDY5N0wxOC4xODkzIDEyLjc1SDRDMy41ODU3OSAxMi43NSAzLjI1IDEyLjQxNDIgMy4yNSAxMkMzLjI1IDExLjU4NTggMy41ODU3OSAxMS4yNSA0IDExLjI1SDE4LjE4OTNMMTMuNDY5NyA2LjUzMDMzQzEzLjE3NjggNi4yMzc0NCAxMy4xNzY4IDUuNzYyNTYgMTMuNDY5NyA1LjQ2OTY3WiIgZmlsbD0iIzAwMCI+PC9wYXRoPjwvc3ZnPg==');
+  --icon-arrow-prev: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlNWR1JlcG9fYmdDYXJyaWVyIiBzdHJva2Utd2lkdGg9IjAiPjwvZz48ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvZz48ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwYXRoIGQ9Ik0yMCAxMkg0TTQgMTJMMTAgNk00IDEyTDEwIDE4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4gPC9nPjwvc3ZnPg==');
+  --icon-size-sm: 18px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+  /* Fonts */
+  --font-display:      'Georgia', serif;
+  --font-body:         'Helvetica', sans-serif;
+  /* Gutters */
+  --gutter-x:               16px; /* Horizontal gutter */
+  /* Text */
+  --text-4xl: 2.5rem;
+  --text-9xl: 7.5rem;
+  /* Shadows */
+  --tw-text-shadow-color: #000;
+  /* Transition */
+  --tw-ease: ease-in-out;
+  --tw-duration: 0.2s;
+}
+/* Custom base variables */
+body {
+  @apply font-body leading-normal;
+}
+h1, .h1 {
+  /* 60px */
+  @apply text-6xl font-display font-semibold font-stretch-ultra-condensed mb-4;
+}
+h2, .h2 {
+  /* 48px */
+  @apply text-5xl mb-4;
+}
+h3, .h3 {
+  /* 40px */
+  @apply text-4xl mb-4;
+}
+h4, .h4 {
+  /* 30px */
+  @apply text-3xl mb-4;
+}
+h5, .h5 {
+  /* 24px */
+  @apply text-2xl mb-4;
+}
+h6, .h6 {
+  /* 20px */
+  @apply text-xl mb-4;
+}
+
+@layer base {
+  svg {
+    width: 100%;
+    height: 100%;
+  }  
+}
+
+/* Custom Variants. (Surfaces) */
+@custom-variant dark {
+  .bg-navy &,
+  .bg-dark-navy &,
+  .bg-blue &,
+  .bg-dark-blue & {
+    @slot;
+  }
+}
+
+/* Custom components variables */
+@layer components {
+  .text-formatted {
+    > * {
+      @apply mb-4;
+    }
+    a {
+      @apply link text-blue;
+    }
+    img {
+      margin: auto;
+    }
+    @variant dark {
+      * {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+/* Custom utilities variables */
+
+/* Icons */
+@utility icon-* {
+  mask-image: --value(--icon);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  flex-shrink: 0;
+  width: --modifier(--icon-size-*);
+  height: --modifier(--icon-size-*);
+}
+
+/* Links */
+@utility link {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+  @variant hover {
+    text-decoration: underline;
+  }
+  @variant dark {
+    color: var(--color-white);
+  }
+}
+
+@utility link-next {
+  @apply link gap-1 transition-[gap] hover:gap-3;
+  @variant after {
+    @apply icon-arrow-next/sm bg-[currentColor];
+  }
+}
+@utility link-prev {
+  @apply link gap-1 transition-[gap] hover:gap-3;
+
+  @variant before {
+    @apply icon-arrow-prev/sm bg-[currentColor];
+  }
+}
+/* End Links */
+
+/* Buttons */
+@utility btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border-color);
+  color: var(--btn-color);
+  transition: all 0.2s ease-out;
+  @apply px-5 py-3;
+  @variant hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-color, var(--btn-color));
+  }
+}
+@utility btn-primary {
+  @apply btn;
+  --btn-bg: var(--color-orange);
+  --btn-border-color: var(--color-orange);
+  --btn-color: var(--color-white);
+  --btn-hover-bg: var(--color-dark-orange);
+}
+@utility btn-secondary {
+  @apply btn;
+  @variant dark {
+    --btn-color: var(--color-white);
+  }
+  --btn-bg: transparent;
+  --btn-border-color: var(--color-orange);
+  --btn-color: var(--color-navy);
+  --btn-hover-bg: var(--color-dark-orange);
+  --btn-hover-color: var(--color-white);
+}
+@utility btn-tertiary {
+  @apply btn flex items-center gap-1 hover:gap-3;
+  @variant after {
+    @apply icon-arrow-next/sm bg-[currentColor];
+  }
+  --btn-bg: var(--color-orange);
+  --btn-border-color: var(--color-orange);
+  --btn-color: var(--color-white);
+  --btn-hover-bg: var(--color-dark-orange);
+}
+/* End Buttons */
+
+/* Eyebrow */
+@utility eyebrow {
+  @apply !text-xl text-blue;
+  font-family: var(--font-display);
+  font-stretch: expanded;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  @variant dark {
+    @apply text-orange;
+  }
+}
+/* End Eyebrow */
+
+/* Other */
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter-x);
+  padding-right: var(--gutter-x);
+}
+/* Creating this because hidden is also included with the stable9 theme */
+@utility d-none {
+  @apply hidden;
+}
