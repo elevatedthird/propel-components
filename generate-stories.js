@@ -7,7 +7,9 @@ const COMPONENTS_DIR = path.join(__dirname, 'components');
 // List of components to exclude from story generation.
 const EXCLUDED_STORIES = [
   'section',
-  'section-region'
+  'section-region',
+  'accordion-item',
+  'glide-slide'
 ];
 /**
  * Template for the story file.
@@ -146,10 +148,10 @@ async function walkDirectory(dir) {
       }
       const componentCategory = parts[parts.length - 3];
       const storyFile = path.join(path.dirname(fullPath), `${componentName}.stories.js`);
-      // try {
-      //   await fs.access(storyFile);
-      //   console.log(`${storyFile} already exists, skipping.`);
-      // } catch {
+      try {
+        await fs.access(storyFile);
+        console.log(`${storyFile} already exists, skipping.`);
+      } catch {
         // Attempt to read the component.yml file.
         const componentYml = await fs.readFile(fullPath, 'utf8');
         const componentData = YAML.parse(componentYml);
@@ -159,7 +161,7 @@ async function walkDirectory(dir) {
         await fs.writeFile(storyFile, content, 'utf8');
         // console.log(componentData); process.exit(1);
         console.log(`Created: ${storyFile}`);
-      // }
+      }
     }
   }
 }

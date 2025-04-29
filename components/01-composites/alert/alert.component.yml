@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Alert"
+status: "stable"
+description: "A sitewide notification or alert."
+required:
+  - dismissible
+slots:
+  content:
+    title: Media
+    description: The media slot.
+props:
+  type: object
+  properties:
+    dismissible:
+      type: boolean
+      title: Dismissible
+      description: "Whether the alert can be dismissed by the user."

@@ -20,7 +20,7 @@ export default {
 
 export const Default = {
   args: {
-    text: "",
+    text: "This is an eyebrow",
     variant: "eyebrow"
 },
 };

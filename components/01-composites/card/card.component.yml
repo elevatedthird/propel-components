@@ -6,12 +6,9 @@ slots:
   media:
     title: Media
     description: The media slot.
-  _body:
+  body:
     title: Body
     description: The body slot.
-  _ctas:
-    title: CTAs
-    description: The CTAs slot.
 props:
   type: object
   properties:
@@ -19,3 +16,7 @@ props:
       type: string
       title: Card heading
       required: true
+    url:
+      type: string
+      title: URL
+      description: The link to the card.

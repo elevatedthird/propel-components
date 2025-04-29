@@ -1,6 +1,5 @@
-{% if behavior_name %}
-  {% set attributes = attributes.setAttribute('data-behavior-name', behavior_name) %}
-{% endif %}
+{% set attributes = attributes.setAttribute('data-open', open|default(false)) %}
+{% set attributes = attributes.setAttribute('data-allow-multiple', allow_multiple|default(false)) %}
 
 <div {{ attributes.addClass('accordion') }}>
   {{ accordion_items }}

@@ -30,3 +30,29 @@ If you want to add your SDC, follow these rules:
 ## JS Libraries.
 - Accordion JS
 - Glide JS
+
+## Icons.
+Icons use the new  `mask-image` rule. This provides greater flexilibity for changing icon colors dynamically.
+### Example
+
+Add an icon before:
+```
+<!-- Adds a red arrow that's medium sized before th text "Button" -->
+<button class="flex before:bg-red before:icon-arrow-next/md"> Button </button>
+```
+
+Add an icon after:
+```
+<!-- Adds a red arrow that's medium sized after the text "Button" -->
+<button class="flex after:bg-red after:icon-arrow-next/md"> Button </button>
+```
+
+To add a new icon, add a theme variable with a base 64 encoded string. Consider using [SVG Repo](https://svgrepo.com) and a tool like [SVG Viewer](https://www.svgviewer.dev/svg-to-data-uri) to convert the svg.
+```
+/* index.css */
+@theme {
+  ...
+  --icon-[ICON_NAME]: url('data:image/svg+xml;base64,...');
+  ...
+}
+```

@@ -3,13 +3,13 @@ name: "Carousel"
 status: "stable"
 group: Blocks
 description: "Provides a simple carousel"
+needs:
+ - glide-slide
 slots:
-  _items:
+  items:
     title: 'Items'
     description: 'The items to be displayed in the carousel'
 props:
   type: object
-  properties:
-    item_count:
-      type: integer
-      title: "Number of items for the navigation"
+  additionalProperties: false
+  properties: {}

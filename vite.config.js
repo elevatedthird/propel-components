@@ -31,6 +31,11 @@ export default defineConfig({
       '@components': resolve(join(__dirname, 'components')),
     },
   },
+  css: {
+    modules: {
+      generateScopedName: ((name) => name) // Disable CSS modules
+    }
+  },
   plugins: [
     tailwindcss(),
     twig({
