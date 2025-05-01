@@ -1,4 +1,5 @@
 @reference "../../../index.css";
+
 .ac .ac-trigger {
   @variant after {
     @apply bg-[currentColor] icon-caret/md transition;

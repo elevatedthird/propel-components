@@ -2,7 +2,7 @@
 import accordion from './accordion.twig';
 import './accordion.es6.js';
 import AccordionItem from '@components/01-composites/accordion-item/accordion-item.twig';
-import '@components/01-composites/accordion-item/accordion-item.module.css';
+import '@components/01-composites/accordion-item/accordion-item.pcss.css';
 
 export default {
   title: '02-blocks/accordion',

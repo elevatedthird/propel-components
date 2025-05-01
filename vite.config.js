@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import twig from 'vite-plugin-twig-drupal'
 import { join, resolve } from 'node:path'
+import postcssNested from 'postcss-nested'
+import autoprefixer from 'autoprefixer'
 
 /**
  * A simple shim to add the twig include function.
@@ -32,9 +34,12 @@ export default defineConfig({
     },
   },
   css: {
-    modules: {
-      generateScopedName: ((name) => name) // Disable CSS modules
-    }
+    postcss: {
+      plugins: [
+        postcssNested(),
+        autoprefixer(),
+      ],
+    },
   },
   plugins: [
     tailwindcss(),

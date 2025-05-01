@@ -20,6 +20,10 @@
   --color-form-text: #525252;
   --color-form-active: #1D4ED8;
   --color-form-error: #B91C1C;
+  /* Themes */
+  --theme-primary: var(--color-orange);
+  --theme-secondary: var(--color-blue);
+  --theme-tertiary: var(--color-navy);
   /* Breakpoints */
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;

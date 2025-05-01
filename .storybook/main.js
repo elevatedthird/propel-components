@@ -1,4 +1,6 @@
 /** @type { import('@storybook/html-vite').StorybookConfig } */
+import { mergeConfig } from 'vite';
+
 const config = {
   "stories": [
     "../components/**/*.mdx",
@@ -12,9 +14,10 @@ const config = {
     "name": "@storybook/html-vite",
     "options": {}
   },
-  async viteFinal(config) {
-    config.base = process.env.BASE_PATH || config.base;
-    return config;
+  viteFinal: async (config, { configType }) => {
+    return mergeConfig(config, {
+      base: process.env.BASE_PATH || config.base,
+    });
   },
 };
 export default config;

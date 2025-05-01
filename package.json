@@ -7,7 +7,9 @@
     "stories": "node generate-stories.js",
     "start": "storybook dev -p 6006 --no-open",
     "cc": "rm -rf node_modules/.cache",
-    "build": "export BASE_PATH=/propel-components && storybook build --output-dir dist && touch ./dist/.nojekyll"
+    "build": "export BASE_PATH=/propel-components && storybook build --output-dir dist && touch ./dist/.nojekyll",
+    "move": "mkdir -p ./dist/propel-components && mv ./dist/* ./dist/propel-components",
+    "build:local": "npm run build && npm run move"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
@@ -16,6 +18,8 @@
     "@storybook/html": "^8.6.12",
     "@storybook/html-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "autoprefixer": "^10.4.21",
+    "postcss-nested": "^7.0.2",
     "storybook": "^8.6.12",
     "vite": "^6.3.1",
     "vite-plugin-twig-drupal": "^1.6.0",
