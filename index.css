@@ -21,9 +21,9 @@
   --color-form-active: #1D4ED8;
   --color-form-error: #B91C1C;
   /* Themes */
-  --theme-primary: var(--color-orange);
-  --theme-secondary: var(--color-blue);
-  --theme-tertiary: var(--color-navy);
+  --color-primary: var(--color-orange);
+  --color-secondary: var(--color-blue);
+  --color-tertiary: var(--color-navy);
   /* Breakpoints */
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
@@ -62,23 +62,23 @@ h1, .h1 {
 }
 h2, .h2 {
   /* 48px */
-  @apply text-5xl mb-4;
+  @apply text-5xl font-body mb-4;
 }
 h3, .h3 {
   /* 40px */
-  @apply text-4xl mb-4;
+  @apply text-4xl font-body mb-4;
 }
 h4, .h4 {
   /* 30px */
-  @apply text-3xl mb-4;
+  @apply text-3xl font-body mb-4;
 }
 h5, .h5 {
   /* 24px */
-  @apply text-2xl mb-4;
+  @apply text-2xl font-body mb-4;
 }
 h6, .h6 {
   /* 20px */
-  @apply text-xl mb-4;
+  @apply text-xl font-body mb-4;
 }
 
 @layer base {
@@ -218,9 +218,9 @@ h6, .h6 {
     --btn-color: var(--color-white);
   }
   --btn-bg: transparent;
-  --btn-border-color: var(--color-orange);
-  --btn-color: var(--color-navy);
-  --btn-hover-bg: var(--color-dark-orange);
+  --btn-border-color: var(--color-secondary);
+  --btn-color: var(--color-secondary);
+  --btn-hover-bg: var(--color-tertiary);
   --btn-hover-color: var(--color-white);
 }
 @utility btn-tertiary {
@@ -237,7 +237,7 @@ h6, .h6 {
 
 /* Eyebrow */
 @utility eyebrow {
-  @apply !text-xl text-blue;
+  @apply !text-sm text-blue;
   font-family: var(--font-display);
   font-stretch: expanded;
   text-transform: uppercase;

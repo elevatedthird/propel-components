@@ -1,23 +1,11 @@
-<div {{ attributes }}>
-  <div class="card">
-    <div class="card-img-top ratio ratio-16x9">
-      {{ media }}
-    </div>
-    <div class="card-body">
-      {% if heading %}
-        <h3 class="h4 text-primary">{{ heading }}</h3>
-      {% endif %}
-
-      <div class="body">
-        {% block _body %}
-          {{ _body }}
-        {% endblock %}
-        <div class="card-ctas">
-          {% block _ctas %}
-            {{ _ctas }}
-          {% endblock %}
-        </div>
-      </div>
+<div {{ attributes.addClass("bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between") }} >
+  <div>
+    {{ media }}
+  </div>
+  <div class="p-4 pt-2">
+    <div class="mb-8">
+      <h4 class="inline-block"> {{ heading }} </h4>
+      {{ body }}
     </div>
   </div>
 </div>

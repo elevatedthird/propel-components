@@ -18,9 +18,9 @@ props:
       type: boolean
       title: Show Bullets
       required: true
-    item_count:
+    slide_count:
       type: integer
-      title: Item Count
+      title: Number of slides
       required: true
     classes:
       type: array

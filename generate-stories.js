@@ -9,8 +9,16 @@ const EXCLUDED_STORIES = [
   'section',
   'section-region',
   'accordion-item',
-  'glide-slide'
+  'glide-slide',
+  'carousel'
 ];
+
+// Force a story file to be created, even if it already exists.
+// This can be helpful when developing new components.
+const FORCE_RECREATE_STORIES = [
+  'title'
+];
+
 /**
  * Template for the story file.
  */
@@ -149,8 +157,12 @@ async function walkDirectory(dir) {
       const componentCategory = parts[parts.length - 3];
       const storyFile = path.join(path.dirname(fullPath), `${componentName}.stories.js`);
       try {
+        // Force a story file to be created if it already exists.
+        if (FORCE_RECREATE_STORIES.includes(componentName)) {
+          throw new Error('Recreate story file: ', componentName);
+        }
         await fs.access(storyFile);
-        console.log(`${storyFile} already exists, skipping.`);
+        // console.log(`${storyFile} already exists, skipping.`);
       } catch {
         // Attempt to read the component.yml file.
         const componentYml = await fs.readFile(fullPath, 'utf8');

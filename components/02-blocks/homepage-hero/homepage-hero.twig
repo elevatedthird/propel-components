@@ -1,0 +1,34 @@
+{% set attributes = create_attribute() %}
+
+<div class='billboard relative w-full h-[704px] overflow-hidden flex items-center'>
+  <div {{ attributes.addClass('relative z-10 container') }} >
+    {% set props = {
+        heading: heading,
+        heading_style: 'h1',
+        heading_tag: 'h1',
+    } %}
+    {% if eyebrow is defined and eyebrow is not empty %}
+      {% set props = props|merge(props, {eyebrow: eyebrow}) %}
+    {% endif %}
+    {% if eyebrow_h1 == true %}
+      {% set props = props|merge(props, {
+        eyebrow_tag: 'h1',
+        heading_tag: 'h2',
+      }) %}
+    {% endif %}
+    {{ include('kinetic:title', props, with_context: false) }}
+    {% if description is not empty %}
+      <div class="mt-4 text-formatted">
+        {{ description }}
+      </div>
+    {% endif %}
+    {% if ctas is not empty %}
+      <div class="mt-4">
+        {{ ctas }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="">
+    {{ media }}
+  </div>
+</div>

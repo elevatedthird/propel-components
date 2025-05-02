@@ -23,8 +23,6 @@ add your SDC to the `templateManifest` object in the `registerIncludeFunction` f
 If you want to add your SDC, follow these rules:
 1. Must use tailwind V4
 2. CSS files must follow `[name].pcss.css` naming
-  - If you are adding CSS, you must create a es6.js file and import your file into it.
-  - See the  `accordion-item` SDC for an example
 3. JS files must follow `[name].es6.js` naming
 4. Do not use embed and blocks.
 5. Add a `[name].stories.js` file.

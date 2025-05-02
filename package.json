@@ -26,6 +26,7 @@
     "yaml": "^2.7.1"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "@tailwindcss/vite": "^4.1.4",
     "accordion-js": "^3.4.0",
     "tailwindcss": "^4.1.4"

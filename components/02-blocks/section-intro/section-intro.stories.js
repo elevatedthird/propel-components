@@ -14,16 +14,21 @@ export default {
       }
     },
   },
-  argTypes: {"eyebrow":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading_style":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["h2","h3","h4","h5"]},"alignment":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["left","right","center"]},"description":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"The description to be displayed in the section intro","table":{"type":{"summary":"text"}}}},
+  argTypes: {"eyebrow":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"heading":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}},"alignment":{"control":{"type":"select"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}},"options":["left","right","center"]},},
   component: section_intro,
 };
 
 export const Default = {
   args: {
-    eyebrow: "",
-    heading: "",
-    heading_style: "h2",
+    eyebrow: "This is the eyebrow",
+    heading: "This is a Heading",
     alignment: "left",
-    description: ""
-},
+  },
+  render: (context) => {
+    return section_intro({
+      ...context,
+      description: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sodales magna, ac lobortis ipsum. Vestibulum consequat tempus sem, in ultricies libero fermentum id. Morbi aliquet id sem ac malesuada. Praesent tempus mauris venenatis diam pretium, finibus mollis magna feugiat. Duis sed quam blandit, elementum nisi nec, semper quam. </p>',
+      ctas: '<div class="flex gap-4"><a href="" class="btn-primary"> Learn More</a><a href="" class="btn-secondary"> Get in Touch</a></div>'
+    });
+  },
 };
