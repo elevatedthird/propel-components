@@ -5,28 +5,6 @@ import { join, resolve } from 'node:path'
 import postcssNested from 'postcss-nested'
 import autoprefixer from 'autoprefixer'
 
-/**
- * A simple shim to add the twig include function.
- */
-function registerIncludeFunction(twigInstance) {
-  // If any of the twig files include another one, you must list it here.
-  const templateManifest = {
-    "kinetic:badge": "./components/00-elements/badge/badge.twig",
-    "kinetic:title": "./components/01-composites/title/title.twig",
-  };
-  twigInstance.extendFunction("include", (templateName, vars) => {
-    const templatePath = templateManifest[templateName];
-    if (!templatePath) {
-      throw new Error(`Template ${templateName} not found`);
-    }
-    return twigInstance.twig({
-      id: templateName,
-      href: templatePath,
-      async: false
-    }).render(vars);
-  });
-}
-
 export default defineConfig({
   resolve: {
     alias: {
@@ -48,7 +26,17 @@ export default defineConfig({
         kinetic: join(__dirname, "/components"),
       },
       functions: {
-        include: registerIncludeFunction,
+        include: (twigInstance) => {
+          twigInstance.extendFunction("include", (templateName, vars) => {
+            // See .storybook/createSDCManifest.js.
+            const templatePath = window.SDC_MANIFEST[templateName];
+            if (!templatePath) {
+              throw new Error(`Template ${templateName} not found`);
+            }
+            // The id of the template is the absolute file path.
+            return twigInstance.twig({ ref: templatePath }).render(vars);
+          });
+        },
         // e.g. extendFilter to register a filter
         clean_unique_id: (twigInstance) => twigInstance.extendFilter("clean_unique_id", () => (text) => text.split(' ').reverse().join(' ')),
       },

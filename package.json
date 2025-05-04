@@ -19,6 +19,7 @@
     "@storybook/html-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "autoprefixer": "^10.4.21",
+    "fast-glob": "^3.3.3",
     "postcss-nested": "^7.0.2",
     "storybook": "^8.6.12",
     "vite": "^6.3.1",

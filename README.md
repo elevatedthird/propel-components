@@ -13,11 +13,15 @@ npm start
 npm run stories
 ```
 You can exclude SDCs from generating a story file by adding the SDC name to the `EXCLUDED_STORIES` array in `generate-stories.js`.
-This is helpful for excluding sub components like accordion items, carousel slides etc.
+This is helpful for excluding sub components like accordion items, carousel slides etc. You may also force a story to be
+re-created by adding an entry to the `FORCE_RECREATE_STORIES` array
 
 ## Function Includes
-The [twig.js](https://github.com/twigjs/twig.js) library does not port over the function include syntax. If you are including a twig template within another,
-add your SDC to the `templateManifest` object in the `registerIncludeFunction` function in `vite.config.js`
+The [twig.js](https://github.com/twigjs/twig.js) library doesn't port over the function include syntax. If you are including a twig template within another, you must import that dependency into your story file. See the section-intro SDC for an example.
+
+## Specifying SDC Dependencies
+Some SDCs may include others or indirectly use another one. To mark a dependency, add the `needs` key to the `component.yml`.
+See accordion, glide, and section-intro as examples. This key is used by the `propel` drush command to make sure dependencies are also downloaded.
 
 ## Contribution Guidelines
 If you want to add your SDC, follow these rules:
