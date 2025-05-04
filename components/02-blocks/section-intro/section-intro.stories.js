@@ -1,7 +1,5 @@
 
 import section_intro from './section-intro.twig';
-import title from '../../01-composites/title/title.twig';
-title();
 
 export default {
   title: '02-blocks/section-intro',

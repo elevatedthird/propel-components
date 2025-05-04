@@ -17,7 +17,8 @@ This is helpful for excluding sub components like accordion items, carousel slid
 re-created by adding an entry to the `FORCE_RECREATE_STORIES` array
 
 ## Function Includes
-The [twig.js](https://github.com/twigjs/twig.js) library doesn't port over the function include syntax. If you are including a twig template within another, you must import that dependency into your story file. See the section-intro SDC for an example.
+The [twig.js](https://github.com/twigjs/twig.js) library doesn't port over the function include syntax. There is custom function registed in the twig vite plugin to
+shim this syntax. **Due to how this function works, the component source code must be publically available**
 
 ## Specifying SDC Dependencies
 Some SDCs may include others or indirectly use another one. To mark a dependency, add the `needs` key to the `component.yml`.

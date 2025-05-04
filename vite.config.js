@@ -33,8 +33,30 @@ export default defineConfig({
             if (!templatePath) {
               throw new Error(`Template ${templateName} not found`);
             }
-            // The id of the template is the absolute file path.
-            return twigInstance.twig({ ref: templatePath }).render(vars);
+            try {
+              // Try to get a cached version of the template.
+              const template = twigInstance.twig({ ref: templatePath });
+              if (template) {
+                return template.render(vars);
+              } else {
+                throw new Error(`Template ${templatePath} not found`);
+              }
+            } catch (error) {
+              // If the template isn't found in the cache, fetch it from the remote URL.
+              const baseURL = window.CONFIG_TYPE === 'PRODUCTION' ? 'https://raw.githubusercontent.com/elevatedthird/propel-components/refs/heads/main' : '.';
+              // Get relative path from the templatePath.
+              const path = templatePath.split('/').slice(-4).join('/');
+              const template = twigInstance.twig({
+                id: templatePath,
+                href: `${baseURL}/${path}`,
+                async: false,
+              });
+              if (template) {
+                return template.render(vars);
+              } else {
+                throw new Error(`Template ${templatePath} not found`);
+              }
+            }
           });
         },
         // e.g. extendFilter to register a filter
