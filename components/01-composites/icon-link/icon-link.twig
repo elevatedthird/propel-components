@@ -1,0 +1,6 @@
+<div {{ attributes }} class="flex gap-2 p-4 items-center transition hover:bg-light-gray dark:hover:bg-navy">
+  <div class="shrink-0 w-10 h-10">
+    {{ icon }}
+  </div>
+  {{ link(title, url, create_attribute( { class: 'link-next text-xl'})) }}
+</div>

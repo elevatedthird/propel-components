@@ -1,0 +1,26 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Byline"
+status: "stable"
+description: "A component for showing an author byline."
+slots:
+  image:
+    title: Image
+    description: Author headshot.
+  company_logo:
+    title: Company logo
+    description: Logo of the company the author works for.
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+      description: "Author name."
+    job_title:
+      type: string
+      title: Job title
+      description: "Author job title."
+    bio:
+      type: string
+      title: Bio
+      description: "Author bio."

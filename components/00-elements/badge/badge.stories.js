@@ -21,5 +21,11 @@ export default {
 export const Default = {
   args: {
     text: "badge text"
-},
+ },
+ decorators: [
+    (Story) => {
+      console.dir(badge);
+      return `<div class="badge">${Story()}</div>`;
+    },
+  ],
 };

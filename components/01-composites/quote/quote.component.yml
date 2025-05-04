@@ -1,0 +1,13 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Quote
+status: stable
+description: Provides a block quote component.
+props:
+  type: object
+  properties:
+    behavior_name:
+      type: string
+      title: >-
+        Drupal beahavior name of the component including this SDC. If no
+        behavior is provided, default accordion behavior will be used.

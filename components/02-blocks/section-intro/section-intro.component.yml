@@ -2,6 +2,8 @@
 name: "Section Intro"
 status: "stable"
 description: "A title section containing a title and optional description, eyebrow, and ctas."
+needs:
+  - title
 slots:
   ctas:
     title: 'CTAs'

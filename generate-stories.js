@@ -16,7 +16,7 @@ const EXCLUDED_STORIES = [
 // Force a story file to be created, even if it already exists.
 // This can be helpful when developing new components.
 const FORCE_RECREATE_STORIES = [
-  'title'
+
 ];
 
 /**

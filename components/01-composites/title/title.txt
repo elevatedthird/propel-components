@@ -1,0 +1,14 @@
+{# Set Heading tag. Default is H3 #}
+{% set tag = heading_tag|default('h3') %}
+
+{# Set Heading style #}
+{% set heading_attributes = create_attribute() %}
+{% set heading_attributes = heading_attributes.addClass(heading_style ? heading_style : tag) %}
+
+{# Set Eyebrow tag #}
+{% set eyebrow_tag = eyebrow_tag|default('p') %}
+
+{% if eyebrow %}
+  <{{ eyebrow_tag }} {{ create_attribute({class: 'eyebrow'}) }}> {{ eyebrow }} </{{ eyebrow_tag}}>
+{% endif %}
+<{{ tag }} {{ heading_attributes.addClass('mt-4', 'dark:text-white') }}> {{ heading }} </{{ tag }}>
