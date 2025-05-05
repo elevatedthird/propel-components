@@ -1,0 +1,20 @@
+{% if variant == 'animate' %}
+  {% set attributes = attributes.addClass(['animate']) %}
+{% else %}
+  {% set attributes = attributes.addClass([
+    'grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-6',
+  ]) %}
+{% endif %}
+
+<div {{ attributes.addClass('logo-bar') }}>
+  {% if variant == 'animate' %}
+    <div class="logo-bar-logos">
+      {{ logos }}
+    </div>
+    <div aria-hidden="true" class="logo-bar-logos">
+      {{ logos }}
+    </div>
+  {% else %}
+    {{ logos }}
+  {% endif %}
+</div>

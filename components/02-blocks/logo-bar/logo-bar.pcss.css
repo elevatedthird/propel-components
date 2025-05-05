@@ -1,0 +1,28 @@
+.logo-bar.animate {
+  overflow: hidden;
+  display: flex;
+  .logo-bar-logos {
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-name: marquee;
+    animation-timing-function: linear;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+    > * {
+      flex-shrink: 0;
+      min-width: calc(20vw - 2rem);
+      padding: 0 1rem;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+}

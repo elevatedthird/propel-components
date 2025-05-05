@@ -1,0 +1,19 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Logo Bar"
+status: "stable"
+description: "Displays a list of company logos"
+slots:
+  logos:
+    title: 'Logos'
+    description: 'company logos'
+props:
+  type: object
+  properties:
+    variant:
+      type: string
+      title: 'Display'
+      description: 'How the logo bar should display'
+      enum:
+        - 'grid'
+        - 'animate'
+      default: 'default'

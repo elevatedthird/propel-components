@@ -12,7 +12,6 @@
 ]%}
 
 {% set id = layout_id ? layout_id : settings.label  %}
-{% set id = id|default('random-id--' ~ random())|clean_id %}
 {% set attributes = attributes ? attributes : create_attribute() %}
 {# Handle all possible section settings. These come from the custom classes from kinetic.layouts.yml #}
 <section{{ attributes.addClass(wrapper_classes).setAttribute('id', id) }}>

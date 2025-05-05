@@ -1,12 +1,16 @@
-{% extends "kinetic:section" %}
 {% set layout_class = 'content-header' %}
 {% set column_classes = ['col-12'] %}
-{% block content %}
+{% set content %}
   <div class="row">
     <div class="{{ column_classes|join(' ') }}">
-      {% block first %}
-        {{ first }}
-      {% endblock %}
+      {{ first }}
     </div>
   </div>
-{% endblock %}
+{% endset %}
+
+{{ include('kinetic:section', {
+  settings: {
+    content_width: 'full',
+  },
+  content: content,
+}, with_context: false) }}
