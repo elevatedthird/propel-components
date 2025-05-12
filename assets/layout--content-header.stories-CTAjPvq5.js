@@ -1,0 +1,9 @@
+const o=()=>"An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/03-formations/layout--content-header/layout--content-header.twig: Error compiling twig file undefined",s={title:"03-formations/layout--content-header",tags:["autodocs"],parameters:{docs:{description:{component:"The Content Header component is used to display intro content to the page. Things such as the page title, a hero, a banner or whatnot. This is the first section of really any page. It has no padding and is intended to be a blank canvas."},source:{code:"drush propel:add layout--content-header"}}},argTypes:{layout_class:{control:{type:"text"},type:{required:!1,name:""},description:"The layout class to use for this section",table:{type:{summary:"text"}}},layout_id:{control:{type:"text"},type:{required:!1,name:""},description:"The layout ID to use for this section",table:{type:{summary:"text"}}},settings:{control:{type:"object"},type:{required:!1,name:""},table:{type:{summary:"object"}}},wrapper_classes:{control:{type:"object"},type:{required:!1,name:""},description:"Classes to add to the wrapper",table:{type:{summary:"array"}}},inner_wrapper_classes:{control:{type:"object"},type:{required:!1,name:""},description:"Classes to add to the inner wrapper",table:{type:{summary:"array"}}}},component:o},e={args:{layout_class:"",layout_id:"",settings:{},wrapper_classes:{},inner_wrapper_classes:{}}};var t,a,r;e.parameters={...e.parameters,docs:{...(t=e.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: {
+    layout_class: "",
+    layout_id: "",
+    settings: {},
+    wrapper_classes: {},
+    inner_wrapper_classes: {}
+  }
+}`,...(r=(a=e.parameters)==null?void 0:a.docs)==null?void 0:r.source}}};const n=["Default"];export{e as Default,n as __namedExportsOrder,s as default};
