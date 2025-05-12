@@ -1,19 +1,12 @@
-{% extends "kinetic:section" %}
-{% set layout_class = 'two-column' %}
-{% set inner_wrapper_classes = ['container'] %}
-{% block content %}
-    {% set column_classes = ['g-col-12', 'g-col-md-6'] %}
-    <div class="grid">
-      <div class="{{ column_classes|join(' ') }}">
-        {% block first %}
-          {{ first }}
-        {% endblock %}
-      </div>
-      <div class="{{ column_classes|join(' ') }}">
-        {% block second %}
-          {{ second }}
-        {% endblock %}
-      </div>
-    </div>
-{% endblock %}
+{% set content %}
+  {{ include('kinetic:section-region', {region: first, layout__region: 'first'}, with_context = false) }}
+  {{ include('kinetic:section-region', {region: second, layout__region: 'second'}, with_context = false) }}
+{% endset %}
 
+{{ include('kinetic:section', {
+  settings: settings,
+  content: content,
+  layout_class: 'layout-twocol',
+  wrapper_classes: [],
+  inner_wrapper_classes: ['container'],
+}, with_context: false) }}

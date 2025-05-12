@@ -98,6 +98,13 @@ h6, .h6 {
   }
 }
 
+@custom-variant disabled {
+  &.disabled,
+  &:disabled {
+    @slot;
+  }
+}
+
 /* Custom components variables */
 @layer components {
   .text-formatted {
@@ -191,47 +198,77 @@ h6, .h6 {
 
 /* Buttons */
 @utility btn {
-  display: inline-block;
-  font-weight: 500;
-  text-align: center;
   cursor: pointer;
-  background-color: var(--btn-bg);
-  border: 1px solid var(--btn-border-color);
+  background-color: var(--btn-bg) !important;
+  border: 2px solid var(--btn-border-color);
   color: var(--btn-color);
-  transition: all 0.2s ease-out;
-  @apply px-5 py-3;
-  @variant hover {
-    background-color: var(--btn-hover-bg);
+  @apply inline-block px-8 py-3 rounded-full transition font-semibold text-center;
+  @variant active {
+    background-color: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-border-color, var(--btn-border-color));
     color: var(--btn-hover-color, var(--btn-color));
+  }
+  @variant hover {
+    background-color: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-border-color, var(--btn-border-color));
+    color: var(--btn-hover-color, var(--btn-color));
+  }
+  @variant disabled  {
+    background-color: var(--btn-disabled-bg-color) !important;
+    border-color: var(--btn-disabled-border-color, var(--btn-border-color));
+    color: var(--btn-disabled-color, var(--btn-color));
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 @utility btn-primary {
   @apply btn;
-  --btn-bg: var(--color-orange);
-  --btn-border-color: var(--color-orange);
+  --btn-bg: #413B5A;
+  --btn-border-color: #413B5A;
   --btn-color: var(--color-white);
-  --btn-hover-bg: var(--color-dark-orange);
+  --btn-disabled-bg-color: var(--color-gray-400);
+  --btn-disabled-border-color: var(--color-gray-400);
+  --btn-disabled-color: var(--color-white);
+  --btn-hover-bg: var(--color-gray-600);
+  --btn-hover-border-color: var(--color-gray-600);
+  @variant dark {
+    --btn-bg: var(--color-white);
+    --btn-border-color: var(--color-white);
+    --btn-color: var(--color-black);
+    --btn-disabled-bg-color: var(--color-gray-300);
+    --btn-disabled-border-color: var(--color-gray-300);
+    --btn-disabled-color: var(--color-white);
+    --btn-hover-bg: var(--color-gray-200);
+    --btn-hover-border-color: var(--color-gray-200);
+  }
 }
 @utility btn-secondary {
   @apply btn;
+  --btn-bg: transparent;
+  --btn-border-color: var(--color-gray-300);
+  --btn-color: var(--color-black);
+  --btn-disabled-bg-color: #FAF9FC;
+  --btn-disabled-border-color: var(--color-gray-300);
+  --btn-disabled-color: var(--color-gray-300);
+  --btn-hover-bg: transparent;
+  --btn-hover-border-color: var(--color-black);
   @variant dark {
     --btn-color: var(--color-white);
+    --btn-border-color: var(--color-white);
+    --btn-disabled-border-color: var(--color-gray-300);
+    --btn-disabled-bg-color: var(--color-gray-500);
+    --btn-disabled-color: var(--color-gray-200);
+    --btn-hover-border-color: var(--color-gray-500);
   }
-  --btn-bg: transparent;
-  --btn-border-color: var(--color-secondary);
-  --btn-color: var(--color-secondary);
-  --btn-hover-bg: var(--color-tertiary);
-  --btn-hover-color: var(--color-white);
 }
 @utility btn-tertiary {
-  @apply btn flex items-center gap-1 hover:gap-3;
+  @apply btn-secondary flex items-center gap-1 transition-[gap] hover:gap-3 px-4 py-2 text-[15px];
   @variant after {
     @apply icon-arrow-next/sm bg-[currentColor];
   }
-  --btn-bg: var(--color-orange);
-  --btn-border-color: var(--color-orange);
-  --btn-color: var(--color-white);
-  --btn-hover-bg: var(--color-dark-orange);
+}
+@utility btn-quaternary {
+  @apply link-next;
 }
 /* End Buttons */
 

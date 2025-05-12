@@ -1,14 +1,11 @@
-{% extends "kinetic:section" %}
-{% set layout_class = 'one-column' %}
-{% set inner_wrapper_classes = ['container'] %}
-{% set column_classes = ['col-12'] %}
-{% block content %}
-  <div class="row">
-    <div class="{{ column_classes|join(' ') }}">
-      {% block first %}
-        {{ first }}
-      {% endblock %}
-    </div>
-  </div>
-{% endblock %}
+{% set content %}
+  {{ include('kinetic:section-region', {region: first, layout__region: 'first'}, with_context = false) }}
+{% endset %}
 
+{{ include('kinetic:section', {
+  settings: settings,
+  content: content,
+  layout_class: 'layout-onecol',
+  wrapper_classes: [],
+  inner_wrapper_classes: ['container'],
+}, with_context: false) }}

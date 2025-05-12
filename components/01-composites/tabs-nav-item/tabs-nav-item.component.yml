@@ -2,19 +2,10 @@
 name: "Tabs Item"
 status: "stable"
 description: "Represents a tabs component pane."
-slots:
-  _tab_navigation:
-    description: "The tab navigation item content."
-    title: "Tab Navigation"
 props:
   type: object
   properties:
-    id:
-      type: "string"
-      title: "ID"
-      description: "The machine id of the pane."
-      required: true,
-    is_active:
-      type: integer
-      title: Active Item
-      description: The default tab that should be active
+    heading:
+      description: "The tab navigation item content."
+      title: "Tab Heading"
+      type: string

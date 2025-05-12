@@ -1,0 +1,10 @@
+@reference "../../../index.pcss.css";
+
+.layout__region {
+  .block {
+    @apply mb-24;
+  }
+  .block:last-child {
+    @apply mb-0;
+  }
+}

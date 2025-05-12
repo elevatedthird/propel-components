@@ -14,7 +14,7 @@ export default {
       }
     },
   },
-  argTypes: {"text":{"control":{"type":"text"},"type":{"required":true,"name":""},"table":{"type":{"summary":"text"}}},"variant":{"control":{"type":"select"},"type":{"required":true,"name":""},"table":{"defaultValue":{"summary":"btn-primary"},"type":{"summary":"text"}},"options":["btn-primary","btn-secondary","btn-tertiary"]}},
+  argTypes: {"text":{"control":{"type":"text"},"type":{"required":true,"name":""},"table":{"type":{"summary":"text"}}},"variant":{"control":{"type":"select"},"type":{"required":true,"name":""},"table":{"defaultValue":{"summary":"btn-primary"},"type":{"summary":"text"}},"options":["btn-primary","btn-secondary","btn-tertiary","btn-quaternary"]}},
   component: button,
 };
 

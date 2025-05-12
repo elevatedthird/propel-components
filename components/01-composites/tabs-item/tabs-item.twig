@@ -1,13 +1,3 @@
-{% set tab_label = "tab-link--" ~ id %}
-
-{% set attributes = create_attribute() %}
-
-{% if show_active == true %}
-  {% set attributes = attributes.addClass(['show', 'active']) %}
-{% endif %}
-
-<div {{ attributes.addClass(['tab-pane', 'fade']) }} id="tab-pane--{{ id }}" role="tabpanel" aria-labelledby="{{ tab_label }}" tabindex="0">
-  {% block _tab_content %}
-
-  {% endblock %}
+<div class="tab-panel" role="tabpanel" tabindex="0">
+  {{ tab_content }}
 </div>

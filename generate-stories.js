@@ -10,7 +10,9 @@ const EXCLUDED_STORIES = [
   'section-region',
   'accordion-item',
   'glide-slide',
-  'carousel'
+  'carousel',
+  'tabs-item',
+  'tabs-nav-item'
 ];
 
 // Force a story file to be created, even if it already exists.

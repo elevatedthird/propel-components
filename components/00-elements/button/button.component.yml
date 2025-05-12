@@ -17,3 +17,4 @@ props:
         - btn-primary
         - btn-secondary
         - btn-tertiary
+        - btn-quaternary

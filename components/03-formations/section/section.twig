@@ -1,14 +1,21 @@
 {% set wrapper_classes = [
-  'layout--' ~ layout_class|clean_class,
+  layout_class|clean_class,
   'layout',
   'position-relative',
   wrapper_classes|join(' '),
+  settings.bg_color,
+  'vertical-spacing--' ~ settings.vertical_spacing,
+  'mobile-order--' ~ settings.mobile_order,
+  'vertical-align--' ~ settings.align_content,
+  'column-gutter--' ~ settings.column_gutter,
+  'section-widths--' ~ settings.section_widths,
 ]%}
 
 {% set inner_wrapper_attributes = create_attribute() %}
 {% set inner_wrapper_classes = [
   inner_wrapper_classes|join(' '),
   'inner-wrapper',
+  settings.content_width,
 ]%}
 
 {% set id = layout_id ? layout_id : settings.label  %}

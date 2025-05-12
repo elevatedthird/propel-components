@@ -1,16 +1,11 @@
-{% set layout_class = 'content-header' %}
-{% set column_classes = ['col-12'] %}
 {% set content %}
-  <div class="row">
-    <div class="{{ column_classes|join(' ') }}">
-      {{ first }}
-    </div>
-  </div>
+  {{ include('kinetic:section-region', {region: first, layout__region: 'first'}, with_context = false) }}
 {% endset %}
 
 {{ include('kinetic:section', {
-  settings: {
-    content_width: 'full',
-  },
+  settings: settings,
   content: content,
+  layout_class: 'content-header',
+  wrapper_classes: [],
+  inner_wrapper_classes: [],
 }, with_context: false) }}
