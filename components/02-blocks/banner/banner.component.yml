@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Banner"
+status: "stable"
+description: "A simple banner for structured pages."
+slots:
+  banner_content:
+    title: 'Content'
+    description: 'Content that goes below the heading'
+props:
+  type: object
+  properties:
+    eyebrow:
+      type: string
+      title: "Eyebrow"
+    heading:
+      type: string
+      title: "Heading"

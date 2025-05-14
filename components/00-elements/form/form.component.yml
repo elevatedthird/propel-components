@@ -3,9 +3,9 @@ name: Form
 status: stable
 description: A Form.
 slots:
-  _modal_body:
-    title: Modal Content
-    description: The body of the modal.
+  form:
+    title: Form.
+    description: The form element and its elements.
 props:
   type: object
   additionalProperties: false

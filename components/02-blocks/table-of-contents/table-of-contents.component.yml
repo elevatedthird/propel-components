@@ -1,0 +1,11 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Table of Contents
+status: stable
+description: Programmatically generates a table of contents for a page
+props:
+  type: object
+  properties:
+    selector:
+      type: string
+      description: The selector of the elements to create the table of contents from

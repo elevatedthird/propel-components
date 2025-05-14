@@ -1,0 +1,10 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Breadcrumbs"
+status: "stable"
+description: "Provides breadcrumb navigation for the site. Intended to wrap the breadcrumb entity."
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: "Array of breadcrumb items"

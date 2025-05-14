@@ -1,0 +1,17 @@
+<ol {{ attributes.addclass('breadcrumbs', 'hide-scrollbar') }}>
+  {% for item in items %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url }}">
+          {% if loop.first %}
+            <span class="visually-hidden">{{ item.text }}</span>
+          {% else %}
+            {{ item.text }}
+          {% endif %}
+        </a>
+      {% else %}
+        <span>{{ item.text }}</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ol>
