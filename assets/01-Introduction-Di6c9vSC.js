@@ -1,4 +1,4 @@
-import{j as e,M as o}from"./index-B-CzANB3.js";import{useMDXComponents as t}from"./index-0FWzMoow.js";import"./iframe-CsnJQih4.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function i(s){const n={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",ul:"ul",...t(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Introduction"}),`
+import{j as e,M as o}from"./index-DuLr5ZXS.js";import{useMDXComponents as t}from"./index-Cg_IsoC5.js";import"./iframe-BG1_gVm3.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function i(s){const n={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",ul:"ul",...t(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Introduction"}),`
 `,e.jsx(n.h1,{id:"introduction",children:"Introduction"}),`
 `,e.jsx(n.p,{children:"This site provides starter SDCs for a drupal site using the Kinetic (>=2.0.0) theme."}),`
 `,e.jsx(n.h2,{id:"prerequisites",children:"Prerequisites"}),`
