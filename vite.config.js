@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@components': resolve(join(__dirname, 'components')),
+      '@base': resolve(join(__dirname, '01-base')),
     },
   },
   css: {

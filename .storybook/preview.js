@@ -1,5 +1,5 @@
 /** @type { import('@storybook/html').Preview } */
-import '../index.css';
+import '@base/global/css/index.pcss.css';
 
 const preview = {
   globalTypes: {

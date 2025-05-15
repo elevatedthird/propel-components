@@ -1,4 +1,4 @@
-@reference "../../../index.css";
+@reference "@base/global/css/index.pcss.css";
 
 .ac .ac-trigger {
   @variant after {

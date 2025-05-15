@@ -1,4 +1,4 @@
-@reference '../../../index.css';
+@reference '@base/global/css/index.pcss.css';
 @import "@glidejs/glide/dist/css/glide.core.min.css";
 
 .glide__bullet--active {

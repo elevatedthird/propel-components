@@ -1,4 +1,4 @@
-@reference "../../../index.pcss.css";
+@reference '@base/global/css/index.pcss.css';
 
 .layout__region {
   .block {
