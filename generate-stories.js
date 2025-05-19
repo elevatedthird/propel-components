@@ -12,7 +12,8 @@ const EXCLUDED_STORIES = [
   'glide-slide',
   'carousel',
   'tabs-item',
-  'tabs-nav-item'
+  'tabs-nav-item',
+  'dialog'
 ];
 
 // Force a story file to be created, even if it already exists.

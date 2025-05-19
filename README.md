@@ -33,8 +33,9 @@ If you want to add your SDC, follow these rules:
 5. Add a `[name].stories.js` file.
 
 ## JS Libraries.
-- Accordion JS
-- Glide JS
+- [Accordion JS](https://github.com/michu2k/Accordion)
+- [Micromodal](https://www.npmjs.com/package/micromodal)
+- [Glide JS](https://glidejs.com)
 
 ## Icons.
 Icons use the new  `mask-image` rule. This provides greater flexilibity for changing icon colors dynamically.
