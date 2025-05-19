@@ -1,5 +1,6 @@
-
 import modal from './modal.twig';
+import '@components/00-elements/dialog/dialog.es6.js';
+import '@components/00-elements/dialog/dialog.pcss.css';
 
 export default {
   title: '01-composites/modal',
@@ -7,19 +8,24 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'A bootstrap modal. Providing a trigger and a dialog.',
+        component: 'A micromodal modal with a trigger and a dialog.',
       },
       source: {
         code: 'drush propel:add modal',
       }
     },
   },
-  argTypes: {"test":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"test prop","table":{"type":{"summary":"text"}}}},
+  argTypes: {"modal_trigger":{"control":{"type":"text"},"type":{"required":true,"name":""},"description":"The trigger for the modal.","table":{"type":{"summary":"text"}}}},
   component: modal,
 };
 
 export const Default = {
   args: {
-    test: ""
-},
+    modal_trigger: "Open me"
+  },
+  render: (args) => modal({
+    ...args,
+    modal_heading: 'Modal Heading',
+    modal_content: '<p> Modal content goes here. </p>',
+  }),
 };

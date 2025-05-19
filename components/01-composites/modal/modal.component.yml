@@ -1,16 +1,24 @@
-$schema: >-
-  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Modal
 status: stable
-description: A bootstrap modal. Providing a trigger and a dialog.
+description: A micromodal modal with a trigger and a dialog.
+needs:
+  - dialog
+required:
+  - modal_trigger
+  - modal_dialog
+  - modal_heading
+slots:
+  modal_dialog:
+    title: Modal Dialog
+    description: The dialog of the modal.
+  modal_heading:
+    title: Modal Heading
+    description: The heading of the modal.
 props:
   type: object
   properties:
-    test:
+    modal_trigger:
+      title: Modal Trigger
       type: string
-      title: Test
-      description: test prop
-libraryOverrides:
-  dependencies:
-    - >-
-      kinetic/partials.vendors.vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c.js
+      description: The trigger for the modal.
