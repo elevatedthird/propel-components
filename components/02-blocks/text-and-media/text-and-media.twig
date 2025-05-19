@@ -1,22 +1,13 @@
-<div{{ attributes.addClass('text-and-media', 'column-reverse', 'layout--' ~ layout) }}>
-  <div class="grid">
-    <div class="col-12 g-col-md-4">
-      {% block _media %}
-        {{ media }}
-      {% endblock %}
-
+<div{{ attributes.addClass([]) }}>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="col-span-1">
+      {{ media }}
     </div>
-    <div class="col-12 g-col-md-8 {{layout == 'right' ? 'order-first'}}">
+    <div class="col-span-1 self-center {{ layout|default('left') == 'right' ? 'order-first'}}">
       {{ include('kinetic:title', {
-        heading_style: 'h5',
-        heading,
+        heading_style: 'h2',
+        heading: heading,
       }, with_context: false )}}
-      {% block _description %}
-        {{ _description }}
-      {% endblock %}
-      {% block _ctas %}
-        {{ ctas }}
-      {% endblock %}
     </div>
   </div>
 </div>

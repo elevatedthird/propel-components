@@ -3,13 +3,10 @@ name: "Text and Media"
 status: "stable"
 description: "Shows media and text content side by side with configurable order."
 slots:
-  _ctas:
-    title: 'CTAs'
-    description: 'The CTAs to be displayed in the card'
-  _description:
-    title: 'Description'
-    description: 'The description to be displayed in the card'
-  _media:
+  text:
+    title: 'Text'
+    description: 'The text to be displayed in the card'
+  media:
     title: 'Media'
     description: 'The media to be displayed in the card'
 props:
@@ -21,7 +18,17 @@ props:
       required: true
     layout:
       type: string
-      title: Alignment
+      title: Layout
+      description: "The side the media should be on."
+      default: left
       enum:
         - left
         - right
+    mobile_layout:
+      type: string
+      title: Layout
+      description: "Setting for the mobile layout."
+      default: default
+      enum:
+        - default
+        - reverse

@@ -20,7 +20,11 @@ export default {
 
 export const Default = {
   args: {
-    heading: "",
+    heading: "This is a heading",
     layout: "left"
-},
+  },
+  render: (args) => text_and_media({
+    ...args,
+    media: '<img src="https://placehold.co/600x400" alt="Placeholder image"/>',
+  }),
 };

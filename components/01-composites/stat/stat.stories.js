@@ -20,7 +20,7 @@ export default {
 
 export const Default = {
   args: {
-    stat: "",
-    description: ""
+    stat: "100+",
+    description: "Statistic description",
 },
 };

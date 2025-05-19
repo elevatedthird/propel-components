@@ -1,0 +1,5 @@
+{% set tag = tag is not defined or tag is null ? 'div' : tag %}
+
+<{{ tag }} {{ attributes.addClass(classes|default([])).setAttribute('behavior-name',behavior_name) }}>
+  {{ content }}
+</{{ tag }}>
