@@ -1,0 +1,1 @@
+@keyframes mmslideIn{0%{transform:translateY(15%)}to{transform:translateY(0)}}[data-micromodal][aria-hidden=false]>div{animation:mmslideIn .3s cubic-bezier(0,0,.2,1)}[data-micromodal]{display:none}[data-micromodal].is-open{display:block}
