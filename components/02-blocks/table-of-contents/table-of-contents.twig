@@ -1,3 +1,6 @@
-<div {{ attributes.addClass('kinetic-toc').setAttribute('data-selector', selector) }}>
-<ul></ul>
+<div {{ attributes.addClass('kinetic-toc')
+  .setAttribute('data-content-selector', content_selector|default('body'))
+  .setAttribute('data-heading-selector', heading_selector|default('h2, h3, h4'))
+}}>
+  <nav class="kinetic-toc-inner"></nav>
 </div>

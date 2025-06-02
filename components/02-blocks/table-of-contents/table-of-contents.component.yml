@@ -2,10 +2,15 @@ $schema: >-
   https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Table of Contents
 status: stable
-description: Programmatically generates a table of contents for a page
+description: Generates a table of contents for a page using the tocbot library
 props:
   type: object
   properties:
-    selector:
+    content_selector:
       type: string
       description: The selector of the elements to create the table of contents from
+      default: 'body'
+    heading_selector:
+      type: string
+      description: The selector of the headings to create the table of contents from
+      default: 'h2, h3, h4'
