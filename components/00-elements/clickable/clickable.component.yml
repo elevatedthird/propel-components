@@ -1,0 +1,22 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Clickable"
+status: "stable"
+description: "A utility SDC that makes the content clickable"
+required:
+  - url
+  - title
+slots:
+  content:
+    title: Content
+    desciption: Inner content
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      description: Link Title attribute
+    url:
+      type: string
+      title: URL
+      description: Link url

@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Marquee
+status: stable
+description: Provides a component that scrolls content vertically or horizontally infinitely.
+slots:
+  items:
+    title: Marquee Items
+    description: The items to be scrolled in the marquee.
+props:
+  type: object
+  properties:
+    direction:
+      type: string
+      title: Scroll Direction
+      default: horizontal
+      enum:
+        - horizontal
+        - vertical
+    gap:
+      type: integer
+      title: Spacing to use between items
+      default: 24
+    reverse:
+      type: boolean
+      title: Reverse Scroll
+      default: false
+libraryOverrides:
+  css:
+    component:
+      marquee.pcss.css: {}
+  js:
+    marquee.es6.js:
+      attributes:
+        type: module

@@ -1,0 +1,27 @@
+{# Marquee SDC. #}
+{# Gap is programmatically set to make the transitions seamless. #}
+{# Otherwise, a jump will happen when the animation resets. #}
+{% set gap = gap|default(24) %}
+{% set direction = direction|default('horizontal') %}
+{% set reverse = reverse == true ? 'true' : 'false' %}
+{% set attributes = create_attribute() %}
+
+<div {{ attributes.setAttribute('data-gap', gap).setAttribute('data-direction', direction).addClass(['marquee', 'overflow-hidden', 'relative']).setAttribute('data-reverse', reverse) }}>
+  {% set classes = [
+    'flex',
+    'items-center',
+    'justify-between',
+    'shrink-0',
+    direction == 'vertical' ? 'flex-col' : ''
+  ] %}
+
+  {# Debugging #}
+  {# <button class="absolute top-0 left-0 w-[100px] p-2 bg-[lightblue] z-10"> pause/play </button> #}
+
+  <div class="marquee-wrapper {{ classes|join(' ') }}" style="gap:{{ gap }}px">
+    <div class="marquee-items {{ classes|join(' ') }}" style="gap:{{ gap }}px">
+      {# Should be an array of items to apply the animation to #}
+      {{ items }}
+    </div>
+  </div>
+</div>

@@ -1,17 +1,11 @@
-<div>
-  <div class="byline__image">
+<div class="flex items-center gap-4">
+  <div class="rounded-full bg-gray-050 w-[64px] h-[64px]">
     {{ image }}
   </div>
   <div class="byline__author">
     <div class="byline__author-info">
-      <h4 class="font-body fs-lead mb-2 text-primary"> {{ name }} </h4>
-      <h5 class="font-body fs-md mb-0"> {{ job_title }} </h5>
+      <h4 class="font-body text-[19px] mb-0 font-bold"> {{ name }} </h4>
+      <p class="text-gray mb-0"> {{ job_title }} </p>
     </div>
-    <div class="byline__author-about">
-      {{ bio }}
-    </div>
-  </div>
-  <div class="byline__company">
-    {{ company_logo }}
   </div>
 </div>

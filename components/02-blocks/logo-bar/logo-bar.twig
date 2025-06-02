@@ -1,6 +1,4 @@
-{% if variant == 'animate' %}
-  {% set attributes = attributes.addClass(['animate']) %}
-{% else %}
+{% if variant == 'grid' %}
   {% set attributes = attributes.addClass([
     'grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-6',
   ]) %}
@@ -8,12 +6,11 @@
 
 <div {{ attributes.addClass('logo-bar') }}>
   {% if variant == 'animate' %}
-    <div class="logo-bar-logos">
-      {{ logos }}
-    </div>
-    <div aria-hidden="true" class="logo-bar-logos">
-      {{ logos }}
-    </div>
+    {{ include('kinetic:marquee', {
+      items: logos,
+      gap: 24,
+      direction: 'horizontal',
+    }, with_context: false) }}
   {% else %}
     {{ logos }}
   {% endif %}

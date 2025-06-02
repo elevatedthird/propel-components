@@ -2,6 +2,8 @@
 name: "Logo Bar"
 status: "stable"
 description: "Displays a list of company logos"
+needs:
+ - marquee
 slots:
   logos:
     title: 'Logos'
