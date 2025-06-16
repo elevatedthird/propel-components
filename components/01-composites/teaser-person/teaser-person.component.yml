@@ -1,0 +1,23 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Teaser Person"
+status: "stable"
+description: "A teaser for a person or author."
+slots:
+  media:
+    title: Media
+    description: The media slot.
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Person Name
+      required: true
+    job_title:
+      type: string
+      title: Job title
+      description: Job title or designation.
+    description:
+      type: string
+      title: Description
+      description: Shot description of this person.

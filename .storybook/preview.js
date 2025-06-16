@@ -24,7 +24,11 @@ const preview = {
   },
   decorators: [
     (story, context) => {
-      return `<section class="${context.globals.theme} p-12">${story()}</section>`;
+      const classes = [context.globals.theme];
+      if (!context.componentId.includes('04-pages')) {
+        classes.push('p-12');
+      }
+      return `<section class="${classes.join(' ')}">${story()}</section>`;
     },
   ],
   parameters: {
@@ -33,6 +37,7 @@ const preview = {
         code: null,
       },
     },
+    layout: 'fullscreen',
     // Disable the backgrounds and grid in the controls panel.
     // We will use our own decorator for this.
     backgrounds: {

@@ -1,0 +1,16 @@
+<a {{ attributes.addClass("cursor-pointer group block").setAttribute('href', url).setAttribute('target', '_blank').setAttribute('rel', 'nofollow') }} >
+  <div class="bg-gray-100">
+    <div class="aspect-16/9">
+      {{ media }}
+    </div>
+  </div>
+  <div class="my-4">
+    <h3 class="h3 inline-block"> {{ heading }} </h3>
+    <div class="text-formatted">
+      {{ body }}
+    </div>
+    <div class="mt-4">
+      <span aria-hidden="true" class="link-next group-hover:gap-3"> {{ link_text|default('Read more') }} </span>
+    </div>
+  </div>
+</a>

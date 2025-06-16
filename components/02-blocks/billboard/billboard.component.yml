@@ -1,0 +1,13 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Billboard"
+status: "stable"
+description: "A Hero like component that can be displayed in the middle of a page."
+slots:
+  media:
+    title: "Media"
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      title: "Array of breadcrumb items"

@@ -1,0 +1,11 @@
+{# Table of contents. #}
+{# On mobile it's a combo of a list box and a dropdown #}
+{% set id = 'dropdown'|unique_id() %}
+{% set content_id = 'dropdown-content'|unique_id() %}
+
+<div class="relative kinetic-dropdown">
+  <button id="{{ id }}" aria-controls="{{ content_id }}" class="px-4 py-3 rounded-lg bg-gray-100 w-full font-semibold text-left"> {{ label }} </button>
+  <div id="{{ content_id }}" tabindex="0" aria-expanded="false" aria-labelledby="{{ id }}" class="d-none absolute w-full bg-white mt-2">
+    {{ content }}
+  </div>
+</div>

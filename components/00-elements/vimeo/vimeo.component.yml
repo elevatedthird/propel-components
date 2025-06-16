@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Dropdown
+status: stable
+description: A wrapper around the vimeo-lite web component. Use this if you need to Lazy Load videos or need to access the Vimeo API.
+props:
+  type: object
+  properties:
+    video_id:
+      type: string
+      title: Vimeo Video ID
+      required: true
+    autoplay:
+      type: boolean
+      title: Autoplay
+      default: false
+libraryOverrides:
+  js:
+    https://player.vimeo.com/api/player.js:
+      external: true
+      attributes:
+        async: true

@@ -14,14 +14,18 @@ export default {
       }
     },
   },
-  argTypes: {"name":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Author name.","table":{"type":{"summary":"text"}}},"job_title":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Author job title.","table":{"type":{"summary":"text"}}},"bio":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Author bio.","table":{"type":{"summary":"text"}}}},
+  argTypes: {"name":{"control":{"type":"text"},"type":{"required":false,"name":""},"description":"Author name.","table":{"type":{"summary":"text"}}}},
   component: byline,
 };
 
 export const Default = {
   args: {
-    name: "",
-    job_title: "",
-    bio: ""
-},
+    name: "John Doe"
+  },
+  render: (args) => {
+    return byline({
+      ...args,
+      image: '<img src="https://placehold.co/32x32" alt="Author Image" />',
+    });
+  }
 };

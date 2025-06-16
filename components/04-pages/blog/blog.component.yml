@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Blog
+status: stable
+description: A basic Blog page.
+needs:
+  - byline
+slots:
+  content:
+    title: Content
+    description: Blog body.
+  authors:
+    title: Authors
+    description: List of author bylines.
+props:
+  type: object
+  properties:
+    category:
+      type: string
+      title: Blog category
+      required: true
+    title:
+      type: string
+      title: Blog title
+      required: true
+    publish_date:
+      type: string
+      title: Publish date

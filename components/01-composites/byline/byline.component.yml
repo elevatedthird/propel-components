@@ -6,9 +6,6 @@ slots:
   image:
     title: Image
     description: Author headshot.
-  company_logo:
-    title: Company logo
-    description: Logo of the company the author works for.
 props:
   type: object
   properties:
@@ -16,11 +13,3 @@ props:
       type: string
       title: Name
       description: "Author name."
-    job_title:
-      type: string
-      title: Job title
-      description: "Author job title."
-    bio:
-      type: string
-      title: Bio
-      description: "Author bio."
