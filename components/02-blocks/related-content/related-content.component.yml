@@ -1,12 +1,12 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "related content"
 status: "stable"
 group: Blocks
 description: "displays related content for a node"
 slots:
   items:
-    title: 'Items'
-    description: 'related content items'
+    title: "Items"
+    description: "related content items"
 props:
   type: object
   properties:

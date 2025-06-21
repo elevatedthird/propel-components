@@ -4,8 +4,8 @@ Drupal.behaviors.carousel = {
     rewind: false,
   },
   init(glide) {
-    glide.on('mount.after', () => {
-      console.log('basic carousel mounted');
+    glide.on("mount.after", () => {
+      console.log("basic carousel mounted");
     });
     glide.mount();
   },

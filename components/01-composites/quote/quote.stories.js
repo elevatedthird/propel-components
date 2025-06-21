@@ -14,12 +14,65 @@ export default {
       }
     },
   },
-  argTypes: {"behavior_name":{"control":{"type":"text"},"type":{"required":false,"name":""},"table":{"type":{"summary":"text"}}}},
-  component: quote,
+  argTypes: {
+  quote: {
+    control: {
+      type: "text"
+    },
+    type: {
+      required: false,
+      name: ""
+    },
+    description: "The quote text.",
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
+  },
+  attribution: {
+    control: {
+      type: "text"
+    },
+    type: {
+      required: false,
+      name: ""
+    },
+    description: "The attribution text.",
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
+  },
+  attribution_description: {
+    control: {
+      type: "text"
+    },
+    type: {
+      required: false,
+      name: ""
+    },
+    description: "The attribution description text.",
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
+  }
+},
 };
 
 export const Default = {
   args: {
-    behavior_name: ""
+    quote: "",
+    attribution: "",
+    attribution_description: ""
 },
+  render: (args) => {
+    return quote({
+      ...args,
+      	image: () => { <!-- image slot content --> }
+    });
+  },
 };

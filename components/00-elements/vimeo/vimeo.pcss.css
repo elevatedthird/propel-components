@@ -23,11 +23,13 @@ lite-vimeo > .ltv-playbtn {
   padding: 0;
   width: 6.5em;
   height: 4em;
-  background: rgba(23, 35, 34, .75);
+  background: rgba(23, 35, 34, 0.75);
   z-index: 1;
-  opacity: .8;
-  border-radius: .5em;
-  transition: opacity .2s ease-out, background .2s ease-out;
+  opacity: 0.8;
+  border-radius: 0.5em;
+  transition:
+    opacity 0.2s ease-out,
+    background 0.2s ease-out;
   outline: 0;
   border: 0;
   cursor: pointer;
@@ -40,7 +42,7 @@ lite-vimeo:hover > .ltv-playbtn {
 
 /* play button triangle */
 lite-vimeo > .ltv-playbtn::before {
-  content: '';
+  content: "";
   border-style: solid;
   border-width: 10px 0 10px 20px;
   border-color: transparent transparent transparent #fff;

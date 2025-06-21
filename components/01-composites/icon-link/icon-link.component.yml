@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
 name: "Icon Link"
 status: "stable"
 description: "Displays an icon with a link."
@@ -11,7 +11,7 @@ props:
   properties:
     url:
       type: object
-      description: "The URL to link to."
+      description: "The URL Object to link to."
     title:
       type: string
       description: "The title attribute for the link."

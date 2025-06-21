@@ -1,18 +1,17 @@
-
-import form from './form.twig';
-import './form.pcss.css';
+import form from "./form.twig";
+import "./form.pcss.css";
 
 export default {
-  title: '00-elements/form',
-  tags: ['autodocs'],
+  title: "00-elements/form",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component: 'A Form.',
+        component: "A Form.",
       },
       source: {
-        code: 'drush propel:add form',
-      }
+        code: "drush propel:add form",
+      },
     },
   },
   argTypes: {},
@@ -122,7 +121,7 @@ export const Default = {
     `;
     return form({
       ...context,
-      form: `${formElements}`
+      form: `${formElements}`,
     });
-  }
+  },
 };

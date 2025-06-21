@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Section Intro"
 status: "stable"
 description: "A title section containing a title and optional description, eyebrow, and ctas."
@@ -6,12 +6,12 @@ needs:
   - title
 slots:
   ctas:
-    title: 'CTAs'
-    description: 'The CTAs to be displayed in the section intro'
+    title: "CTAs"
+    description: "The CTAs to be displayed in the section intro"
   description:
     type: string
-    title: 'Description'
-    description: 'The description to be displayed in the section intro'
+    title: "Description"
+    description: "The description to be displayed in the section intro"
 props:
   type: object
   properties:
@@ -29,4 +29,3 @@ props:
         - left
         - right
         - center
-

@@ -1,34 +1,42 @@
-import { Meta } from '@storybook/blocks';
- 
-<Meta title="Introduction" />
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />;
 
 # Introduction
+
 This site provides starter SDCs for a drupal site using the Kinetic (>=2.0.0) theme.
 
 ## Prerequisites
+
 - Drupal 10.3.0 or higher
 - Tailwind 4.0.0 or higher
 - SDC module installed (or use Core)
 
 ## Getting Started
-- Install the [propel module](https://github.com/elevatedthird/paragon_propel), which provides a drush command to add an SDC to your theme's `components` directory
+
+- Install the [propel module](https://github.com/elevatedthird/propel_drush), which provides a drush command to add an SDC to your theme's `components` directory
 
 ## Component Categories
 
 ### 00-elements
+
 Contains single elements, such as buttons, links, images, and badges.
 Most of these SDCs wrap the utility classes created in your `index.css` file. They primarily exist for showing variants in storybook.
 These utility classes are available anywhere in your site, including custom modules and PHP files.
 
 ### 01-composites
+
 Contains components that are made up of multiple elements. They aren't
 as big as blocks, but are more complex than elements.
 
 ### 02-blocks
-Contains components that are composed of multiple composites.
+
+Contains components that are composed of multiple composites. These are like the blocks in layout builder
 
 ### 03-formations
-Contains wrappers for layouts
+
+Contains wrappers for layouts. Ex. headers, footers, and sections.
 
 ### 04-pages
+
 Contains templates for entire pages

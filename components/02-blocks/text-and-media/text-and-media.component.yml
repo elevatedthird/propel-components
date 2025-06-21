@@ -1,14 +1,14 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Text and Media"
 status: "stable"
 description: "Shows media and text content side by side with configurable order."
 slots:
   text:
-    title: 'Text'
-    description: 'The text to be displayed in the card'
+    title: "Text"
+    description: "The text to be displayed in the card"
   media:
-    title: 'Media'
-    description: 'The media to be displayed in the card'
+    title: "Media"
+    description: "The media to be displayed in the card"
 props:
   type: object
   properties:

@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Link"
 status: "stable"
 description: "Anchor tag."
@@ -13,7 +13,7 @@ props:
     href:
       type: "string"
     variant:
-      type: 'string'
+      type: "string"
       default: "link"
       enum:
         - link

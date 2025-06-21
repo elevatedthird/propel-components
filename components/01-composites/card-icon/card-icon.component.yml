@@ -1,7 +1,11 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Card Icon"
 status: "stable"
-description: "A group of buttons or links that are styled as calls to action."
+description: "A card with an icon, heading and description."
+slots:
+  icon:
+    title: Icon
+    description: The icon slot.
 props:
   type: object
   properties:
@@ -11,6 +15,3 @@ props:
     description:
       type: string
       title: description
-    icon:
-      type: array
-      title: "Icon"

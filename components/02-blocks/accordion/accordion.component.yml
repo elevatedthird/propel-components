@@ -15,12 +15,12 @@ props:
     open:
       type: boolean
       title: Open
-      description: 'Check if the first item should be opened by default.'
+      description: "Check if the first item should be opened by default."
       default: false
     allow_multiple:
       type: boolean
       title: Allow multiple
-      description: 'Check if multiple items can be opened at the same time.'
+      description: "Check if multiple items can be opened at the same time."
       default: false
 libraryOverrides:
   dependencies: []

@@ -1,11 +1,11 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Banner"
 status: "stable"
 description: "A simple banner with an optional background image."
 slots:
   banner_content:
-    title: 'Content'
-    description: 'Content that goes below the heading'
+    title: "Content"
+    description: "Content that goes below the heading"
 props:
   type: object
   properties:

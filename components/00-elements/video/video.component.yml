@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Video"
 status: "stable"
 description: "Renders Video media type"
@@ -12,4 +12,3 @@ props:
     view_mode:
       type: string
       title: view mode to be added as a class
-

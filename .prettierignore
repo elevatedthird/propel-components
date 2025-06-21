@@ -1,0 +1,6 @@
+# Ignore artifacts:
+.github
+.storybook
+01-base
+**/*.twig
+**/*.mdx

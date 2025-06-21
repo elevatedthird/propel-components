@@ -1,17 +1,17 @@
-
-import rich_text from './rich-text.twig';
+import rich_text from "./rich-text.twig";
 
 export default {
-  title: '00-elements/rich-text',
-  tags: ['autodocs'],
+  title: "00-elements/rich-text",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component: 'A wrapper that adds the text-formatted class around the CKEditor output.',
+        component:
+          "A wrapper that adds the text-formatted class around the CKEditor output.",
       },
       source: {
-        code: 'drush propel:add rich-text',
-      }
+        code: "drush propel:add rich-text",
+      },
     },
   },
   argTypes: {},

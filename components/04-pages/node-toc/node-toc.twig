@@ -1,0 +1,30 @@
+<article{{ attributes }}>
+  {# Optional banner section for structured pages. #}
+  {% if page_banner is defined %}
+    {{ page_banner }}
+  {% endif %}
+  {% set classes = [
+    show_toc ? 'grid grid-cols-1 md:grid-cols-6 gap-8' : '',
+    page_banner is defined ? 'pt-12' : '',
+    page_bottom is defined ? 'pb-12' : '',
+    content_classes|join(' ')
+  ] %}
+  <div {{ create_attribute().addClass(classes) }}>
+    {% if show_toc == true %}
+      <div class="md:col-span-2 md:sticky md:top-12 self-start">
+        {# Make sure to add the toc-content class somewhere in your page-content slot! #}
+        {{ include('kinetic:table-of-contents', {
+          content_selector: '.toc-content',
+          heading_selector: 'h2, h3, h4',
+        }, with_context: false) }}
+      </div>
+    {% endif %}
+    <div class="md:col-span-4">
+      {{ page_content }}
+    </div>
+  </div>
+  {# Optional bottom section for structured pages #}
+  {% if page_bottom is defined %}
+    {{ page_bottom }}
+  {% endif %}
+</article>

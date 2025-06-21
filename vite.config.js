@@ -1,23 +1,20 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-import twig from 'vite-plugin-twig-drupal'
-import { join, resolve } from 'node:path'
-import postcssNested from 'postcss-nested'
-import autoprefixer from 'autoprefixer'
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+import twig from "vite-plugin-twig-drupal";
+import { join, resolve } from "node:path";
+import postcssNested from "postcss-nested";
+import autoprefixer from "autoprefixer";
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@components': resolve(join(__dirname, 'components')),
-      '@base': resolve(join(__dirname, '01-base')),
+      "@components": resolve(join(__dirname, "components")),
+      "@base": resolve(join(__dirname, "01-base")),
     },
   },
   css: {
     postcss: {
-      plugins: [
-        postcssNested(),
-        autoprefixer(),
-      ],
+      plugins: [postcssNested(), autoprefixer()],
     },
   },
   plugins: [
@@ -45,7 +42,11 @@ export default defineConfig({
               }
             } catch (error) {
               // Get the template path from the SDC_MANIFEST.
-              const template = twigInstance.twig({ id: id, href: href, async: false });
+              const template = twigInstance.twig({
+                id: id,
+                href: href,
+                async: false,
+              });
               if (template) {
                 return template.render(vars);
               } else {
@@ -55,8 +56,9 @@ export default defineConfig({
           });
         },
         // e.g. extendFilter to register a filter
-        clean_unique_id: (twigInstance) => twigInstance.extendFilter("clean_unique_id", (text) => text),
+        clean_unique_id: (twigInstance) =>
+          twigInstance.extendFilter("clean_unique_id", (text) => text),
       },
     }),
   ],
-})
+});

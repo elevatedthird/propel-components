@@ -1,21 +1,21 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Logo Bar"
 status: "stable"
 description: "Displays a list of company logos"
 needs:
- - marquee
+  - marquee
 slots:
   logos:
-    title: 'Logos'
-    description: 'company logos'
+    title: "Logos"
+    description: "company logos"
 props:
   type: object
   properties:
     variant:
       type: string
-      title: 'Display'
-      description: 'How the logo bar should display'
+      title: "Display"
+      description: "How the logo bar should display"
       enum:
-        - 'grid'
-        - 'animate'
-      default: 'default'
+        - "grid"
+        - "animate"
+      default: "default"

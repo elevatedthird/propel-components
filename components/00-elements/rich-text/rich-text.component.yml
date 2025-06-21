@@ -1,13 +1,11 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Rich Text"
 status: "stable"
 description: "A wrapper that adds the text-formatted class around the CKEditor output."
 slots:
   text:
-    title: 'Text'
-    description: 'The text to be displayed in the rich text'
+    title: "Text"
+    description: "The text to be displayed in the rich text"
 props:
   type: object
   additionalProperties: false
-
-

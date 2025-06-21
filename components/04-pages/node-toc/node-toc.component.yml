@@ -1,0 +1,23 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: "Page with Table of Contents"
+status: "stable"
+description: "Node content with a table of contents."
+slots:
+  page_banner:
+    title: "Page Banner"
+    description: "Content above page content."
+  page_content:
+    title: "Page Content"
+    description: "Main page content."
+  page_bottom:
+    title: "Page Bottom"
+    description: "Content below page content."
+props:
+  type: object
+  properties:
+    show_toc:
+      type: boolean
+      description: "Show table of contents"
+    content_classes:
+      type: string
+      description: "classes to wrap the page content."

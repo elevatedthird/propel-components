@@ -1,17 +1,16 @@
-
-import footer from './footer.twig';
+import footer from "./footer.twig";
 
 export default {
-  title: '03-formations/footer',
-  tags: ['autodocs'],
+  title: "03-formations/footer",
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component: 'The layout area for the parts of the footer.',
+        component: "The layout area for the parts of the footer.",
       },
       source: {
-        code: 'drush propel:add footer',
-      }
+        code: "drush propel:add footer",
+      },
     },
   },
   argTypes: {},

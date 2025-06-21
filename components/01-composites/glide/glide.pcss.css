@@ -2,5 +2,5 @@
 @import "@glidejs/glide/dist/css/glide.core.min.css";
 
 .glide__bullet--active {
-  @apply bg-primary;
+  @apply bg-default-primary;
 }

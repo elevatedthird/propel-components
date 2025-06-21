@@ -1,99 +1,150 @@
 /* https://tailwindcss.com/docs/theme#theme-variable-namespaces */
 /* https://tailwindcss.com/docs/hover-focus-and-other-states#appendix */
+/* For custom utilities */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units/CSS_data_types */
 
 @import "tailwindcss";
+
+/* Define all the sources where classes need to be discovered. */
+@source "../../../components";
+/* Add classes configured in WYSIWYG so they don't get stripped out */
+@source inline('{btn-primary,btn-secondary,btn-tertiary,btn-quaternary}');
+
+/* Fonts */
+/* End Fonts */
 
 /* Custom theme variables */
 @theme {
   /* Colors */
-  --color-orange:           #F25929;
-  --color-dark-orange:      #E44919;
-  --color-navy:             #16215B;
-  --color-dark-navy:        #091241;
-  --color-blue:             #150DF7;
-  --color-dark-blue:        #0700CC;
+  --color-purple:           #572EBD;
+  --color-blue:             #069DE0;
+  --color-pink:             #E306E3;
+  --color-pink-200:         #E9D7FE;
+  --color-turquoise:        #07D9BD;
+  --color-yellow:           #FCCC14;
+  --color-orange:           #FF7112;
+  --color-red:              #EF1541;
+  --color-green:            #05AC3F;
   --color-white:            #FFF;
-  --color-lighter-gray:     #F6F6FF;
-  --color-light-gray:       #E6E6F7;
-  --color-gray:             #667085;
   --color-black:            #000;
-  --color-form-text: #525252;
+  --color-black-100:        #262628;
+  --color-black-200:        #0D1017;
+  --color-black-25:         rgba(0, 0, 0, 0.25);
+  /* Grays */
+  --color-gray-050: #FAF9FC;
+  --color-gray-100: #F5F4F9;
+  --color-gray-150: #EBEAF0;
+  --color-gray-200: #E1DFE6;
+  --color-gray-250: #CCCADA;
+  --color-gray-275: #C8C8C8;
+  --color-gray-300: #B7B4C0;
+  --color-gray-400: #ABABAB;
+  --color-gray-500: #8E8A9B;
+  --color-gray-600: #7A7688;
+  --color-gray-700: #656175;
+  --color-gray-800: #514C63;
+  --color-gray-850: #3D3750;
+  --color-gray-900: #28223D;
+  --color-gray-950: #130C2A;
+  --color-gray-1000: #2B2B2B;
+  /* Form Colors */
+  --color-gray-overlay: rgba(171, 171, 171, 0.7);
+
+  --color-form-text:   #525252;
   --color-form-active: #1D4ED8;
-  --color-form-error: #B91C1C;
+  --color-form-error:  #B91C1C;
   /* Themes */
-  --color-primary: var(--color-orange);
-  --color-secondary: var(--color-blue);
-  --color-tertiary: var(--color-navy);
+  --color-default-primary:   var(--color-purple);
+  --color-default-secondary: var(--color-blue);
+  --color-default-tertiary:  var(--color-pink);
   /* Breakpoints */
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 58rem;
-  --breakpoint-xl: 64rem;
-  --breakpoint-2xl: 80rem;
+  --breakpoint-sm:  40rem;
+  --breakpoint-md:  48rem;
+  --breakpoint-lg:  58rem;
+  --breakpoint-xl:  64rem;
+  --breakpoint-2xl: 78rem;
   /* Container */
   /* SVGs as data URIs */
   --icon-arrow-next: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy40Njk3IDUuNDY5NjdDMTMuNzYyNiA1LjE3Njc4IDE0LjIzNzQgNS4xNzY3OCAxNC41MzAzIDUuNDY5NjdMMjAuNTMwMyAxMS40Njk3QzIwLjgyMzIgMTEuNzYyNiAyMC44MjMyIDEyLjIzNzQgMjAuNTMwMyAxMi41MzAzTDE0LjUzMDMgMTguNTMwM0MxNC4yMzc0IDE4LjgyMzIgMTMuNzYyNiAxOC44MjMyIDEzLjQ2OTcgMTguNTMwM0MxMy4xNzY4IDE4LjIzNzQgMTMuMTc2OCAxNy43NjI2IDEzLjQ2OTcgMTcuNDY5N0wxOC4xODkzIDEyLjc1SDRDMy41ODU3OSAxMi43NSAzLjI1IDEyLjQxNDIgMy4yNSAxMkMzLjI1IDExLjU4NTggMy41ODU3OSAxMS4yNSA0IDExLjI1SDE4LjE4OTNMMTMuNDY5NyA2LjUzMDMzQzEzLjE3NjggNi4yMzc0NCAxMy4xNzY4IDUuNzYyNTYgMTMuNDY5NyA1LjQ2OTY3WiIgZmlsbD0iIzAwMCI+PC9wYXRoPjwvc3ZnPg==');
   --icon-arrow-prev: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlNWR1JlcG9fYmdDYXJyaWVyIiBzdHJva2Utd2lkdGg9IjAiPjwvZz48ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvZz48ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwYXRoIGQ9Ik0yMCAxMkg0TTQgMTJMMTAgNk00IDEyTDEwIDE4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4gPC9nPjwvc3ZnPg==');
-  --icon-caret: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgaWQ9IkZsYXQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlNWR1JlcG9fYmdDYXJyaWVyIiBzdHJva2Utd2lkdGg9IjAiPjwvZz48ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvZz48ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwYXRoIGQ9Ik0xMjgsMTgwYTMuOTg4ODEsMy45ODg4MSwwLDAsMS0yLjgyODYxLTEuMTcxMzlsLTgwLTgwLjAwMDI0YTQuMDAwMDksNC4wMDAwOSwwLDAsMSw1LjY1NzIyLTUuNjU2NzRMMTI4LDE3MC4zNDMyNmw3Ny4xNzEzOS03Ny4xNzE2M2E0LjAwMDA5LDQuMDAwMDksMCwwLDEsNS42NTcyMiw1LjY1Njc0bC04MCw4MC4wMDAyNEEzLjk4ODgxLDMuOTg4ODEsMCwwLDEsMTI4LDE4MFoiPjwvcGF0aD4gPC9nPjwvc3ZnPg==');
-  --icon-size-sm: 18px;
-  --icon-size-md: 24px;
+  --icon-arrow-next-long: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIGZpbGw9IiMwMDAwMDAiPjxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L2c+PGcgaWQ9IlNWR1JlcG9faWNvbkNhcnJpZXIiPiA8bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgeDE9IjI2IiB5MT0iMTYiIHgyPSI0IiB5Mj0iMTYiPjwvbGluZT4gPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IiBwb2ludHM9IjIwLjQ4NSwxMCAyNi40ODUsMTYgMjAuNDg1LDIyICI+PC9wb2x5bGluZT4gPC9nPjwvc3ZnPgo8IS0tIDxzdmcgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L2c+PGcgaWQ9IlNWR1JlcG9faWNvbkNhcnJpZXIiPiA8ZyBpZD0iQXJyb3cgLyBBcnJvd19SaWdodF9MRyI+IDxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik0yMSAxMkwxNiA3TTIxIDEyTDE2IDE3TTIxIDEySDMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4gPC9nPiA8L2c+PC9zdmc+IC0tPg==');
+  --icon-play: url('data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2214%22%20viewBox%3D%220%200%2012%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.10938%200.810303L10.9556%206.96415L1.10938%2013.118V0.810303Z%22%20stroke%3D%22white%22%20stroke-width%3D%221.23077%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --icon-pause: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M15.2842%2021.8334C14.7142%2021.8334%2014.2226%2021.6269%2013.8096%2021.2138C13.3965%2020.8008%2013.19%2020.3092%2013.19%2019.7392V2.26092C13.19%201.69092%2013.3965%201.19939%2013.8096%200.786331C14.2226%200.373276%2014.7142%200.166748%2015.2842%200.166748H19.7392C20.3092%200.166748%2020.8007%200.373276%2021.2138%200.786331C21.6268%201.19939%2021.8333%201.69092%2021.8333%202.26092V19.7392C21.8333%2020.3092%2021.6268%2020.8008%2021.2138%2021.2138C20.8007%2021.6269%2020.3092%2021.8334%2019.7392%2021.8334H15.2842ZM2.26084%2021.8334C1.69084%2021.8334%201.19931%2021.6269%200.786255%2021.2138C0.373199%2020.8008%200.166672%2020.3092%200.166672%2019.7392V2.26092C0.166672%201.69092%200.373199%201.19939%200.786255%200.786331C1.19931%200.373276%201.69084%200.166748%202.26084%200.166748H6.72667C7.29112%200.166748%207.78112%200.373276%208.19667%200.786331C8.61251%201.19939%208.82042%201.69092%208.82042%202.26092V19.7392C8.82042%2020.3092%208.61251%2020.8008%208.19667%2021.2138C7.78112%2021.6269%207.29112%2021.8334%206.72667%2021.8334H2.26084ZM15.2842%2019.7392H19.7392V2.26092H15.2842V19.7392ZM2.26084%2019.7392H6.72667V2.26092H2.26084V19.7392Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E');
+  --icon-muted: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%235985E1%22%3E%3Cpath%20d%3D%22M658.31-195.08q-9.85%206.23-20.08%2011.85Q628-177.62%20617.15-173q-11.15%205.08-23.19%200-12.04-5.08-16.5-16.85-4.46-11.15%201.31-22.19%205.77-11.04%2016.92-16.11%205.16-2.39%209.81-4.77%204.65-2.39%209.42-5.54L471.54-381.85V-282q0%2020.46-18.73%2028.27-18.73%207.8-33.12-6.58L300-380H187.69q-15.46%200-25.8-10.35-10.35-10.34-10.35-25.81v-127.68q0-15.47%2010.35-25.81Q172.23-580%20187.69-580h85.7L100.92-752.46q-8.3-8.31-8.5-20.88-.19-12.58%208.5-21.27%208.7-8.7%2021.08-8.7%2012.39%200%2021.08%208.7L800-137.69q8.31%208.31%208.5%2020.88.19%2012.58-8.5%2021.27t-21.08%208.69q-12.38%200-21.07-8.69l-99.54-99.54ZM759.23-481q0-82.23-44.19-150.54-44.19-68.31-118.58-101.92-11.54-5.46-17-16.31-5.46-10.84-1.23-22%204.85-12.15%2017.08-16.84%2012.23-4.7%2024.77.77%2090.46%2041.07%20144.8%20123.3%2054.35%2082.23%2054.35%20183.54%200%2038.39-8.89%2074.73-8.88%2036.35-25.65%2069.04-6.85%2016.23-19.12%2020-12.26%203.77-22.8-.08-10.54-3.84-16.35-13.77-5.81-9.92.27-22.3%2016.39-29.46%2024.46-60.97%208.08-31.5%208.08-66.65ZM594.46-609.15q28%2021.38%2042.54%2058%2014.54%2036.61%2014.54%2071.15%200%208.85-.96%2017.5-.97%208.65-3.5%2017.12-2.77%2011.46-13.81%2014.5-11.04%203.03-19.89-5.81l-35.61-35.62q-5.62-5.61-8.23-12.15-2.62-6.54-2.62-13.77v-96.62q0-10.46%209.54-15.19%209.54-4.73%2018%20.89Zm-196.77-43.23q-5.61-5.62-5.42-12.85.19-7.23%205.81-12.84l21.61-21.62q14.39-14.38%2033.12-6.58%2018.73%207.81%2018.73%2028.27v55.69q0%2012.47-11.04%2017.27-11.04%204.81-19.89-4.42l-42.92-42.92ZM411.54-354v-87.85L333.39-520H211.54v80h114l86%2086Zm-39.08-126.92Z%22%2F%3E%3C%2Fsvg%3E');
+  --icon-mute: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cmask%20id%3D%22mask0_10109_878%22%20style%3D%22mask-type%3Aalpha%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23D9D9D9%22%2F%3E%3C%2Fmask%3E%3Cg%20mask%3D%22url(%23mask0_10109_878)%22%3E%3Cpath%20d%3D%22M18.8462%2011.975C18.8462%2010.6%2018.4778%209.34519%2017.741%208.21052C17.0042%207.07569%2016.0162%206.22669%2014.777%205.66352C14.5847%205.57252%2014.443%205.4366%2014.352%205.25577C14.261%205.0751%2014.2498%204.89077%2014.3185%204.70277C14.401%204.50227%2014.5442%204.36294%2014.748%204.28477C14.9518%204.20644%2015.1582%204.21285%2015.3672%204.30402C16.8749%204.98852%2018.0817%206.01852%2018.9875%207.39402C19.8932%208.76935%2020.346%2010.2963%2020.346%2011.9748C20.346%2013.6531%2019.8932%2015.1801%2018.9875%2016.5558C18.0817%2017.9314%2016.8749%2018.9615%2015.3672%2019.646C15.1582%2019.7372%2014.9518%2019.7436%2014.748%2019.6653C14.5442%2019.5871%2014.401%2019.4478%2014.3185%2019.2473C14.2498%2019.0593%2014.261%2018.8749%2014.352%2018.6943C14.443%2018.5134%2014.5847%2018.3775%2014.777%2018.2865C16.0162%2017.7234%2017.0042%2016.8744%2017.741%2015.7395C18.4778%2014.6049%2018.8462%2013.35%2018.8462%2011.975ZM7.36549%2014.5H4.55774C4.30157%2014.5%204.08691%2014.4134%203.91374%2014.24C3.74058%2014.0669%203.65399%2013.8522%203.65399%2013.596V10.404C3.65399%2010.1479%203.74058%209.93319%203.91374%209.76002C4.08691%209.58669%204.30157%209.50002%204.55774%209.50002H7.36549L10.3577%206.50777C10.5974%206.2681%2010.8733%206.21402%2011.1855%206.34552C11.4977%206.47702%2011.6537%206.71185%2011.6537%207.05002V16.95C11.6537%2017.2882%2011.4977%2017.523%2011.1855%2017.6545C10.8733%2017.786%2010.5974%2017.7319%2010.3577%2017.4923L7.36549%2014.5ZM16.1537%2012.001C16.1537%2012.6249%2016.0242%2013.2153%2015.7652%2013.7723C15.5064%2014.3293%2015.1574%2014.7975%2014.7182%2015.177C14.5766%2015.2719%2014.4278%2015.2814%2014.272%2015.2058C14.1163%2015.1301%2014.0385%2015.0051%2014.0385%2014.8308V9.11927C14.0385%208.94494%2014.1163%208.81994%2014.272%208.74427C14.4278%208.6686%2014.5766%208.67769%2014.7182%208.77152C15.1574%209.16235%2015.5064%209.64235%2015.7652%2010.2115C16.0242%2010.7809%2016.1537%2011.3774%2016.1537%2012.001ZM10.1537%208.85002L8.00374%2011H5.15374V13H8.00374L10.1537%2015.15V8.85002Z%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  --icon-caret: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlNWR1JlcG9fYmdDYXJyaWVyIiBzdHJva2Utd2lkdGg9IjAiPjwvZz48ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvZz48ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy4wMDAwMyA4LjVDNi41OTU1NyA4LjUgNi4yMzA5MyA4Ljc0MzY0IDYuMDc2MTUgOS4xMTczMkM1LjkyMTM3IDkuNDkwOTkgNi4wMDY5MiA5LjkyMTExIDYuMjkyOTIgMTAuMjA3MUwxMS4yOTI5IDE1LjIwNzFDMTEuNjgzNCAxNS41OTc2IDEyLjMxNjYgMTUuNTk3NiAxMi43MDcxIDE1LjIwNzFMMTcuNzA3MSAxMC4yMDcxQzE3Ljk5MzEgOS45MjExMSAxOC4wNzg3IDkuNDkwOTkgMTcuOTIzOSA5LjExNzMyQzE3Ljc2OTEgOC43NDM2NCAxNy40MDQ1IDguNSAxNyA4LjVINy4wMDAwM1oiIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD4gPC9nPjwvc3ZnPg==');
+  --icon-arrow-tr: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSI+CjxwYXRoIGQ9Ik0xIDExTDExIDFNMTEgMUgxTTExIDFWMTEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+');
+  --icon-minus: url('data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%222%22%20viewBox%3D%220%200%2013%202%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.49996%201.99967C1.26385%201.99967%201.06593%201.91981%200.906209%201.76009C0.746487%201.60037%200.666626%201.40245%200.666626%201.16634C0.666626%200.93023%200.746487%200.732313%200.906209%200.572591C1.06593%200.412869%201.26385%200.333008%201.49996%200.333008H11.5C11.7361%200.333008%2011.934%200.412869%2012.0937%200.572591C12.2534%200.732313%2012.3333%200.93023%2012.3333%201.16634C12.3333%201.40245%2012.2534%201.60037%2012.0937%201.76009C11.934%201.91981%2011.7361%201.99967%2011.5%201.99967H1.49996Z%22%20fill%3D%22%231C1B1F%22%2F%3E%3C%2Fsvg%3E');
+  --icon-plus: url('data:image/svg+xml,%3Csvg%20width%3D%2221%22%20height%3D%2222%22%20viewBox%3D%220%200%2021%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.5%205.91602V16.416M5.25%2011.166H15.75%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  --icon-fb: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDguMDQ4ODlDMTYgMy42MDM2MSAxMi40MTgzIDAgOCAwQzMuNTgxNzIgMCAwIDMuNjAzNjEgMCA4LjA0ODg5QzAgMTIuMDY2MyAyLjkyNTQ3IDE1LjM5NjIgNi43NSAxNlYxMC4zNzU1SDQuNzE4NzVWOC4wNDg4OUg2Ljc1VjYuMjc1NjJDNi43NSA0LjI1ODM3IDcuOTQ0MzggMy4xNDQxIDkuNzcxNzIgMy4xNDQxQzEwLjY0NjcgMy4xNDQxIDExLjU2MjUgMy4zMDEzIDExLjU2MjUgMy4zMDEzVjUuMjgyMDhIMTAuNTUzOEM5LjU2IDUuMjgyMDggOS4yNSA1LjkwMjU3IDkuMjUgNi41Mzk3MlY4LjA0ODg5SDExLjQ2ODhMMTEuMTE0MSAxMC4zNzU1SDkuMjVWMTZDMTMuMDc0NSAxNS4zOTYyIDE2IDEyLjA2NjMgMTYgOC4wNDg4OVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuNzUiLz4KPC9zdmc+Cg==');
+  --icon-li: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuNjEzMDUgNS4yNjE2SDAuMjY5Nzc1VjE1LjkyMzFIMy42MTMwNVY1LjI2MTZaIiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuNyIvPgo8cGF0aCBkPSJNMTIuNjU2OCA1LjAzMDE0QzEyLjUzMzYgNS4wMTQ3NCAxMi40MDI2IDUuMDA3MDMgMTIuMjcxNyA0Ljk5OTMzQzEwLjM5OTcgNC45MjIzIDkuMzQ0MzkgNi4wMzE1OSA4Ljk3NDYyIDYuNTA5MkM4Ljg3NDQ4IDYuNjQwMTUgOC44MjgyNiA2LjcxNzE5IDguODI4MjYgNi43MTcxOVY1LjI5MjA2SDUuNjMxMzVWMTUuOTUzNkg4LjgyODI2SDguOTc0NjJDOC45NzQ2MiAxNC44Njc0IDguOTc0NjIgMTMuNzg4OSA4Ljk3NDYyIDEyLjcwMjdDOC45NzQ2MiAxMi4xMTczIDguOTc0NjIgMTEuNTMxOCA4Ljk3NDYyIDEwLjk0NjRDOC45NzQ2MiAxMC4yMjIyIDguOTIwNyA5LjQ1MTg5IDkuMjgyNzYgOC43ODk0QzkuNTkwOSA4LjIzNDc2IDEwLjE0NTUgNy45NTc0MyAxMC43Njk1IDcuOTU3NDNDMTIuNjE4MyA3Ljk1NzQzIDEyLjY1NjggOS42MjkwNyAxMi42NTY4IDkuNzgzMTRDMTIuNjU2OCA5Ljc5MDg0IDEyLjY1NjggOS43OTg1NSAxMi42NTY4IDkuNzk4NTVWMTUuOTk5OEgxNi4wMDAxVjkuMDQzNjFDMTYuMDAwMSA2LjY2MzI2IDE0Ljc5MDcgNS4yNjEyNSAxMi42NTY4IDUuMDMwMTRaIiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuNyIvPgo8cGF0aCBkPSJNMS45NDEyNSAzLjg4Mjc2QzMuMDEzMzggMy44ODI3NiAzLjg4MjUxIDMuMDEzNjMgMy44ODI1MSAxLjk0MTVDMy44ODI1MSAwLjg2OTM3NCAzLjAxMzM4IDAuMDAwMjQ0MTQxIDEuOTQxMjUgMC4wMDAyNDQxNDFDMC44NjkxMjYgMC4wMDAyNDQxNDEgMCAwLjg2OTM3NCAwIDEuOTQxNUMwIDMuMDEzNjMgMC44NjkxMjYgMy44ODI3NiAxLjk0MTI1IDMuODgyNzZaIiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuNyIvPgo8L3N2Zz4K');
+  --icon-x: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0MDggMC40NzY1NjJIMTQuMzQ5NEw5LjUyNTM4IDYuMDA0MzZMMTUuMjAwOCAxMy41MjY2SDEwLjc1NzVMNy4yNzcxOCA4Ljk2MzU2TDMuMjk0NjggMTMuNTI2NkgxLjA4NTE4TDYuMjQ0ODggNy42MTM1NkwwLjgwMDc4MSAwLjQ3NjU2Mkg1LjM1NzQ4TDguNTAyOTggNC42NDYyNkwxMi4xNDA4IDAuNDc2NTYyWk0xMS4zNjY4IDEyLjIwMThIMTIuNTkwOEw0LjY5MTQ4IDEuNzMyMDZIMy4zNzkyOEwxMS4zNjY4IDEyLjIwMThaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjc1Ii8+Cjwvc3ZnPgo=');
+  --icon-close: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%23e3e3e3%22%3E%3Cpath%20d%3D%22m256-200-56-56%20224-224-224-224%2056-56%20224%20224%20224-224%2056%2056-224%20224%20224%20224-56%2056-224-224-224%20224Z%22%2F%3E%3C%2Fsvg%3E');
+  --icon-search: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%235985E1%22%3E%3Cpath%20d%3D%22M784-120%20532-372q-30%2024-69%2038t-83%2014q-109%200-184.5-75.5T120-580q0-109%2075.5-184.5T380-840q109%200%20184.5%2075.5T640-580q0%2044-14%2083t-38%2069l252%20252-56%2056ZM380-400q75%200%20127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75%200-127.5%2052.5T200-580q0%2075%2052.5%20127.5T380-400Z%22%2F%3E%3C%2Fsvg%3E');
+  --icon-filter: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%235985E1%22%3E%3Cpath%20d%3D%22M400-240v-80h160v80H400ZM240-440v-80h480v80H240ZM120-640v-80h720v80H120Z%22%2F%3E%3C%2Fsvg%3E');
+  --icon-size-sm: 17px;
+  --icon-size-md: 22px;
   --icon-size-lg: 32px;
   /* Fonts */
-  --font-display:      'Georgia', serif;
+  --font-display:      'Georgia', sans-serif;
   --font-body:         'Helvetica', sans-serif;
   /* Gutters */
-  --gutter-x:               16px; /* Horizontal gutter */
+  --gutter-x:          16px; /* Horizontal gutter */
   /* Text */
   --text-4xl: 2.5rem;
   --text-9xl: 7.5rem;
+  /* Radius */
+  --radius-full: 9999px;
   /* Shadows */
   --tw-text-shadow-color: #000;
   /* Transition */
   --tw-ease: ease-in-out;
   --tw-duration: 0.2s;
+  /* Typography */
+  --tracking-tighter: -0.01em;
+}
+/* This is used for Kinetic Breakpoints. Do not delete */
+/* See global/js/breakpoints.es6.js */
+.kinetic-breakpoints {
+  --breakpoints:
+    sm:var(--breakpoint-sm),
+    md:var(--breakpoint-md),
+    lg:var(--breakpoint-lg),
+    xl:var(--breakpoint-xl),
+    2xl:var(--breakpoint-2xl);
 }
 /* Custom base variables */
 body {
-  @apply font-body leading-normal;
+  @apply font-body leading-normal text-[17px] tracking-tighter text-gray-900;
 }
-h1, .h1 {
-  /* 60px */
-  @apply text-6xl font-display font-semibold font-stretch-ultra-condensed mb-4;
-}
-h2, .h2 {
-  /* 48px */
-  @apply text-5xl font-body mb-4;
-}
-h3, .h3 {
+@utility h1 {
   /* 40px */
-  @apply text-4xl font-body mb-4;
+  @apply text-[34px] md:text-4xl font-display font-semibold text-black mb-4;
 }
-h4, .h4 {
-  /* 30px */
-  @apply text-3xl font-body mb-4;
+@utility h2 {
+  /* 34px */
+  @apply text-[28px] md:text-[34px] font-display font-semibold leading-[130%] text-black-100 mb-4;
 }
-h5, .h5 {
-  /* 24px */
-  @apply text-2xl font-body mb-4;
+@utility h3 {
+  /* 28px */
+  @apply text-[28px] font-body font-medium text-black mb-4;
 }
-h6, .h6 {
-  /* 20px */
-  @apply text-xl font-body mb-4;
+@utility h4 {
+  @apply text-[22px] font-body text-black mb-4;
 }
-
-@layer base {
-  svg {
-    width: 100%;
-    height: 100%;
-  }  
+@utility h5 {
+  @apply text-[19px] font-body font-medium text-black mb-4;
 }
 
-/* Custom Variants. (Surfaces) */
+ /*Custom Variants. (Surfaces)*/
 @custom-variant dark {
-  .bg-navy &,
-  .bg-dark-navy &,
-  .bg-blue &,
-  .bg-dark-blue & {
+  .dark &,
+  .gradient-1 &,
+  .gradient-2 &,
+  .gradient-3 &,
+  .bg-black &,
+  .bg-purple-2 &,
+  .bg-gray-950 & {
     @slot;
   }
 }
@@ -105,21 +156,26 @@ h6, .h6 {
   }
 }
 
-/* Custom components variables */
-@layer components {
-  .text-formatted {
+@utility text-formatted {
     > * {
       @apply mb-4;
     }
-    a {
-      @apply link text-blue;
+    > *:last-child {
+      @apply mb-0 pb-0;
     }
-    img {
-      margin: auto;
+    h2 {@apply h2}
+    h3 {@apply h3}
+    h4 {@apply h4}
+    h5 {@apply h5}
+    a { @apply link text-purple; }
+    img { margin: auto; }
+    figcaption {
+      @apply text-center text-gray-800 text-sm mt-2;
     }
-    ol,
-    ul {
-      list-style-position: inside;
+    blockquote {
+      @apply font-display font-semibold text-[25px] leading-[39px] border-l-4 border-purple ps-8 text-purple my-12;
+    }
+    ol, ul {
       list-style-type: initial;
       padding-left: 24px;
       ul, ol {
@@ -146,12 +202,44 @@ h6, .h6 {
         text-indent: -24px;
       }
     }
+    iframe {
+      max-width: 100%;
+    }
+    /* Table */
+    table:not(.reset) {
+      @apply table-auto w-full;
+      thead {
+        @apply bg-gray-100 border-b border-gray-200;
+      }
+      td, th {
+        @apply p-2 text-left;
+      }
+      tr {
+        @apply border-b border-gray-200;
+      }
+      tr:nth-child(even) {
+        @apply bg-gray-50;
+      }
+    }
+    /* Resizeable images */
+    .media-embed-resized {
+      @apply max-md:!w-full;
+      img {
+        @apply !w-full;
+      }
+    }
+    /* CTAs */
+    [class^='btn'] {
+      @apply mt-6;
+    }
+    [class^='btn'] + [class^='btn'] {
+      @apply sm:ml-4;
+    }
     @variant dark {
       * {
         @apply text-white;
       }
     }
-  }
 }
 
 /* Custom utilities variables */
@@ -163,18 +251,21 @@ h6, .h6 {
   mask-repeat: no-repeat;
   mask-position: center;
   flex-shrink: 0;
-  width: --modifier(--icon-size-*);
-  height: --modifier(--icon-size-*);
+  width: --modifier(--icon-size-*, [length]);
+  height: --modifier(--icon-size-*, [length]);
 }
 
 /* Links */
 @utility link {
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
+  @apply font-semibold inline-flex items-center;
   overflow-wrap: anywhere;
   @variant hover {
     text-decoration: underline;
+  }
+  @variant disabled {
+    color: var(--color-gray-500) !important;
+    pointer-events: none;
+    cursor: not-allowed;
   }
   @variant dark {
     color: var(--color-white);
@@ -184,7 +275,7 @@ h6, .h6 {
 @utility link-next {
   @apply link gap-1 transition-[gap] hover:gap-3;
   @variant after {
-    @apply icon-arrow-next/sm bg-[currentColor];
+    @apply icon-arrow-next/md bg-[currentColor];
   }
 }
 @utility link-prev {
@@ -201,8 +292,9 @@ h6, .h6 {
   cursor: pointer;
   background-color: var(--btn-bg) !important;
   border: 2px solid var(--btn-border-color);
-  color: var(--btn-color);
-  @apply inline-block px-8 py-3 rounded-full transition font-semibold text-center;
+  color: var(--btn-color) !important;
+  line-height: 1;
+  @apply inline-block px-11 py-3 rounded-full transition font-semibold text-center;
   @variant active {
     background-color: var(--btn-hover-bg) !important;
     border-color: var(--btn-hover-border-color, var(--btn-border-color));
@@ -211,6 +303,7 @@ h6, .h6 {
   @variant hover {
     background-color: var(--btn-hover-bg) !important;
     border-color: var(--btn-hover-border-color, var(--btn-border-color));
+    text-decoration: none !important;
     color: var(--btn-hover-color, var(--btn-color));
   }
   @variant disabled  {
@@ -253,20 +346,23 @@ h6, .h6 {
   --btn-hover-bg: transparent;
   --btn-hover-border-color: var(--color-black);
   @variant dark {
+    --btn-bg: transparent;
     --btn-color: var(--color-white);
     --btn-border-color: var(--color-white);
     --btn-disabled-border-color: var(--color-gray-300);
     --btn-disabled-bg-color: var(--color-gray-500);
     --btn-disabled-color: var(--color-gray-200);
+    --btn-hover-bg: transparent;
     --btn-hover-border-color: var(--color-gray-500);
   }
 }
 @utility btn-tertiary {
-  @apply btn-secondary flex items-center gap-1 transition-[gap] hover:gap-3 px-4 py-2 text-[15px];
+  @apply btn-secondary inline-flex items-center gap-1 transition-all hover:gap-3 px-6 text-[15px];
   @variant after {
     @apply icon-arrow-next/sm bg-[currentColor];
   }
 }
+
 @utility btn-quaternary {
   @apply link-next;
 }
@@ -274,14 +370,10 @@ h6, .h6 {
 
 /* Eyebrow */
 @utility eyebrow {
-  @apply !text-sm text-blue;
-  font-family: var(--font-display);
-  font-stretch: expanded;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  @apply text-sm text-purple font-bold uppercase font-display;
+  letter-spacing: 1.1px;
   @variant dark {
-    @apply text-orange;
+    @apply text-white;
   }
 }
 /* End Eyebrow */
@@ -293,6 +385,40 @@ h6, .h6 {
   height: 100%;
 }
 
+/* FORM Elements */
+@utility radio-* {
+  appearance: none;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-gray-500);
+  background-color: #F5F5F5;
+  border-radius: --value(--radius, [length]);
+  display: inline-grid;
+  place-content: center;
+  padding: 10px;
+  &::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: --value(--radius, [length]);
+    transform: scale(0);
+    box-shadow: inset 1rem 1rem var(--color-gray-500);
+    transition: 120ms transform ease-in-out;
+  }
+  &:checked::before {
+    transform: scale(1);
+  }
+  &:checked,
+  &:focus {
+    color: var(--theme-default-primary);
+  }
+  & + label {
+    font-size: 14px;
+  }
+}
+
+
 /* Other */
 @utility container {
   margin-left: auto;
@@ -300,7 +426,69 @@ h6, .h6 {
   padding-left: var(--gutter-x);
   padding-right: var(--gutter-x);
 }
+
+@utility container-left {
+  margin-left: var(--gutter-x);
+  padding-left: calc((100vw - var(--container-left, 100vw)) / 2);
+  @apply sm:[--container-left:var(--breakpoint-sm)];
+  @apply md:[--container-left:var(--breakpoint-md)];
+  @apply lg:[--container-left:var(--breakpoint-lg)];
+  @apply xl:[--container-left:var(--breakpoint-xl)];
+  @apply 2xl:[--container-left:var(--breakpoint-2xl)];
+}
 /* Creating this because hidden is also included with the stable9 theme */
 @utility d-none {
   @apply hidden;
+}
+
+@utility responsive-media {
+  @apply relative h-full;
+
+  div, article {
+    @apply h-full;
+  }
+
+  img, video, iframe {
+    @apply absolute top-0 left-0 w-full h-full object-cover object-center;
+  }
+}
+
+@utility text-fill-color-transparent {
+  -webkit-text-fill-color: transparent;
+}
+
+/* Layers */
+@layer base {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, input:not([type='submit']), p, small, i, figcaption, div {
+    @apply dark:text-white;
+  }
+  
+  .bg-gray-950,
+  .bg-black {
+    p, ul, ol, li, textarea, small, figcaption, div {
+      @apply text-gray-400;
+    }
+  }
+  
+  [class*='icon-'][class*='mask-'] {
+    @apply dark:bg-white;
+  }
+
+  span.text-align-left {
+    @apply block;
+  }
+  span.text-align-right {
+    @apply block;
+  }
+  span.text-align-center {
+    @apply block;
+  }
+  span.text-align-justify {
+    @apply block;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+
 }

@@ -9,6 +9,7 @@
     "cc": "rm -rf node_modules/.cache",
     "build": "export BASE_PATH=/propel-components && storybook build --output-dir dist && touch ./dist/.nojekyll",
     "move": "mkdir -p ./dist/propel-components && mv ./dist/* ./dist/propel-components",
+    "prettier": "prettier --write",
     "build:local": "npm run build && npm run move"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "autoprefixer": "^10.4.21",
     "fast-glob": "^3.3.3",
     "postcss-nested": "^7.0.2",
+    "prettier": "3.5.3",
     "storybook": "^8.6.12",
     "vite": "^6.3.1",
     "vite-plugin-twig-drupal": "^1.6.0",

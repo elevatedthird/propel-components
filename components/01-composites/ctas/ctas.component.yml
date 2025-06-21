@@ -1,11 +1,11 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Ctas"
 status: "stable"
 description: "A group of buttons or links that are styled as calls to action."
 slots:
   _ctas:
-    title: 'CTAs'
-    description: 'The CTAs to be displayed in the card'
+    title: "CTAs"
+    description: "The CTAs to be displayed in the card"
 props:
   type: object
   properties:

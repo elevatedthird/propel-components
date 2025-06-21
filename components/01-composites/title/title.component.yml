@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Title"
 status: "stable"
 description: "A title section containing a title and optional description and eyebrow. This is inteneded to be included by other SDCs"
@@ -10,7 +10,7 @@ props:
       title: "Eyebrow"
     eyebrow_tag:
       type: boolean
-      title: 'Eyebrow Tag'
+      title: "Eyebrow Tag"
       description: "Tag for eyebrow. Default is p. this doesn't change the style"
       enum:
         - p

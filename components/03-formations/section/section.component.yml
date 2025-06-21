@@ -1,10 +1,10 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: "Section"
 status: "stable"
 description: "An easy wrapper to use for creating sections. Either Via layout builder or to mimic layout build on a structured page."
 slots:
   content:
-    title: 'Content when layout is not rendered by a layout builder section'
+    title: "Content when layout is not rendered by a layout builder section"
 props:
   type: object
   properties:
@@ -39,10 +39,10 @@ props:
           title: "Label"
           description: "The label of the section, used also to determine the layout id attribute"
     wrapper_classes:
-        type: array
-        title: Wrapper Classes
-        description: Classes to add to the wrapper
+      type: array
+      title: Wrapper Classes
+      description: Classes to add to the wrapper
     inner_wrapper_classes:
-        type: array
-        title: Inner Wrapper Classes
-        description: Classes to add to the inner wrapper
+      type: array
+      title: Inner Wrapper Classes
+      description: Classes to add to the inner wrapper

@@ -3,11 +3,19 @@ $schema: >-
 name: Quote
 status: stable
 description: Provides a block quote component.
+slots:
+  image:
+    type: image
+    description: An optional image to accompany the quote.
 props:
   type: object
   properties:
-    behavior_name:
+    quote:
       type: string
-      title: >-
-        Drupal beahavior name of the component including this SDC. If no
-        behavior is provided, default accordion behavior will be used.
+      description: The quote text.
+    attribution:
+      type: string
+      description: The attribution text.
+    attribution_description:
+      type: string
+      description: The attribution description text.

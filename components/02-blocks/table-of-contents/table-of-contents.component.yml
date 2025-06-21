@@ -9,8 +9,8 @@ props:
     content_selector:
       type: string
       description: The selector of the elements to create the table of contents from
-      default: 'body'
+      default: "body"
     heading_selector:
       type: string
       description: The selector of the headings to create the table of contents from
-      default: 'h2, h3, h4'
+      default: "h2, h3, h4"

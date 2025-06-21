@@ -1,1 +1,96 @@
-.kinetic-form {}
+@reference '@base/global/css/index.pcss.css';
+/* Generic Form element styles. */
+/* If you need to add custom styles per form, make a new SDC that includes this one. */
+
+form.kinetic-form {
+  textarea,
+  select,
+  input {
+    @apply border-1 border-gray-300 rounded-sm text-gray-800;
+    flex-shrink: 0;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    padding: 8px 12px;
+  }
+  input[type="checkbox"] {
+    @apply radio-[2px];
+  }
+  input[type="radio"] {
+    @apply radio-full;
+  }
+  input[type="submit"] {
+    @apply btn-secondary w-full md:w-auto;
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDEuNUw2IDYuNUwxMSAxLjUiIHN0cm9rZT0iI0I3QjRDMCIgc3Ryb2tlLXdpZHRoPSIxLjY2NjY3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+    background-position: center right 16px;
+    background-repeat: no-repeat;
+  }
+
+  label {
+    @apply text-gray-800 text-[14px] font-semibold;
+    overflow-wrap: anywhere;
+    display: block;
+  }
+
+  legend span {
+    font-weight: normal;
+  }
+
+  label,
+  legend > span {
+    @apply block mb-2;
+  }
+
+  fieldset,
+  fieldset.form-item {
+    margin: 2rem 0;
+  }
+
+  .form-type-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    flex-wrap: nowrap;
+    label {
+      margin: 0;
+    }
+    & + .description {
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+  .form-checkboxes {
+    gap: 0.5rem;
+    .form-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0;
+      flex-wrap: nowrap;
+      padding: 12px 0;
+    }
+  }
+  .form-item {
+    margin: 0.5rem 0;
+  }
+  .form-type-processed-text {
+    text-align: center;
+  }
+
+  .form-actions {
+    @apply flex flex-col md:flex-row md:flex-wrap items-center gap-4;
+    justify-content: start;
+    input[type="submit"] {
+      @apply w-full md:w-auto m-0;
+    }
+
+    [name="reset"] {
+      @apply border-0 p-3 link hover:!underline;
+    }
+  }
+}
