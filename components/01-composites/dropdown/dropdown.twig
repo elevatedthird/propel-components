@@ -1,11 +1,10 @@
-{# Table of contents. #}
-{# On mobile it's a combo of a list box and a dropdown #}
-{% set id = 'dropdown'|unique_id() %}
-{% set content_id = 'dropdown-content'|unique_id() %}
+{# Dropdown. #}
+{% set id = 'dropdown'|clean_unique_id() %}
+{% set content_id = 'dropdown-content'|clean_unique_id() %}
 
-<div class="relative kinetic-dropdown">
-  <button id="{{ id }}" aria-controls="{{ content_id }}" class="px-4 py-3 rounded-lg bg-gray-100 w-full font-semibold text-left"> {{ label }} </button>
-  <div id="{{ content_id }}" tabindex="0" aria-expanded="false" aria-labelledby="{{ id }}" class="d-none absolute w-full bg-white mt-2">
+<div class="relative kinetic-dropdown [&_button[aria-expanded=true]]:after:rotate-180">
+  <button id="{{ id }}" aria-controls="{{ content_id }}" aria-expanded="false" aria-label="Open dropdown" class="px-4 py-3 rounded-lg flex justify-between w-full font-semibold text-left cursor-pointer after:icon-caret/md after:bg-black after:transition"> {{ label }} </button>
+  <div id="{{ content_id }}" tabindex="0" aria-labelledby="{{ id }}" class="d-none absolute w-full bg-gray-100 p-4">
     {{ content }}
   </div>
 </div>

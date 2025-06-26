@@ -47,13 +47,13 @@ export default {
 
 export const Default = {
   args: {
-    heading: "",
-    description: "",
+    heading: "Card Icon Heading",
+    description: "This is short description of the card icon.",
   },
   render: (args) => {
     return card_icon({
       ...args,
-      icon: () => "<!-- icon slot content -->",
+      icon: () => "<img src='https://placehold.co/30x30'>",
     });
   },
 };

@@ -18,15 +18,33 @@ const preview = {
        title: 'Surfaces',
       },
     },
+    columns: {
+      description: 'Columns for components',
+      toolbar: {
+        icon: 'paintbrush',
+        // These are the section background colors.
+        items: [
+          { value: 'grid-cols-1', title: '1 Column' },
+          { value: 'grid-cols-2', title: '2 Column' },
+          { value: 'grid-cols-3', title: '3 Column' },
+        ],
+       title: 'Columns',
+      },
+    },
   },
   initialGlobals: {
     theme: 'bg-white',
+    columns: 'grid-cols-1',
   },
   decorators: [
     (story, context) => {
       const classes = [context.globals.theme];
+      const regex = /(01|02)-/;
       if (!context.componentId.includes('04-pages')) {
         classes.push('p-12');
+      }
+      if (regex.test(context.componentId)) {
+        classes.push('grid', 'gap-4', context.globals.columns);
       }
       return `<section class="${classes.join(' ')}">${story()}</section>`;
     },

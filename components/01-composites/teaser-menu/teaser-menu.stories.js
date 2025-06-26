@@ -43,38 +43,19 @@ export default {
         summary: "text"
       }
     }
-  },
-  link_text: {
-    control: {
-      type: "text"
-    },
-    type: {
-      required: false,
-      name: ""
-    },
-    description: "The text for the link.",
-    table: {
-      defaultValue: {
-        summary: "Read more"
-      },
-      type: {
-        summary: "text"
-      }
-    }
   }
 },
 };
 
 export const Default = {
   args: {
-    heading: "",
-    url: "",
-    link_text: "Read more"
+    heading: "This is the heading",
+    url: "https://google.com",
 },
   render: (args) => {
     return teaser_menu({
       ...args,
-      	image: () => { <!-- image slot content --> }
+      image: () => '<img src="https://plachold.co/300x200" alt="Placeholder image"/>'
     });
   },
 };

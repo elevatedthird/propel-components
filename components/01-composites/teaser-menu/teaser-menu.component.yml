@@ -1,10 +1,10 @@
 "$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
-name: "Teaser"
+name: "Teaser - Menu"
 status: "stable"
 description: "A small teaser that displays in the menu."
 slots:
   image:
-    title: Media
+    title: Image
     description: The media slot.
 props:
   type: object
@@ -17,8 +17,3 @@ props:
       type: string
       title: URL
       description: The link to the card.
-    link_text:
-      type: string
-      title: Link text
-      default: "Read more"
-      description: The text for the link.

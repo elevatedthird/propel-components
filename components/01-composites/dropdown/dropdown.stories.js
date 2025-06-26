@@ -1,4 +1,5 @@
 import dropdown from "./dropdown.twig";
+import "./dropdown.es6.js";
 
 export default {
   title: "01-composites/dropdown",
@@ -25,6 +26,10 @@ export default {
 
 export const Default = {
   args: {
-    label: "",
+    label: "Dropdown Heading",
   },
+  render: (args) => dropdown({
+    ...args,
+    content: `<p> Dropdown content </p>`
+  }),
 };

@@ -74,8 +74,8 @@ export const Default = {
   render: (args) => {
     return teaser_featured({
       ...args,
-      	media: () => { <!-- media slot content --> },
-	body: () => { <!-- body slot content --> }
+      media: () => '<img src="https://plachold.co/300x200" alt="Placeholder image"/>',
+      body: () => '<p>This is a teaser body text. It provides a brief overview of the content that the teaser is linking to.</p>',
     });
   },
 };

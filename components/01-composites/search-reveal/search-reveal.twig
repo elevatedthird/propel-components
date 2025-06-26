@@ -1,0 +1,18 @@
+<div class="search-reveal">
+  <div id="search-reveal">
+    <form method="GET" action="{{ action|default('/search') }}">
+      <label for="search-input" class="sr-only">Search</label>
+      <input type="search" id="search-input" name="q" placeholder="{{ placeholder|default('Search the site') }}" required />
+      <input type="submit" name="op" value="Submit" class="d-none">
+    </form>
+    <button aria-label="Search" type="submit" class="absolute right-12 top-1/2 -translate-y-1/2 cursor-pointer">
+      <span class="flex after:icon-search/[24px] after:bg-black"></span>
+    </button>
+    <button aria-label="Close Search" type="reset" class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer">
+      <span class="flex after:icon-close/[24px] after:bg-black"></span>
+    </button>
+  </div>
+  <button aria-label="Open Search" aria-controls="search-reveal" aria-expanded="false" class="cursor-pointer">
+    <span class="flex after:icon-search/[24px] after:bg-black"></span>
+  </button>
+</div>

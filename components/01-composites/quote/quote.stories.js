@@ -65,14 +65,14 @@ export default {
 
 export const Default = {
   args: {
-    quote: "",
-    attribution: "",
-    attribution_description: ""
+    quote: "This is a quote. It can be a testimonial, a saying, or any other text that you want to highlight.",
+    attribution: "John Doe",
+    attribution_description: "Head of marketing, Acme corp",
 },
   render: (args) => {
     return quote({
       ...args,
-      	image: () => { <!-- image slot content --> }
+      image: () => '<img src="https://placehold.co/100x100" alt="Placeholder image"/>',
     });
   },
 };

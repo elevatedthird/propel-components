@@ -56,9 +56,9 @@ export const Default = {
   render: (args) => {
     return node_toc({
       ...args,
-      	page_banner: () => { <!-- page_banner slot content --> },
-	page_content: () => { <!-- page_content slot content --> },
-	page_bottom: () => { <!-- page_bottom slot content --> }
+      page_banner: () => '<img src="https://plachold.co/300x200" alt="Placeholder image"/>',
+      page_content: () => '<img src="https://plachold.co/300x200" alt="Placeholder image"/>',
+      page_bottom: () => '<img src="https://plachold.co/300x200" alt="Placeholder image"/>'
     });
   },
 };

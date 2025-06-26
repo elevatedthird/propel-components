@@ -1,7 +1,7 @@
 ((window) => {
   class KineticDropdown {
     constructor(element) {
-      this.trigger = element.querySelector("> button");
+      this.trigger = element.querySelector(":scope > button");
       if (!this.trigger) {
         throw new Error("Trigger button not found");
       }
@@ -14,34 +14,40 @@
       this.init();
     }
 
+    close(target) {
+      if (this.trigger === target || this.trigger.contains(target)) {
+        return;
+      }
+      if ((this.dropdown === target || !this.dropdown.contains(target)) && this.trigger.getAttribute("aria-expanded") === "true" ) {
+        this.trigger.setAttribute("aria-expanded", "false");
+        this.trigger.setAttribute("aria-label", "Open dropdown");
+        this.dropdown.classList.add('d-none');
+        this.dropdown.classList.remove('block');
+      }
+    }
+
     init() {
       // Attach events.
+      // Close dropdowns if ESC is pressed.
       document.addEventListener("keydown", (e) => {
-        // Close dropdowns if ESC is pressed.
-        if (
-          e.key === "Escape" &&
-          this.dropdown.getAttribute("aria-expanded") === "true"
-        ) {
-          this.dropdown.setAttribute("aria-expanded", "false");
+        if (e.key === "Escape") {
+          this.close(this.dropdown);
         }
       });
-      document.addEventListener("click", (e) => {
-        const id = dropdown.getAttribute("id");
-        if (
-          !e.target.closest(`#${id}`) &&
-          this.dropdown.getAttribute("aria-expanded") === "true"
-        ) {
-          this.dropdown.setAttribute("aria-expanded", "false");
+      // Close dropdown if clicked outside.
+      document.addEventListener("click", (e) => this.close(e.target));
+      // Close dropdown if focus leaves the dropdown.
+      this.dropdown.addEventListener("focusout", (e) => this.close(e.relatedTarget));
+      // Open dropdown on click.
+      this.trigger.addEventListener("click", () => {
+        if (this.trigger.getAttribute("aria-expanded") === "false") {
+          this.trigger.setAttribute("aria-expanded", 'true');
+          this.trigger.setAttribute("aria-label", "Close dropdown");
+          this.dropdown.classList.remove('d-none');
+          this.dropdown.classList.add('block');
+          return;
         }
-      });
-      // close dropdown if focus leaves the dropdown.
-      this.dropdown.addEventListener("focusout", (e) => {
-        if (
-          !tocListBox.contains(e.relatedTarget) &&
-          this.dropdown.getAttribute("aria-expanded") === "true"
-        ) {
-          this.dropdown.setAttribute("aria-expanded", "false");
-        }
+        this.close(this.dropdown);
       });
     }
   }

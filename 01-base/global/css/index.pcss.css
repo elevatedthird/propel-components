@@ -385,6 +385,12 @@ body {
   height: 100%;
 }
 
+@utility stretch {
+  @variant after {
+    @apply absolute inset-0;
+  }
+}
+
 /* FORM Elements */
 @utility radio-* {
   appearance: none;

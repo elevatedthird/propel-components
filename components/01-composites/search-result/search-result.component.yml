@@ -1,0 +1,17 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Search Result
+status: stable
+description: Provides a search result for Site Search.
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      description: The heading for the search result.
+    description:
+      type: string
+      description: The description for the search result.
+    url:
+      type: string
+      description: The URL for the search result.

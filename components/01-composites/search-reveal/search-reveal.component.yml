@@ -1,0 +1,16 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Search Reveal
+status: stable
+description: Provides a collapsible search input that goes in the header.
+props:
+  type: object
+  properties:
+    placeholder:
+      type: string
+      description: The placeholder text for the search input.
+      default: Search
+    action:
+      type: string
+      description: The URL to which the search form will submit.
+      default: /search
