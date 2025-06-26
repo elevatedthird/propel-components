@@ -22,7 +22,7 @@ import{t as m,D as w,T as n,a as v}from"./twig--J2y2TUI.js";import"./_commonjsHe
   render: context => {
     return section_intro({
       ...context,
-      description: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sodales magna, ac lobortis ipsum. Vestibulum consequat tempus sem, in ultricies libero fermentum id. Morbi aliquet id sem ac malesuada. Praesent tempus mauris venenatis diam pretium, finibus mollis magna feugiat. Duis sed quam blandit, elementum nisi nec, semper quam. </p>',
+      description: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sodales magna, ac lobortis ipsum. Vestibulum consequat tempus sem, in ultricies libero fermentum id. Morbi aliquet id sem ac malesuada. Praesent tempus mauris venenatis diam pretium, finibus mollis magna feugiat. Duis sed quam blandit, elementum nisi nec, semper quam. </p>",
       ctas: '<div class="flex gap-4"><a href="" class="btn-primary"> Learn More</a><a href="" class="btn-secondary"> Get in Touch</a></div>'
     });
   }

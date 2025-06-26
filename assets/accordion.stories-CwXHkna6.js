@@ -25,22 +25,22 @@ import{t as q,D as _,T as f,a as I}from"./twig--J2y2TUI.js";import{g as F}from".
     return \`\${accordion({
       ...context,
       accordion_items: () => {
-        let markup = '';
+        let markup = "";
         markup += AccordionItem({
           heading: \`Heading 1\`,
-          body: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>'
+          body: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>"
         });
         markup += AccordionItem({
           heading: \`Heading 2\`,
-          body: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>'
+          body: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>"
         });
         markup += AccordionItem({
           heading: \`Heading 3\`,
-          body: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>'
+          body: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>"
         });
         markup += AccordionItem({
           heading: \`Heading 4\`,
-          body: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>'
+          body: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales diam quis ligula rhoncus, et feugiat mauris congue. Donec accumsan sed arcu id laoreet. </p>"
         });
         return markup;
       }

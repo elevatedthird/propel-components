@@ -42,7 +42,7 @@ import{t as it,D as st,T,a as at}from"./twig--J2y2TUI.js";import"./_commonjsHelp
       ...context,
       slide_count: 3,
       items: () => {
-        let markup = '';
+        let markup = "";
         markup += glideSlide({
           item: slideMarkup
         });

@@ -23,7 +23,7 @@ import{t as g,D as w,T as o,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHe
     return homepage_hero({
       ...context,
       media: '<img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=980" />',
-      description: '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sodales magna, ac lobortis ipsum. Vestibulum consequat tempus sem, in ultricies libero fermentum id. Morbi aliquet id sem ac malesuada. Praesent tempus mauris venenatis diam pretium, finibus mollis magna feugiat. Duis sed quam blandit, elementum nisi nec, semper quam. </p>',
+      description: "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sodales magna, ac lobortis ipsum. Vestibulum consequat tempus sem, in ultricies libero fermentum id. Morbi aliquet id sem ac malesuada. Praesent tempus mauris venenatis diam pretium, finibus mollis magna feugiat. Duis sed quam blandit, elementum nisi nec, semper quam. </p>",
       ctas: '<div class="flex gap-4"><a href="" class="btn-primary"> Learn More</a><a href="" class="btn-secondary"> Get in Touch</a></div>'
     });
   }

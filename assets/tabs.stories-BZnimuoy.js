@@ -30,24 +30,24 @@ import{t as u,D as b,T as i,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHe
       ...context,
       panels: () => \`
         \${tabItem({
-        tab_content: '<h3> Tab content 1</h3>' + tabMarkup
+        tab_content: "<h3> Tab content 1</h3>" + tabMarkup
       })}
         \${tabItem({
-        tab_content: '<h3> Tab content 2</h3>' + tabMarkup
+        tab_content: "<h3> Tab content 2</h3>" + tabMarkup
       })}
         \${tabItem({
-        tab_content: '<h3> Tab content 3</h3>' + tabMarkup
+        tab_content: "<h3> Tab content 3</h3>" + tabMarkup
       })}
       \`,
       tab_navigation: () => \`
         \${tabNavItem({
-        heading: 'heading 1'
+        heading: "heading 1"
       })}
         \${tabNavItem({
-        heading: 'heading 2'
+        heading: "heading 2"
       })}
         \${tabNavItem({
-        heading: 'heading 3'
+        heading: "heading 3"
       })}
       \`
     })}\`;

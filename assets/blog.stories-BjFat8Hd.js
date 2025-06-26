@@ -40,9 +40,9 @@ import{t as v,D as b,T as s,a as f}from"./twig--J2y2TUI.js";import{b as h}from".
     return blog({
       ...args,
       authors: byline({
-        name: 'John Doe',
+        name: "John Doe",
         image: '<img src="https://placehold.co/32x32" width="32" height="32" />',
-        title: 'Senior Writer'
+        title: "Senior Writer"
       }),
       content: body
     });

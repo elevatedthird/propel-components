@@ -9,7 +9,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   },
   render: args => modal({
     ...args,
-    modal_heading: 'Modal Heading',
-    modal_content: '<p> Modal content goes here. </p>'
+    modal_heading: "Modal Heading",
+    modal_content: "<p> Modal content goes here. </p>"
   })
 }`,...(O=(F=m.parameters)==null?void 0:F.docs)==null?void 0:O.source}}};const Z=["Default"];export{m as Default,Z as __namedExportsOrder,Y as default};
