@@ -2,14 +2,14 @@
 {% if behavior_name is defined %}
   {% set attributes = attributes.setAttribute('data-behavior-name', behavior_name) %}
 {% endif %}
-<div aria-hidden="true" role="dialog" {{ attributes.setAttribute('id', modal_id).setAttribute('data-micromodal', 'true') }}>
+<div aria-hidden="true" {{ attributes.setAttribute('id', modal_id).setAttribute('data-micromodal', 'true') }}>
   {# Overlay #}
   <div tabindex="-1" data-micromodal-close class="fixed inset-0 z-10 bg-black/50 h-full grid place-items-center">
     {# Modal content #}
-    <div role="dialog" aria-modal="true" class="fixed max-w-[500px] z-50 bg-white p-4">
-      <header>
+    <div role="dialog" aria-modal="true" class="fixed z-50 bg-white p-4">
+      <header class="mb-4">
         {{ modal_heading }}
-        <button aria-label="Close modal" data-micromodal-close></button>
+        <button aria-label="Close modal" data-micromodal-close class="flex justify-self-end after:icon-close/md after:bg-black"></button>
       </header>
       <div>
         {{ modal_content }}

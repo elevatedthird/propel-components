@@ -1,0 +1,53 @@
+{# Displays a gallery of media with a lightbox #}
+{# A lightbox is a carousel that appears in a modal #}
+
+{% set modal_id = 'modal'|clean_unique_id() %}
+<div class="lightbox">
+<div class="grid grid-cols-2">
+  <div tabindex="0" data-index='0' aria-controls="masonry" data-micromodal-trigger="{{ modal_id }}"> item 1 </div>
+  <div tabindex="0" data-index='1' aria-controls="masonry" data-micromodal-trigger="{{ modal_id }}"> item 2 </div>
+</div>
+{# Modal body #}
+
+{% set item %}
+  <div class="aspect-16/9 bg-red p-4">
+    TEST Item
+  </div>
+{% endset %}
+{% set item2 %}
+  <div class="aspect-16/9 bg-red p-4">
+    TEST Item 2
+  </div>
+{% endset %}
+
+{% set items %}
+  {{ include('kinetic:glide-slide', {
+    item: item,
+  }, with_context: false) }}
+  {{ include('kinetic:glide-slide', {
+    item: item2,
+  }, with_context: false) }}
+{% endset %}
+
+
+{% set modal_content %}
+  {{ include('kinetic:glide', {
+    show_arrows: true,
+    show_bullets: false,
+    classes: ['carousel'],
+    behavior_name: 'lightboxGlide',
+    slide_count: 2,
+    items: items,
+  }, with_context: false) }}
+{% endset %}
+
+
+
+{# Dialog #}
+{{ include('kinetic:dialog', {
+  modal_id: modal_id,
+  modal_heading: null,
+  modal_content: modal_content,
+  behavior_name: 'lightboxModal'
+}, with_context: false) }}
+</div>
