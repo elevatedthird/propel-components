@@ -2,6 +2,9 @@
 name: "One Column Layout"
 status: "stable"
 description: "Provides a one column layout. Can be used with Layout builder or replicate a one column layout"
+needs:
+  - section
+  - section-region
 slots:
   first:
     title: "Region, first"
