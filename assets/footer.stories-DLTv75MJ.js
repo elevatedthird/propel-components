@@ -1,0 +1,17 @@
+import{t as m,D as f,T as n,a as w}from"./twig--J2y2TUI.js";import"./_commonjsHelpers-D6-XlEtG.js";const g=t=>{t.extendFunction("include",(e,o)=>{const i=window.SDC_MANIFEST[e];if(!i)throw new Error(`Template ${e} not found`);const{id:a,href:y}=i;try{const s=t.twig({ref:a});if(s)return s.render(o);throw new Error(`Template ${e} not found`)}catch{const p=t.twig({id:a,href:y,async:!1});if(p)return p.render(o);throw new Error(`Template ${e} not found`)}})};g(n);const v=t=>t.extendFilter("clean_unique_id",e=>e);v(n);w(n);n.cache(!1);const d=t=>t,T=(t={})=>{const e=m.twig({id:"/home/runner/work/propel-components/propel-components/components/03-formations/footer/footer.twig",data:[{type:"raw",value:"<footer ",position:{start:0,end:8}},{type:"output",position:{start:8,end:102},stack:[{type:"Twig.expression.type.variable",value:"attributes",match:["attributes"],position:{start:8,end:102}},{type:"Twig.expression.type.key.period",position:{start:8,end:102},key:"setAttribute"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:8,end:102},expression:!0,params:[{type:"Twig.expression.type.string",value:"role",position:{start:8,end:102}},{type:"Twig.expression.type.comma",position:{start:8,end:102}},{type:"Twig.expression.type.string",value:"contentinfo",position:{start:8,end:102}}]},{type:"Twig.expression.type.key.period",position:{start:8,end:102},key:"addClass"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:8,end:102},expression:!0,params:[{type:"Twig.expression.type.string",value:"kinetic-footer",position:{start:8,end:102}},{type:"Twig.expression.type.comma",position:{start:8,end:102}},{type:"Twig.expression.type.string",value:"bg-gray-050",position:{start:8,end:102}}]}]},{type:"raw",value:`>
+  <div class="container py-16">
+    <div class="pb-12 md:grid grid-cols-12">
+      `,position:{start:102,end:187}},{type:"output",position:{start:187,end:201},stack:[{type:"Twig.expression.type.variable",value:"branding",match:["branding"],position:{start:187,end:201}}]},{type:"raw",value:`
+      <div class="col-span-8">
+        `,position:{start:201,end:241}},{type:"output",position:{start:241,end:258},stack:[{type:"Twig.expression.type.variable",value:"footer_menu",match:["footer_menu"],position:{start:241,end:258}}]},{type:"raw",value:`
+      </div>
+    </div>
+    <hr class="border-gray-200">
+    <div class="pt-12">
+      `,position:{start:258,end:346}},{type:"output",position:{start:346,end:365},stack:[{type:"Twig.expression.type.variable",value:"footer_bottom",match:["footer_bottom"],position:{start:346,end:365}}]},{type:"raw",value:`
+    </div>
+  </div>
+</footer>
+`,position:{start:365,end:365}}],precompiled:!0});e.options.allowInlineIncludes=!0;try{let o=t.defaultAttributes?t.defaultAttributes:[];return Array.isArray(o)||(o=Object.entries(o)),d(e.render({attributes:new f(o),...t}))}catch(o){return d("An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/03-formations/footer/footer.twig: "+o.toString())}},x={title:"03-formations/footer",tags:["autodocs"],parameters:{docs:{description:{component:"The layout area for the parts of the footer."},source:{code:"drush propel:add footer"}}},argTypes:{},component:T},r={args:{}};var u,c,l;r.parameters={...r.parameters,docs:{...(u=r.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  args: {}
+}`,...(l=(c=r.parameters)==null?void 0:c.docs)==null?void 0:l.source}}};const k=["Default"];export{r as Default,k as __namedExportsOrder,x as default};

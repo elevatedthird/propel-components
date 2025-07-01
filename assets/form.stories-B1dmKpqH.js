@@ -1,9 +1,9 @@
-import{t as f,D as y,T as a,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHelpers-D6-XlEtG.js";const x=e=>{e.extendFunction("include",(t,n)=>{const r=window.SDC_MANIFEST[t];if(!r)throw new Error(`Template ${t} not found`);const{id:i,href:c}=r;try{const o=e.twig({ref:i});if(o)return o.render(n);throw new Error(`Template ${t} not found`)}catch{const p=e.twig({id:i,href:c,async:!1});if(p)return p.render(n);throw new Error(`Template ${t} not found`)}})};x(a);const g=e=>e.extendFilter("clean_unique_id",t=>t);g(a);h(a);a.cache(!1);const s=e=>e,b=(e={})=>{const t=f.twig({id:"/home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig",data:[{type:"raw",value:`
+import{t as f,D as y,T as a,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHelpers-D6-XlEtG.js";const x=e=>{e.extendFunction("include",(t,n)=>{const r=window.SDC_MANIFEST[t];if(!r)throw new Error(`Template ${t} not found`);const{id:i,href:b}=r;try{const o=e.twig({ref:i});if(o)return o.render(n);throw new Error(`Template ${t} not found`)}catch{const p=e.twig({id:i,href:b,async:!1});if(p)return p.render(n);throw new Error(`Template ${t} not found`)}})};x(a);const g=e=>e.extendFilter("clean_unique_id",t=>t);g(a);h(a);a.cache(!1);const s=e=>e,c=(e={})=>{const t=f.twig({id:"/home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig",data:[{type:"raw",value:`
 
 <form`,position:{start:150,end:157}},{type:"output",position:{start:157,end:198},stack:[{type:"Twig.expression.type.variable",value:"attributes",match:["attributes"],position:{start:157,end:198}},{type:"Twig.expression.type.key.period",position:{start:157,end:198},key:"addClass"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:157,end:198},expression:!0,params:[{type:"Twig.expression.type.string",value:"kinetic-form",position:{start:157,end:198}}]}]},{type:"raw",value:`>
   `,position:{start:198,end:202}},{type:"output",position:{start:202,end:212},stack:[{type:"Twig.expression.type.variable",value:"form",match:["form"],position:{start:202,end:212}}]},{type:"raw",value:`
 </form>
-`,position:{start:212,end:212}}],precompiled:!0});t.options.allowInlineIncludes=!0;try{let n=e.defaultAttributes?e.defaultAttributes:[];return Array.isArray(n)||(n=Object.entries(n)),s(t.render({attributes:new y(n),...e}))}catch(n){return s("An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig: "+n.toString())}},T={title:"00-elements/form",tags:["autodocs"],parameters:{docs:{description:{component:"A Form."},source:{code:"drush propel:add form"}}},argTypes:{},component:b},l={args:{},render:e=>b({...e,form:`
+`,position:{start:212,end:212}}],precompiled:!0});t.options.allowInlineIncludes=!0;try{let n=e.defaultAttributes?e.defaultAttributes:[];return Array.isArray(n)||(n=Object.entries(n)),s(t.render({attributes:new y(n),...e}))}catch(n){return s("An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/00-elements/form/form.twig: "+n.toString())}},T={title:"00-elements/form",tags:["autodocs"],parameters:{docs:{description:{component:"A Form."},source:{code:"drush propel:add form"}}},argTypes:{},component:c},l={args:{},render:e=>c({...e,form:`
   <form action="/submit" method="post">
     
     <!-- Text Input -->
@@ -93,14 +93,8 @@ import{t as f,D as y,T as a,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHe
     <!-- Hidden Input -->
     <input type="hidden" name="hiddenField" value="hiddenValue">
 
-    <!-- Buttons -->
-    <label>Buttons:</label>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-    <button type="button" onclick="alert('Button clicked!')">Click Me</button>
-
     </form>
-    `})};var u,m,d;l.parameters={...l.parameters,docs:{...(u=l.parameters)==null?void 0:u.docs,source:{originalSource:`{
+    `})};var m,u,d;l.parameters={...l.parameters,docs:{...(m=l.parameters)==null?void 0:m.docs,source:{originalSource:`{
   args: {},
   render: context => {
     const formElements = \`
@@ -193,12 +187,6 @@ import{t as f,D as y,T as a,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHe
     <!-- Hidden Input -->
     <input type="hidden" name="hiddenField" value="hiddenValue">
 
-    <!-- Buttons -->
-    <label>Buttons:</label>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-    <button type="button" onclick="alert('Button clicked!')">Click Me</button>
-
     </form>
     \`;
     return form({
@@ -206,4 +194,4 @@ import{t as f,D as y,T as a,a as h}from"./twig--J2y2TUI.js";import"./_commonjsHe
       form: \`\${formElements}\`
     });
   }
-}`,...(d=(m=l.parameters)==null?void 0:m.docs)==null?void 0:d.source}}};const k=["Default"];export{l as Default,k as __namedExportsOrder,T as default};
+}`,...(d=(u=l.parameters)==null?void 0:u.docs)==null?void 0:d.source}}};const k=["Default"];export{l as Default,k as __namedExportsOrder,T as default};
