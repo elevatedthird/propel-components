@@ -35,50 +35,9 @@ shim this syntax. **Due to how this function works, the component source code mu
 Some SDCs may include others or indirectly use another one. To mark a dependency, add the `needs` key to the `component.yml`.
 See accordion, glide, and section-intro as examples. This key is used by the `propel` drush command to make sure dependencies are also downloaded.
 
-## Contribution Guidelines
-
-If you want to add your SDC, follow these rules:
-
-1. Must use tailwind V4
-2. CSS files must follow `[name].pcss.css` naming
-3. JS files must follow `[name].es6.js` naming
-4. Do not use embed and blocks.
-5. Add a `[name].stories.js` file.
-
 ## JS Libraries.
 
 - [Accordion JS](https://github.com/michu2k/Accordion)
 - [Micromodal](https://www.npmjs.com/package/micromodal)
 - [Glide JS](https://glidejs.com)
 - [tocbot](https://github.com/tscanlin/tocbot)
-
-## Icons.
-
-Icons use the new `mask-image` rule. This provides greater flexilibity for changing icon colors dynamically.
-
-### Example
-
-Add an icon before:
-
-```
-<!-- Adds a red arrow that's medium sized before th text "Button" -->
-<button class="flex before:bg-red before:icon-arrow-next/md"> Button </button>
-```
-
-Add an icon after:
-
-```
-<!-- Adds a red arrow that's medium sized after the text "Button" -->
-<button class="flex after:bg-red after:icon-arrow-next/md"> Button </button>
-```
-
-To add a new icon, add a theme variable with a base 64 encoded string. Consider using [SVG Repo](https://svgrepo.com) and a tool like [SVG Viewer](https://www.svgviewer.dev/svg-to-data-uri) to convert the svg.
-
-```
-/* index.css */
-@theme {
-  ...
-  --icon-[ICON_NAME]: url('data:image/svg+xml;base64,...');
-  ...
-}
-```

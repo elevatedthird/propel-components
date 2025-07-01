@@ -1,0 +1,44 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+
+<Meta title="Contributing" />
+
+# Contributing
+We welcome new SDCs and improvements to existing SDCs. If you have an idea for a new SDC or want to improve an existing one, keep the following in mind:
+
+1. Is a valid SDC.
+2. Contains a `stories.js` file with a default story.
+3. Works on light and dark themes.
+4. Lists any component dependencies in the `component.yml` file.
+5. CSS files must follow `[name].pcss.css` naming
+6. JS files must follow `[name].es6.js` naming
+7. Do not use embed and blocks.
+
+## Adding dependencies
+If your SDC includes another one, add a needs key to the component.yml file.
+
+Ex.
+```
+...
+needs:
+  - glide-slide
+  - glide-bullets
+...
+```
+
+## Generating stories
+
+Story files are automatically generated when you create a component.yml file.
+The better your component.yml file is, the better your story will be.
+
+```
+npm run stories
+```
+
+### Ignoring story generation
+Add an entry to `EXCLUDED_STORIES` array in `generate-stories.js`
+
+### Forcing story re-generation
+Add an entry to `FORCE_RECREATE_STORIES` array in `generate-stories.js`
+
+## Bugs / Feature Requests
+Please open an issue!

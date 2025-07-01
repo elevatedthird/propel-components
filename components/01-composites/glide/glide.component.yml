@@ -2,22 +2,21 @@ $schema: >-
   https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Glide
 status: stable
-description: Provides a glidejs carousel.
+needs:
+  - glide-arrows
+  - glide-bullets
+  - glide-slide
+description: Provides a glidejs slider.
 slots:
-  _items:
+  items:
     title: Item
-    description: The item to be rendered in the carousel.
+    description: The item to be rendered in the slider.
+  controls:
+    title: Controls
+    description: Bring your own arrows and bullets to the slider.
 props:
   type: object
   properties:
-    show_arrows:
-      type: boolean
-      title: Show Arrows
-      required: true
-    show_bullets:
-      type: boolean
-      title: Show Bullets
-      required: true
     slide_count:
       type: integer
       title: Number of slides
@@ -32,7 +31,3 @@ props:
       title: >-
         Drupal beahavior name of the component including this SDC. If no
         behavior is provided, default glide behavior will be used.
-libraryOverrides:
-  dependencies:
-    - >-
-      kinetic/partials.vendors.vendors-node_modules_glidejs_glide_dist_glide_esm_js.js

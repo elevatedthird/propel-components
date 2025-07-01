@@ -16,6 +16,14 @@
   };
   // Mock Drupal's once library too.
   window.once = (_, selector) => document.querySelectorAll(selector);
+  // Mock Drupal's Debounce library.
+  window.Drupal.debounce = (fn, delay) => {
+    let timeout;
+    return function(...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), delay);
+    };
+  };
   // Attach behaviors on load.
   document.addEventListener('DOMContentLoaded', () => {
     Drupal.attachBehaviors(document, window.drupalSettings);

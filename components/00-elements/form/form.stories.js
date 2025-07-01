@@ -111,12 +111,6 @@ export const Default = {
     <!-- Hidden Input -->
     <input type="hidden" name="hiddenField" value="hiddenValue">
 
-    <!-- Buttons -->
-    <label>Buttons:</label>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-    <button type="button" onclick="alert('Button clicked!')">Click Me</button>
-
     </form>
     `;
     return form({

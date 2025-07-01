@@ -2,52 +2,42 @@
 {# A lightbox is a carousel that appears in a modal #}
 
 {% set modal_id = 'modal'|clean_unique_id() %}
+
 <div class="lightbox">
-<div class="grid grid-cols-2">
-  <div tabindex="0" data-index='0' aria-controls="masonry" data-micromodal-trigger="{{ modal_id }}"> item 1 </div>
-  <div tabindex="0" data-index='1' aria-controls="masonry" data-micromodal-trigger="{{ modal_id }}"> item 2 </div>
-</div>
-{# Modal body #}
-
-{% set item %}
-  <div class="aspect-16/9 bg-red p-4">
-    TEST Item
+ {# Loop through thumbnails #}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
+    {% for thumbnail in thumbnails  %}
+      <div class="cursor-pointer" tabindex="0" data-index={{ loop.index0 }} aria-controls="{{ modal_id }}" data-micromodal-trigger="{{ modal_id }}">
+        {{ thumbnail }}
+      </div>
+    {% endfor %}
   </div>
-{% endset %}
-{% set item2 %}
-  <div class="aspect-16/9 bg-red p-4">
-    TEST Item 2
-  </div>
-{% endset %}
+  {# Glide template set up. #}
+  {% set controls %}
+    {{ include('kinetic:glide-arrows', {
+      classes: {
+        arrows: 'absolute top-[-22px] left-0 w-full h-full flex justify-between items-center pointer-events-none',
+        arrow_prev: 'cursor-pointer pointer-events-auto relative md:right-[80px] w-[48px] h-[48px] border-none flex items-center justify-start md:justify-center rounded-lg md:bg-black/75 after:icon-arrow-prev/md after:bg-black md:after:bg-white mask-size-[20px] z-10',
+        arrow_next: 'cursor-pointer pointer-events-auto relative md:left-[80px] w-[48px] h-[48px] border-none flex items-center justify-end md:justify-center rounded-lg md:bg-black/75 after:icon-arrow-next/md after:bg-black md:after:bg-white mask-size-[20px] z-10',
+      }
+    }, with_context: false) }}
+  {% endset %}
 
-{% set items %}
-  {{ include('kinetic:glide-slide', {
-    item: item,
+  {% set modal_content %}
+    {{ include('kinetic:glide', {
+      classes: ['carousel'],
+      behavior_name: 'lightboxGlide',
+      slide_count: 2,
+      items: lightbox,
+      controls: controls
+    }, with_context: false) }}
+  {% endset %}
+
+  {# Dialog #}
+  {{ include('kinetic:dialog', {
+    modal_id: modal_id,
+    modal_heading: null,
+    modal_content: modal_content,
+    behavior_name: 'lightboxModal'
   }, with_context: false) }}
-  {{ include('kinetic:glide-slide', {
-    item: item2,
-  }, with_context: false) }}
-{% endset %}
-
-
-{% set modal_content %}
-  {{ include('kinetic:glide', {
-    show_arrows: true,
-    show_bullets: false,
-    classes: ['carousel'],
-    behavior_name: 'lightboxGlide',
-    slide_count: 2,
-    items: items,
-  }, with_context: false) }}
-{% endset %}
-
-
-
-{# Dialog #}
-{{ include('kinetic:dialog', {
-  modal_id: modal_id,
-  modal_heading: null,
-  modal_content: modal_content,
-  behavior_name: 'lightboxModal'
-}, with_context: false) }}
 </div>

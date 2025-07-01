@@ -16,7 +16,41 @@ This site provides starter SDCs for a drupal site using the Kinetic (>=2.0.0) th
 ## Getting Started
 
 - Install the [propel module](https://github.com/elevatedthird/propel_drush), which provides a drush command to add an SDC to your theme's `components` directory
-- Copy the `index.pcss.css` file into Kinetic's `/01-base/global/css/` directory.
+- run `drush propel:init`
+
+## 
+
+
+## Icons
+
+Icons use the new `mask-image` rule. This provides greater flexilibity for changing icon colors dynamically.
+
+### Example
+
+Add an icon before:
+
+```
+<!-- Adds a red arrow that's medium sized before th text "Button" -->
+<button class="flex before:bg-red before:icon-arrow-next/md"> Button </button>
+```
+
+Add an icon after:
+
+```
+<!-- Adds a red arrow that's medium sized after the text "Button" -->
+<button class="flex after:bg-red after:icon-arrow-next/md"> Button </button>
+```
+
+To add a new icon, add a theme variable with a base 64 encoded string. Consider using [SVG Repo](https://svgrepo.com) and a tool like [SVG Viewer](https://www.svgviewer.dev/svg-to-data-uri) to convert the svg.
+
+```
+/* index.css */
+@theme {
+  ...
+  --icon-[ICON_NAME]: url('data:image/svg+xml;base64,...');
+  ...
+}
+```
 
 ## Component Categories
 
@@ -41,4 +75,4 @@ Contains wrappers for layouts. Ex. headers, footers, and sections.
 
 ### 04-pages
 
-Contains templates for entire pages
+Contains templates for entire pages and content types.

@@ -1,8 +1,17 @@
-<header {{ attributes.setAttribute('role', 'banner') }}>
-  <div class="branding">
-    {{ branding }}
-  </div>
-  <div class="navigation">
-    {{ nav }}
+{% set nav_wrapper_id = 'nav'|clean_unique_id() %}
+
+<header role="banner" class="bg-black kinetic-nav">
+  <div class="container md:flex md:items-center">
+    <div class="logo relative flex items-center justify-between py-3">
+      {{ branding }}
+    </div>
+    <div class="block md:d-none">
+      {# Mobile trigger to collapse/expand nav content #}
+      <button class="flex before:transition before:icon-caret/md before:bg-white"
+        aria-controls="{{ nav_wrapper_id }}" aria-haspopup="true" aria-expanded="false" aria-label="Expand menu links"></button>
+    </div>
+    <div id="{{ nav_wrapper_id }}" class="flex-1 mobile-menu-wrapper">
+      {{ nav }}
+    </div>
   </div>
 </header>

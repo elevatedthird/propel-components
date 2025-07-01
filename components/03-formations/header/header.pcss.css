@@ -1,0 +1,57 @@
+@reference '@base/global/css/index.pcss.css';
+
+.kinetic-nav {
+  .logo {
+    @apply md:items-center md:justify-center md:pe-6;
+    img {
+      height: 60px;
+      width: auto;
+    }
+    a {
+      @apply uppercase text-white text-lg;
+    }
+  }
+  ul {
+    @apply m-0;
+  }
+  ul.menu-level-0 {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    > li {
+      border-bottom: 3px solid transparent;
+      @apply py-6;
+      a {
+        @apply relative z-10;
+      }
+      button {
+        @apply flex before:transition before:icon-caret/md before:bg-white after:stretch;
+      }
+      &.menu-item--expanded {
+        @apply cursor-pointer;
+      }
+    }
+
+    > li.is-active,
+    > li:hover{
+      @apply md:border-purple-500 relative;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .menu-dropdown {
+      @apply d-none;
+    }
+    .menu-dropdown.is-open {
+      @apply block w-max static text-white md:absolute md:shadow-lg md:bg-gray-100 md:text-black md:rounded-lg md:p-8;
+      z-index: 10;
+      top: calc(100% + 8px);
+      left: -32px;
+    }
+  }
+  button[aria-expanded="true"] {
+    @apply before:rotate-180;
+  }
+}

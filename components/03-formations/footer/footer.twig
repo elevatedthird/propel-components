@@ -1,3 +1,14 @@
-<footer {{ attributes.setAttribute('role', 'contentinfo') }}>
-  {{ main_menu }}
+<footer {{ attributes.setAttribute('role', 'contentinfo').addClass('kinetic-footer', 'bg-gray-050') }}>
+  <div class="container py-16">
+    <div class="pb-12 md:grid grid-cols-12">
+      {{ branding }}
+      <div class="col-span-8">
+        {{ footer_menu }}
+      </div>
+    </div>
+    <hr class="border-gray-200">
+    <div class="pt-12">
+      {{ footer_bottom }}
+    </div>
+  </div>
 </footer>
