@@ -1,0 +1,18 @@
+<div {{ attributes.addClass([
+  'relative',
+  'w-full',
+  'py-12',
+  'min-h-[547px]',
+  'min-h-[447px]',
+  'flex',
+  'flex-col',
+  'kinetic-banner'
+]) }}>
+  <div class="container dark flex flex-col justify-end md:justify-center flex-1 z-1">
+    {{ banner_content }}
+  </div>
+  <div aria-hidden="true" class="banner-media absolute inset-0 [&_>*]:h-full">
+    {{ image }}
+    <div class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-black/75 to-transparent"></div>
+  </div>
+</div>

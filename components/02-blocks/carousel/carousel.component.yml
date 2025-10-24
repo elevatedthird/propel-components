@@ -4,7 +4,7 @@ status: "stable"
 group: Blocks
 description: "Provides a simple carousel"
 needs:
-  - glide-slide
+  - glide
 slots:
   items:
     title: "Items"

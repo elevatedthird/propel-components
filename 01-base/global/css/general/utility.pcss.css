@@ -1,0 +1,64 @@
+/* Custom theme variables */
+@theme {
+  /* Radius */
+  --radius-full: 9999px;
+  /* Shadows */
+  --tw-text-shadow-color: #000;
+  /* Transition */
+  --tw-ease: ease-in-out;
+  --tw-duration: 0.2s;
+}
+
+/*Custom Variants. (Surfaces)*/
+@custom-variant dark {
+  .dark &,
+  .gradient-1 &,
+  .gradient-2 &,
+  .gradient-3 &,
+  .bg-black &,
+  .bg-purple-2 &,
+  .bg-gray-950 & {
+    @slot;
+  }
+}
+
+@custom-variant disabled {
+  &.disabled,
+  &:disabled {
+    @slot;
+  }
+}
+
+@utility cover {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+@utility stretch {
+  @variant after {
+    @apply absolute inset-0;
+  }
+}
+
+/* Creating this because hidden is also included with the stable9 theme */
+@utility d-none {
+  @apply hidden;
+}
+
+@utility responsive-media {
+  @apply relative h-full;
+
+  div, article {
+    @apply h-full;
+  }
+
+  img, video, iframe {
+    @apply absolute top-0 left-0 w-full h-full object-cover object-center;
+  }
+}
+
+@utility text-fill-color-transparent {
+  -webkit-text-fill-color: transparent;
+}

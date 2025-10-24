@@ -3,8 +3,8 @@ name: "Billboard"
 status: "stable"
 description: "A Hero like component that can be displayed in the middle of a page."
 slots:
-  media:
-    title: "Media"
+  image:
+    title: "Background Image"
 props:
   type: object
   properties:

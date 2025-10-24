@@ -1,0 +1,36 @@
+{% if bio is not empty %}
+  {% set attributes = attributes.addClass('has-bio') %}
+{% endif %}
+<div {{ attributes.addClass('w-full') }} >
+
+  <div class="speaker__top flex gap-4 items-center flex-col">
+    <div class="max-w-[150px] [&_img]:transition-[scale] hover:[&_img]:scale-105 [&_img]:cover overflow-hidden rounded-full [&_img]:aspect-square">
+      {{ headshot }}
+    </div>
+
+    <div>
+      <h4 class="toc-ignore h5 font-bold mb-2">
+        {{ name }}
+      </h4>
+      {% if title is not empty %}
+        <p class="mb-2">{{ title }}</p>
+      {% endif %}
+      {% if company is not empty %}
+        <p class="mb-2">{{ company }}</p>
+      {% endif %}
+
+      {% if social_link is not empty %}
+        <div class="[&_a]:btn-quaternary">
+          {{ social_link }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if bio is not empty %}
+    <p class="mt-4 text-sm col-span-2 row-start-2">
+    {{ bio }}
+    </p>
+  {% endif %}
+
+</div>

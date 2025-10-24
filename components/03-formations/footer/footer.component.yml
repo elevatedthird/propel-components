@@ -2,6 +2,14 @@
 name: "Footer"
 status: "stable"
 description: "The layout area for the parts of the footer."
+slots:
+  branding:
+    title: Branding
+  footer_menu:
+    title: Footer menu
+  footer_bottom:
+    title: Footer bottom
+    description: "Links below the footer such as terms, privacy policy, and conditions"
 props:
   type: object
   additionalProperties: false

@@ -1,0 +1,8 @@
+libraryOverrides:
+  css:
+    component:
+      menu-trigger.pcss.css: {}
+  js:
+    menu-trigger.es6.js:
+      attributes:
+        type: module

@@ -1,0 +1,145 @@
+/* Font Family declarations */
+/* @font-face {
+  font-family: 'Futura';
+  src: url('../../../01-base/assets/fonts/[FONT_FAMILY].woff2') format('woff2');
+  font-weight: 500;
+} */
+
+/* Typography Variables */
+@theme {
+  --font-display:      'Georgia', sans-serif;
+  --font-body:         'Helvetica', sans-serif;
+}
+
+@utility eyebrow {
+  @apply text-sm text-purple font-bold uppercase font-display;
+  letter-spacing: 1.1px;
+  @variant dark {
+    @apply text-white;
+  }
+}
+
+@utility h1 {
+  /* 40px */
+  @apply text-[34px] md:text-4xl font-display font-semibold text-black mb-4;
+}
+@utility h2 {
+  /* 34px */
+  @apply text-[28px] md:text-[34px] font-display font-semibold leading-[130%] text-black-100 mb-4;
+}
+@utility h3 {
+  /* 28px */
+  @apply text-[28px] font-body font-medium text-black mb-4;
+}
+@utility h4 {
+  @apply text-[22px] font-body text-black mb-4;
+}
+@utility h5 {
+  @apply text-[19px] font-body font-medium text-black mb-4;
+}
+
+ /*Custom Variants. (Surfaces)*/
+@custom-variant dark {
+  .dark &,
+  .gradient-1 &,
+  .gradient-2 &,
+  .gradient-3 &,
+  .bg-black &,
+  .bg-purple-2 &,
+  .bg-gray-950 & {
+    @slot;
+  }
+}
+
+@custom-variant disabled {
+  &.disabled,
+  &:disabled {
+    @slot;
+  }
+}
+
+@utility text-formatted {
+    > * {
+      @apply mb-4;
+    }
+    > *:last-child {
+      @apply mb-0 pb-0;
+    }
+    h2 {@apply h2}
+    h3 {@apply h3}
+    h4 {@apply h4}
+    h5 {@apply h5}
+    a { @apply link text-purple; }
+    img { margin: auto; }
+    figcaption {
+      @apply text-center text-gray-800 text-sm mt-2;
+    }
+    blockquote {
+      @apply font-display font-semibold text-[25px] leading-[39px] border-l-4 border-purple ps-8 text-purple my-12;
+    }
+    ol, ul {
+      list-style-type: initial;
+      padding-left: 24px;
+      ul, ol {
+        margin-left: 2rem;
+      }
+    }
+    ol {
+      list-style-type: decimal;
+    }
+    li {
+      @apply leading-relaxed;
+      /* @variant before {
+        @apply icon-caret/sm bg-[currentColor] pe-4 me-2;
+      } */
+      > .ck-list-bogus-paragraph,
+      > p {
+        display: inline !important;
+      }
+      &:has(> .text-align-center) {
+        text-align: center;
+      }
+      li {
+        display: block !important;
+        text-indent: -24px;
+      }
+    }
+    iframe {
+      max-width: 100%;
+    }
+    /* Table */
+    table:not(.reset) {
+      @apply table-auto w-full;
+      thead {
+        @apply bg-gray-100 border-b border-gray-200;
+      }
+      td, th {
+        @apply p-2 text-left;
+      }
+      tr {
+        @apply border-b border-gray-200;
+      }
+      tr:nth-child(even) {
+        @apply bg-gray-50;
+      }
+    }
+    /* Resizeable images */
+    .media-embed-resized {
+      @apply max-md:!w-full;
+      img {
+        @apply !w-full;
+      }
+    }
+    /* CTAs */
+    [class^='btn'] {
+      @apply mt-6;
+    }
+    [class^='btn'] + [class^='btn'] {
+      @apply sm:ml-4;
+    }
+    @variant dark {
+      * {
+        @apply text-white;
+      }
+    }
+}

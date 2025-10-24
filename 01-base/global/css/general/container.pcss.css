@@ -1,0 +1,28 @@
+/* Global container variables */
+@theme {
+  --gutter-x: 1rem;
+  --container-default: 1248px;
+  --container-narrow: 894px;
+  --container-small: 752px;
+  --container-wide: 1426px;
+  --container-full: 100%;
+  --container-max-width: var(--container-default);
+}
+
+@utility container-* {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: --value(--container, [length]);
+  padding-left: var(--gutter-x);
+  padding-right: var(--gutter-x);
+}
+
+@utility left-container {
+  margin-left: var(--gutter-x);
+  padding-left: calc((100vw - var(--container-left, 100vw)) / 2);
+  @apply sm:[--container-left:var(--breakpoint-sm)];
+  @apply md:[--container-left:var(--breakpoint-md)];
+  @apply lg:[--container-left:var(--breakpoint-lg)];
+  @apply xl:[--container-left:var(--breakpoint-xl)];
+  @apply 2xl:[--container-left:var(--breakpoint-2xl)];
+}

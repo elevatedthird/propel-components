@@ -1,57 +1,67 @@
-@reference '@base/global/css/index.pcss.css';
+@reference "@base/global/css/index.pcss.css";
 
-.kinetic-nav {
-  .logo {
-    @apply md:items-center md:justify-center md:pe-6;
-    img {
-      height: 60px;
-      width: auto;
-    }
-    a {
-      @apply uppercase text-white text-lg;
-    }
-  }
-  ul {
-    @apply m-0;
-  }
-  ul.menu-level-0 {
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-    > li {
-      border-bottom: 3px solid transparent;
-      @apply py-6;
-      a {
-        @apply relative z-10;
-      }
-      button {
-        @apply flex before:transition before:icon-caret/md before:bg-white after:stretch;
-      }
-      &.menu-item--expanded {
-        @apply cursor-pointer;
-      }
-    }
+[data-component-id="kinetic:header"] {
+  position: sticky;
+  top: var(--gin-toolbar-secondary-height, 0);
+  z-index: 99;
+}
+.menu--main {
 
-    > li.is-active,
-    > li:hover{
-      @apply md:border-purple-500 relative;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    .menu-dropdown {
-      @apply d-none;
-    }
-    .menu-dropdown.is-open {
-      @apply block w-max static text-white md:absolute md:shadow-lg md:bg-gray-100 md:text-black md:rounded-lg md:p-8;
-      z-index: 10;
-      top: calc(100% + 8px);
-      left: -32px;
-    }
+  button[aria-expanded="false"] + ul {
+    display: none;
   }
-  button[aria-expanded="true"] {
-    @apply before:rotate-180;
+  button[aria-expanded="true"] + ul {
+    @apply block bg-blue-500 md:absolute md:z-99;
+    width: max-content;
+    top: calc(100%);
+    @apply px-4 py-2 text-sm;
   }
+  button {
+    @apply w-full;
+    @apply flex items-center justify-between after:transition after:bg-[currentColor] after:icon-caret/sm;
+  }
+  button.is-open {
+    @apply text-blue-50 after:rotate-180;
+  }
+
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+#mobile-nav-wrapper {
+  &.is-open .mobile-nav__inner {
+    animation: slide-in 0.3s forwards;
+  }
+  .mobile-nav__inner {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 75%;
+  }
+}
+
+/* Hide and Show the container for the mobile menu. */
+#mobile-nav-wrapper {
+  display: none;
+}
+#mobile-nav-wrapper.is-open {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  top: calc(var(--gin-toolbar-secondary-height, 0px) + 58px);
+  left: 0;
+  right: 0;
+  z-index: 100;
 }

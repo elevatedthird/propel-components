@@ -2,13 +2,21 @@
 name: "Header"
 status: "stable"
 description: "A simple main menu. This is not a mega menu."
+needs:
+  - menu-trigger
 slots:
   branding:
     title: "Branding"
     description: "The branding render."
-  nav:
+  header_top:
+    title: "Header Top"
+    description: "Section aove the main nav, typically for a utility nav."
+  main_menu:
     title: "Navigation"
-    description: "The navigation render."
+    description: "The main navigation."
 props:
   type: object
   additionalProperties: false
+libraryOverrides:
+  dependencies:
+    - paragon_mega_menus/block_collector

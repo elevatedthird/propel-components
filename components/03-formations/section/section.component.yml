@@ -2,6 +2,8 @@
 name: "Section"
 status: "stable"
 description: "An easy wrapper to use for creating sections. Either Via layout builder or to mimic layout build on a structured page."
+needs:
+  - section-region
 slots:
   content:
     title: "Content when layout is not rendered by a layout builder section"

@@ -6,7 +6,7 @@ needs:
   - section
   - section-region
 slots:
-  first:
+  content:
     title: "Region, first"
 props:
   type: object

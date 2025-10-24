@@ -1,0 +1,79 @@
+/* Buttons */
+@utility btn {
+  cursor: pointer;
+  background-color: var(--btn-bg) !important;
+  border: 2px solid var(--btn-border-color);
+  color: var(--btn-color) !important;
+  line-height: 1;
+  @apply inline-block px-11 py-3 rounded-full transition font-semibold text-center;
+  @variant active {
+    background-color: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-border-color, var(--btn-border-color));
+    color: var(--btn-hover-color, var(--btn-color));
+  }
+  @variant hover {
+    background-color: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-border-color, var(--btn-border-color));
+    text-decoration: none !important;
+    color: var(--btn-hover-color, var(--btn-color));
+  }
+  @variant disabled  {
+    background-color: var(--btn-disabled-bg-color) !important;
+    border-color: var(--btn-disabled-border-color, var(--btn-border-color));
+    color: var(--btn-disabled-color, var(--btn-color));
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+@utility btn-primary {
+  @apply btn;
+  --btn-bg: #413B5A;
+  --btn-border-color: #413B5A;
+  --btn-color: var(--color-white);
+  --btn-disabled-bg-color: var(--color-gray-400);
+  --btn-disabled-border-color: var(--color-gray-400);
+  --btn-disabled-color: var(--color-white);
+  --btn-hover-bg: var(--color-gray-600);
+  --btn-hover-border-color: var(--color-gray-600);
+  @variant dark {
+    --btn-bg: var(--color-white);
+    --btn-border-color: var(--color-white);
+    --btn-color: var(--color-black);
+    --btn-disabled-bg-color: var(--color-gray-300);
+    --btn-disabled-border-color: var(--color-gray-300);
+    --btn-disabled-color: var(--color-white);
+    --btn-hover-bg: var(--color-gray-200);
+    --btn-hover-border-color: var(--color-gray-200);
+  }
+}
+@utility btn-secondary {
+  @apply btn;
+  --btn-bg: transparent;
+  --btn-border-color: var(--color-gray-300);
+  --btn-color: var(--color-black);
+  --btn-disabled-bg-color: #FAF9FC;
+  --btn-disabled-border-color: var(--color-gray-300);
+  --btn-disabled-color: var(--color-gray-300);
+  --btn-hover-bg: transparent;
+  --btn-hover-border-color: var(--color-black);
+  @variant dark {
+    --btn-bg: transparent;
+    --btn-color: var(--color-white);
+    --btn-border-color: var(--color-white);
+    --btn-disabled-border-color: var(--color-gray-300);
+    --btn-disabled-bg-color: var(--color-gray-500);
+    --btn-disabled-color: var(--color-gray-200);
+    --btn-hover-bg: transparent;
+    --btn-hover-border-color: var(--color-gray-500);
+  }
+}
+@utility btn-tertiary {
+  @apply btn-secondary inline-flex items-center gap-1 transition-all hover:gap-3 px-6 text-[15px];
+  @variant after {
+    @apply icon-arrow-next/sm bg-[currentColor];
+  }
+}
+
+@utility btn-quaternary {
+  @apply link-next;
+}

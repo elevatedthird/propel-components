@@ -1,0 +1,31 @@
+/* Links */
+@utility link {
+  @apply font-semibold inline-flex items-center;
+  overflow-wrap: anywhere;
+  @variant hover {
+    text-decoration: underline;
+  }
+  @variant disabled {
+    color: var(--color-gray-500) !important;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  @variant dark {
+    color: var(--color-white);
+  }
+}
+
+@utility link-next {
+  @apply link gap-1 transition-[gap] hover:gap-3;
+  @variant after {
+    @apply icon-arrow-next/md bg-[currentColor];
+  }
+}
+@utility link-prev {
+  @apply link gap-1 transition-[gap] hover:gap-3;
+
+  @variant before {
+    @apply icon-arrow-prev/sm bg-[currentColor];
+  }
+}
+/* End Links */

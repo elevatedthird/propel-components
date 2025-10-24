@@ -1,0 +1,45 @@
+/* Custom theme variables */
+@theme {
+  /* Colors */
+  --color-purple:           #572EBD;
+  --color-blue:             #069DE0;
+  --color-pink:             #E306E3;
+  --color-pink-200:         #E9D7FE;
+  --color-turquoise:        #07D9BD;
+  --color-yellow:           #FCCC14;
+  --color-orange:           #FF7112;
+  --color-red:              #EF1541;
+  --color-green:            #05AC3F;
+  --color-white:            #FFF;
+  --color-black:            #000;
+  --color-black-100:        #262628;
+  --color-black-200:        #0D1017;
+  --color-black-25:         rgba(0, 0, 0, 0.25);
+  /* Grays */
+  --color-gray-050: #FAF9FC;
+  --color-gray-100: #F5F4F9;
+  --color-gray-150: #EBEAF0;
+  --color-gray-200: #E1DFE6;
+  --color-gray-250: #CCCADA;
+  --color-gray-275: #C8C8C8;
+  --color-gray-300: #B7B4C0;
+  --color-gray-400: #ABABAB;
+  --color-gray-500: #8E8A9B;
+  --color-gray-600: #7A7688;
+  --color-gray-700: #656175;
+  --color-gray-800: #514C63;
+  --color-gray-850: #3D3750;
+  --color-gray-900: #28223D;
+  --color-gray-950: #130C2A;
+  --color-gray-1000: #2B2B2B;
+  /* Form Colors */
+  --color-gray-overlay: rgba(171, 171, 171, 0.7);
+
+  --color-form-text:   #525252;
+  --color-form-active: #1D4ED8;
+  --color-form-error:  #B91C1C;
+  /* Themes */
+  --color-default-primary:   var(--color-purple);
+  --color-default-secondary: var(--color-blue);
+  --color-default-tertiary:  var(--color-pink);
+}

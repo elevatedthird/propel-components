@@ -1,0 +1,12 @@
+[data-component-id="kinetic:speaker"] {
+  .speaker__top {
+    @apply text-sm text-center;
+  }
+  &.has-bio {
+    .speaker__top {
+      flex-direction: row;
+      column-gap: 2rem;
+      @apply text-base text-left;
+    }
+  }
+}

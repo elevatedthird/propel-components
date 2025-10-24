@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Speaker
+status: stable
+description: Displays information about a speaker for an event, webinar, etc.
+slots:
+  headshot:
+    description: Speaker image.
+    required: true
+  social_link:
+    description: LinkedIn or social media link.
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      description: Speaker name
+    role:
+      type: string
+      description: Speaker role or title.
+    company:
+      type: string
+      description: Speaker company.
+    bio:
+      type: string
+      description: Short speaker bio.

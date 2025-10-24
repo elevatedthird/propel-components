@@ -1,5 +1,5 @@
 {% set content %}
-  {{ include('kinetic:section-region', {region: first, layout__region: 'first'}, with_context = false) }}
+  {{ include('kinetic:section-region', {region: first, layout__region: 'first'}, with_context = true) }}
 {% endset %}
 
 {{ include('kinetic:section', {
@@ -7,5 +7,5 @@
   content: content,
   layout_class: 'layout-onecol',
   wrapper_classes: [],
-  inner_wrapper_classes: ['container'],
-}, with_context: false) }}
+  inner_wrapper_classes: [],
+}, with_context: true) }}

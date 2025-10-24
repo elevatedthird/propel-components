@@ -1,6 +1,9 @@
 import header from "./header.twig";
 import './header.es6.js';
 import './header.pcss.css';
+import '@components/00-elements/menu-trigger/menu-trigger.pcss.css';
+import '@components/00-elements/menu-trigger/menu-trigger.es6.js';
+
 
 export default {
   title: "03-formations/header",
@@ -31,20 +34,27 @@ export const Default = {
         </a>
       </div>
     `,
-    nav: `
-      <nav role="navigation" aria-labelledby="block-kinetic-utilitymenu-menu" id="block-kinetic-utilitymenu" class="contextual-region block block-menu navigation menu--utility-menu">
-        <ul class="menu-level-0">
+    header_top: `
+      <nav role="navigation" class="contextual-region block block-menu navigation menu--utility-menu">
+        <ul class="flex gap-4 text-white">
+          <li class="menu-item--expanded">
+          <a href="/blog" class="hover:underline" data-drupal-link-system-path="node/131">Company</a>
+          </li>
+          <li class="py-2 md:py-0">
+          <a href="/blog" class="hover:underline" data-drupal-link-system-path="node/131">Location</a>
+          </li>
+          <li class="py-2 md:py-0">
+          <a href="/news" class="hover:underline" data-drupal-link-system-path="node/8606">News</a>
+          </li>
+        </ul>
+      </nav>
+    `,
+    main_menu: `
+      <nav role="navigation" class="contextual-region block block-menu navigation menu--main">
+        <ul class="flex gap-4 text-white">
           <li class="menu-item--expanded">
             <div class="menu-link">
               <span> About </span>
-            </div>
-            <div class="menu-dropdown">
-              <ul class="menu-level-1">
-                <li><a href="/"> Link 1 </a></li>
-                <li><a href="/"> Link 2 </a></li>
-                <li><a href="/"> Link 3 </a></li>
-                <li><a href="/"> Link 4 </a></li>
-              </ul>
             </div>
           </li>
           <li class="py-2 md:py-0">
