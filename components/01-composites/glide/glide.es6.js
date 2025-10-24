@@ -1,12 +1,46 @@
 import Glide from "@glidejs/glide";
 
 Drupal.behaviors.kineticGlide = {
+  setAriaAttributes(slides) {
+    slides.forEach((slide, index) => {
+      slide.setAttribute('aria-label', `Slide ${index + 1} of ${slides.length}`);
+      const isActive = slide.classList.contains('glide__slide--active');
+      const focusableElements = slide.querySelectorAll('a, button, [tabindex]');
+      if (isActive) {
+        slide.removeAttribute('aria-hidden');
+        slide.setAttribute('aria-live', 'polite');
+        slide.setAttribute('aria-atomic', 'true');
+        // Enable all focusable elements within active slides.
+        focusableElements.forEach((el) => {
+          el.removeAttribute('tabindex');
+        });
+      } else {
+        slide.setAttribute('aria-hidden', 'true');
+        slide.removeAttribute('aria-live');
+        slide.removeAttribute('aria-atomic');
+        // Disable all focusable elements within inactive slides.
+        focusableElements.forEach((el) => {
+          el.setAttribute('tabindex', '-1');
+        });
+      }
+    });
+  },
   attach(context) {
     const sliders = once("kinetic-glide", ".glide", context);
     sliders.forEach((element) => {
       const glide = new Glide(element);
       // Attach global events that affect all sliders.
-      glide.on("mount.after", () => element.classList.add("mounted"));
+      glide.on("mount.after", () => {
+        element.classList.add("mounted");
+        this.setAriaAttributes(glide.selector.querySelectorAll('.glide__slide'));
+        // If prefers reduced motion is enabled, disable autoplay.
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          glide.update({ autoplay: false });
+        }
+      });
+      glide.on("run.after", () => {
+        this.setAriaAttributes(glide.selector.querySelectorAll('.glide__slide'));
+      });
       // Check if this component implements glide itself.
       if (!element.hasAttribute("data-behavior-name")) {
         glide.mount();

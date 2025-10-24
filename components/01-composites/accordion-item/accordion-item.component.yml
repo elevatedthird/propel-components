@@ -2,6 +2,7 @@
 name: "Accordion Item"
 status: "stable"
 description: "A bootstrap accordion item."
+noUi: true
 props:
   type: object
   properties:

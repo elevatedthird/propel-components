@@ -1,4 +1,4 @@
-{% set attributes = create_attribute().addClass([]).addClass('glide') %}
+{% set attributes = create_attribute().addClass(classes|default([])).addClass('glide') %}
 {% if behavior_name %}
   {% set attributes = attributes.setAttribute('data-behavior-name', behavior_name) %}
 {% endif %}
@@ -12,23 +12,20 @@
       {{ items }}
     </ul>
   </div>
+
   {# Glide bullets #}
-{#
-  @todo we should make the nav stuff into sdcs and insert them via blks.
-#}
   {% if controls %}
-   {{ controls }}
-    <div class="glide__bullets my-8 flex justify-center gap-4" data-glide-el="controls[nav]">
-      {% for i in 0..slide_count - 1 %}
-        <button class="glide__bullet bg-primary/50 w-3 h-3 rounded-full" data-glide-dir="={{ loop.index0 }}" aria-label={{ 'Slide' ~ slide_count }}></button>
-      {% endfor %}
-    </div>
+    {{ include('kinetic:glide-bullets', {
+      bullet_classes: 'bg-primary icon-circle-sm',
+      slide_count: slide_count
+    }, with_context: false) }}
   {% endif %}
+
   {# Glide arrows #}
   {% if show_arrows %}
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left bg-primary rotate-90 icon-caret/md" data-glide-dir="<"><span class='sr-only'>Previous Step</span></button>
-      <button class="glide__arrow glide__arrow--right bg-primary rotate-270 icon-caret/md" data-glide-dir=">"><span class='sr-only'>Next Step</span></button>
-    </div>
+    {{ include('kinetic:glide-arrows', {
+      arrow_right_classes: 'bg-primary rotate-90 icon-caret/md',
+      arrow_left_classes: 'bg-primary rotate-270 icon-caret/md'
+    }, with_context: false) }}
   {% endif %}
 </div>

@@ -2,6 +2,7 @@
 name: "Glide Slide"
 status: "stable"
 description: "Provides a slide for the glidejs carousel."
+noUi: true
 slots:
   item:
     title: "Item"

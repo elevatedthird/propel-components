@@ -1,0 +1,16 @@
+$schema: >-
+  https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Glide Bullets
+status: stable
+noUi: true
+description: Provides bullets for a Glide carousel.
+props:
+  type: object
+  properties:
+    slide_count:
+      type: integer
+      title: Number of slides
+      required: true
+    bullet_classes:
+      type: string
+      title: Bullet classes

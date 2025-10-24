@@ -16,9 +16,11 @@ npm start
 npm run stories
 ```
 
-You can exclude SDCs from generating a story file by adding the SDC name to the `EXCLUDED_STORIES` array in `generate-stories.js`.
-This is helpful for excluding sub components like accordion items, carousel slides etc. You may also force a story to be
-re-created by adding an entry to the `FORCE_RECREATE_STORIES` array.
+You can exclude SDCs from generating a story file by adding the `noUi: true` key to your SDC's component.yml.
+This is useful for excluding sub components like accordion items, carousel slides etc. This also aligns with how SDC component
+metadata is used by Drupal Canvas.
+
+You may also force a story to be re-created by adding an entry to the `FORCE_RECREATE_STORIES` array.
 
 ## Prettier
 ```

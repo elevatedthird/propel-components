@@ -4,20 +4,6 @@ import YAML from "yaml";
 
 const __dirname = path.resolve();
 const COMPONENTS_DIR = path.join(__dirname, "components");
-// List of components to exclude from story generation.
-const EXCLUDED_STORIES = [
-  "section",
-  "section-region",
-  "accordion-item",
-  "glide-slide",
-  "glide-arrows",
-  "glide-bullets",
-  "marquee",
-  "glide",
-  "tabs-item",
-  "tabs-nav-item",
-  "dialog",
-];
 
 // Force a story file to be created, even if it already exists.
 // This can be helpful when developing new components.
@@ -177,16 +163,10 @@ async function walkDirectory(dir) {
 
     if (entry.isDirectory()) {
       await walkDirectory(fullPath);
-    } else if (entry.isFile() && entry.name.endsWith("component.yml")) {
+    }
+    else if (entry.isFile() && entry.name.endsWith("component.yml")) {
       const parts = fullPath.split("/");
       const componentName = parts[parts.length - 2];
-      // Ignore excluded stories.
-      if (EXCLUDED_STORIES.includes(componentName)) {
-        console.log(
-          `Skipping ${componentName} because it is in the excluded list.`,
-        );
-        continue;
-      }
       const componentCategory = parts[parts.length - 3];
       const storyFile = path.join(
         path.dirname(fullPath),
@@ -201,9 +181,14 @@ async function walkDirectory(dir) {
         // console.log(`${storyFile} already exists, skipping.`);
       } catch {
         // Attempt to read the component.yml file.
-        console.log(`Creating story for ${componentName}`);
         const componentYml = await fs.readFile(fullPath, "utf8");
         const componentData = YAML.parse(componentYml);
+        // Skip Story creation if noUi is set to true.
+        if (componentData?.noUi === true) {
+          console.log(`Skipping story creation for ${componentName} because noUi is true.`);
+          continue;
+        }
+        console.log(`Creating story for ${componentName}`);
         const argTypes = convertComponentYamlToArgTypes(componentData);
         const importName = componentName.replace(/-/g, "_");
         const content = STORY_TEMPLATE(
