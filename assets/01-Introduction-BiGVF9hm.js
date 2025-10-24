@@ -1,6 +1,7 @@
-import{j as e,M as r}from"./index-8K6dc7lu.js";import{useMDXComponents as t}from"./index-CB7VQC5K.js";import"./iframe-DC-ExBKB.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function i(s){const n={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",pre:"pre",ul:"ul",...t(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Introduction"}),`
+import{j as e,M as r}from"./index-CuZRrsU5.js";import{useMDXComponents as t}from"./index-BmqGlLuY.js";import"./iframe-CHoCN5TX.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function i(s){const n={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",pre:"pre",ul:"ul",...t(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Introduction"}),`
 `,e.jsx(n.h1,{id:"introduction",children:"Introduction"}),`
 `,e.jsx(n.p,{children:"This site provides starter SDCs for a drupal site using the Kinetic (>=2.0.0) theme."}),`
+`,e.jsx(n.p,{children:e.jsx(n.a,{href:"https://github.com/elevatedthird/propel-components",rel:"nofollow",children:"Github Repo"})}),`
 `,e.jsx(n.h2,{id:"prerequisites",children:"Prerequisites"}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Drupal 10.3.0 or higher"}),`
@@ -10,10 +11,9 @@ import{j as e,M as r}from"./index-8K6dc7lu.js";import{useMDXComponents as t}from
 `]}),`
 `,e.jsx(n.h2,{id:"getting-started",children:"Getting Started"}),`
 `,e.jsxs(n.ul,{children:[`
-`,e.jsxs(n.li,{children:["Install the ",e.jsx(n.a,{href:"https://github.com/elevatedthird/propel_drush",rel:"nofollow",children:"propel module"}),", which provides a drush command to add an SDC to your theme's ",e.jsx(n.code,{children:"components"})," directory"]}),`
+`,e.jsxs(n.li,{children:["Install the ",e.jsx(n.a,{href:"https://github.com/elevatedthird/propel_drush",rel:"nofollow",children:"propel module"}),", which provides a drush command to add an SDC to Kinetic's ",e.jsx(n.code,{children:"components"})," directory"]}),`
 `,e.jsxs(n.li,{children:["run ",e.jsx(n.code,{children:"drush propel:init"})]}),`
 `]}),`
-`,e.jsx(n.h2,{id:""}),`
 `,e.jsx(n.h2,{id:"icons",children:"Icons"}),`
 `,e.jsxs(n.p,{children:["Icons use the new ",e.jsx(n.code,{children:"mask-image"})," rule. This provides greater flexilibity for changing icon colors dynamically."]}),`
 `,e.jsx(n.h3,{id:"example",children:"Example"}),`
