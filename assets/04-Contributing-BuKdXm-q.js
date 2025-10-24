@@ -1,4 +1,4 @@
-import{j as e,M as o}from"./index-CuZRrsU5.js";import{useMDXComponents as r}from"./index-BmqGlLuY.js";import"./iframe-CHoCN5TX.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function s(i){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",ol:"ol",p:"p",pre:"pre",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Contributing"}),`
+import{j as e,M as o}from"./index-BXjIuICt.js";import{useMDXComponents as r}from"./index-BzlrOy8B.js";import"./iframe-CHIPpGDo.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./index-CfOrKyLd.js";import"./index-DrFu-skq.js";function s(i){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",ol:"ol",p:"p",pre:"pre",...r(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Contributing"}),`
 `,e.jsx(n.h1,{id:"contributing",children:"Contributing"}),`
 `,e.jsx(n.p,{children:"We welcome new SDCs and improvements to existing SDCs. If you have an idea for a new SDC or want to improve an existing one, keep the following in mind:"}),`
 `,e.jsxs(n.ol,{children:[`
