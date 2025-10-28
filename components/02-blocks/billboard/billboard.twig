@@ -1,18 +1,27 @@
 <div {{ attributes.addClass([
   'relative',
   'w-full',
-  'py-12',
-  'min-h-[547px]',
-  'min-h-[447px]',
+  'h-[500px]',
+  'overflow-hidden',
   'flex',
-  'flex-col',
+  'flex-col-reverse',
+  'md:flex-row-reverse',
   'kinetic-banner'
 ]) }}>
-  <div class="container dark flex flex-col justify-end md:justify-center flex-1 z-1">
-    {{ banner_content }}
+  <div class="md:flex-2/5 px-4 py-10 md:pl-10 md:self-end">
+    {% set props = {
+      eyebrow: eyebrow,
+      heading: heading,
+    } %}
+    {% if description is not empty %}
+      {% set props = props|merge({ description: description}) %}
+    {% endif %}
+    {% if ctas is not empty %}
+      {% set props = props|merge({ ctas: ctas}) %}
+    {% endif %}
+    {{ include('kinetic:section-intro', props, with_context: false) }}
   </div>
-  <div aria-hidden="true" class="banner-media absolute inset-0 [&_>*]:h-full">
+  <div aria-hidden="true" class="md:flex-3/5 h-full relative [&_img]:cover">
     {{ image }}
-    <div class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-black/75 to-transparent"></div>
   </div>
 </div>

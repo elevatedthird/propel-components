@@ -2,7 +2,7 @@
 name: "Carousel"
 status: "stable"
 group: Blocks
-description: "Provides a simple carousel"
+description: "Provides a simple carousel using Glide JS"
 needs:
   - glide
 slots:

@@ -1,19 +1,31 @@
 <div {{ attributes.addClass([
   'relative',
   'w-full',
-  'py-12',
-  'kinetic-banner',
-  style == 'short' ? 'min-h-[40vh]' : 'min-h-[65vh]',
+  'py-20',
+  height == 'short' ? 'min-h-[40vh]' : 'min-h-[65vh]',
   'flex',
-  'items-end',
+  'items-center',
+  'bg-gray-900'
 ]) }}>
   <div class="z-1 flex-grow-1 left-container">
-    <div class="md:max-w-[50%]">
-      {{ banner_content }}
+    <div class="mr-4 md:max-w-[50%]">
+      {% set props = {
+        eyebrow: eyebrow,
+        heading: heading,
+      } %}
+      {% if description is not empty %}
+        {% set props = props|merge({ description: description}) %}
+      {% endif %}
+      {% if ctas is not empty %}
+        {% set props = props|merge({ ctas: ctas}) %}
+      {% endif %}
+      {{ include('kinetic:section-intro', props, with_context: false) }}
     </div>
   </div>
-  <div aria-hidden="true" class="banner-media overflow-hidden absolute inset-0 [&_img]:h-full">
-    {{ image }}
-    <div class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-white/90 from-30% to-transparent"></div>
-  </div>
+  {% if media is defined %}
+    <div aria-hidden="true" class="banner-media overflow-hidden absolute inset-0 [&_img]:cover">
+      {{ media }}
+      <div class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-gray-900/90 from-30% to-transparent"></div>
+    </div>
+  {% endif %}
 </div>

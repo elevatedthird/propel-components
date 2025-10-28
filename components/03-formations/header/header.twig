@@ -1,16 +1,19 @@
 <header {{ attributes.setAttribute('role', 'banner').setAttribute('id', 'paragon-header').addClass(['header', 'paragon-mega-menu']) }}>
   {% if header_top is defined %}
     <div class="bg-gray-900 py-2 d-none md:block">
-      <div class="container-default flex justify-end">
+      <div class="container-default-default flex justify-end">
         {{ header_top }}
       </div>
     </div>
   {% endif %}
   <div class='bg-gray-600 py-4'>
-    <div class="container-default flex items-center justify-between">
+    <div class="container-default-default flex items-center justify-between">
       {{ branding }}
       <div class="d-none md:block">
         {{ main_menu }}
+        {% if cta_menu is defined and cta_menu is not empty %}
+          {{ cta_menu }}
+        {% endif %}
       </div>
       {# Mobile Menu Trigger #}
       <div class='block md:d-none'>
@@ -20,10 +23,10 @@
       </div>
     </div>
   </div>
-  {# Mobile Menu Container. JS will clone blocks into here. #}
+  {# Mobile Menu container-default. JS will clone blocks into here. #}
   <div id="mobile-nav-wrapper" class="bg-blue-overlay">
     <div class='mobile-nav__inner bg-gray-900'>
-      <div class='container-default py-8'>
+      <div class='container-default-default py-8'>
         <div data-block-collector='mobile'></div>
       </div>
   </div>

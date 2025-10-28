@@ -1,5 +1,5 @@
 <div class="glide__bullets my-8 flex justify-center gap-4" data-glide-el="controls[nav]">
   {% for i in 0..slide_count - 1 %}
-    <button class="glide__bullet {{ bullet_classes }}" data-glide-dir="={{ loop.index0 }}" aria-label={{ 'Slide' ~ slide_count }}></button>
+    <button class="glide__bullet {{ bullet_classes|default('bg-gray-200 w-4 h-4 rounded-full') }}" data-glide-dir="={{ loop.index0 }}" aria-label={{ 'Slide' ~ slide_count }}></button>
   {% endfor %}
 </div>

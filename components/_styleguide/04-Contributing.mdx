@@ -20,7 +20,7 @@ Ex.
 ```
 ...
 needs:
-  - glide-slide
+  - glide-arrows
   - glide-bullets
 ...
 ```
@@ -35,7 +35,7 @@ npm run stories
 ```
 
 ### Ignoring story generation
-Add an entry to `EXCLUDED_STORIES` array in `generate-stories.js`
+Add the `noUi: true` key to the component.yml file.
 
 ### Forcing story re-generation
 Add an entry to `FORCE_RECREATE_STORIES` array in `generate-stories.js`

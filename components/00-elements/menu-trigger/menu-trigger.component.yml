@@ -1,3 +1,15 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: "Menu trigger"
+status: "stable"
+description: "A component that opens and closes the main menu."
+noUi: true
+properties:
+  type: object
+  properties:
+    aria_controls:
+      type: string
+      title: "ARIA Controls"
+      description: "The ID of the element that this button controls."
 libraryOverrides:
   css:
     component:

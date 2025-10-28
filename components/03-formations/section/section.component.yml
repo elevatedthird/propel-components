@@ -2,6 +2,7 @@
 name: "Section"
 status: "stable"
 description: "An easy wrapper to use for creating sections. Either Via layout builder or to mimic layout build on a structured page."
+noUi: true
 needs:
   - section-region
 slots:

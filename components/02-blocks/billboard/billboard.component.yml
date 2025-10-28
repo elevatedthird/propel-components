@@ -2,12 +2,22 @@
 name: "Billboard"
 status: "stable"
 description: "A Hero like component that can be displayed in the middle of a page."
+needs:
+  - section-intro
 slots:
   image:
     title: "Background Image"
+  ctas:
+    title: "Call to Action links"
 props:
   type: object
   properties:
-    items:
-      type: array
-      title: "Array of breadcrumb items"
+    eyebrow:
+      type: string
+      title: "Eyebrow Text"
+    heading:
+      type: string
+      title: "Heading Text"
+    description:
+      type: string
+      title: "Description Text"

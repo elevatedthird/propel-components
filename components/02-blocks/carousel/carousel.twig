@@ -1,7 +1,22 @@
+{% set bullets %}
+  {{ include('kinetic:glide-bullets', {
+    bullet_classes: 'bg-gray-200 w-4 h-4 rounded-full',
+    slide_count: slide_count
+  }, with_context: false) }}
+{% endset %}
+
+{% set arrows %}
+  {{ include('kinetic:glide-arrows', {
+    arrow_right_classes: 'rotate-270 flex after:bg-gray-900 after:icon-caret/[40px]',
+    arrow_left_classes:  'rotate-90 flex after:bg-gray-900 after:icon-caret/[40px]'
+  }, with_context: false) }}
+{% endset %}
+
 {{ include('kinetic:glide', {
-  show_arrows: true,
-  show_bullets: true,
+  arrows: arrows,
+  bullets: bullets,
   classes: ['carousel'],
   behavior_name: 'carousel',
+  slide_count: slide_count,
   items: items,
 }, with_context: false) }}

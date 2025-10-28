@@ -5,15 +5,18 @@ status: stable
 needs:
   - glide-arrows
   - glide-bullets
-  - glide-slide
 description: Provides a glidejs slider.
+noUi: true
 slots:
   items:
     title: Item
     description: The item to be rendered in the slider.
-  controls:
-    title: Controls
-    description: Bring your own arrows and bullets to the slider.
+  arrows:
+    title: Arrows
+    description: Bring your own arrows to the slider.
+  bullets:
+    title: Bullets
+    description: Bring your own bullets to the slider.
 props:
   type: object
   properties:

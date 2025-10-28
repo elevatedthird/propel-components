@@ -1,5 +1,4 @@
 import header from "./header.twig";
-import './header.es6.js';
 import './header.pcss.css';
 import '@components/00-elements/menu-trigger/menu-trigger.pcss.css';
 import '@components/00-elements/menu-trigger/menu-trigger.es6.js';

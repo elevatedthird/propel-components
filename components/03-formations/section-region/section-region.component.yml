@@ -2,6 +2,7 @@
 name: "Section Region"
 status: "stable"
 description: "A simple component to add section regions with appropriate attributes to a layout builder section"
+noUi: true
 props:
   type: object
   properties:

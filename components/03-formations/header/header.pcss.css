@@ -2,54 +2,50 @@
 
 [data-component-id="kinetic:header"] {
   position: sticky;
-  top: var(--gin-toolbar-secondary-height, 0);
-  z-index: 99;
-}
-.menu--main {
-
-  button[aria-expanded="false"] + ul {
-    display: none;
+  top: var(--drupal-displace-offset-top, 0px);
+  left: 0;
+  z-index: 20;
+  right: 0;
+  ul, li {
+    @apply ml-0;
   }
-  button[aria-expanded="true"] + ul {
-    @apply block bg-blue-500 md:absolute md:z-99;
-    width: max-content;
-    top: calc(100%);
-    @apply px-4 py-2 text-sm;
-  }
-  button {
-    @apply w-full;
-    @apply flex items-center justify-between after:transition after:bg-[currentColor] after:icon-caret/sm;
-  }
-  button.is-open {
-    @apply text-blue-50 after:rotate-180;
+  .header__top,
+  .header__main .menu--main,
+  .header__main .menu--cta {
+    @apply max-menu:d-none;
   }
 
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  .header__main {
+    display: flex;
   }
 }
+/* Main menu */
+.menu--main > ul {
+  @apply flex flex-col menu:flex-row menu:gap-8;
 
-
-
-#mobile-nav-wrapper {
-  &.is-open .mobile-nav__inner {
-    animation: slide-in 0.3s forwards;
+  .pmm-menu-item > a,
+  .pmm-menu-item > span {
+    @apply py-2 transition-[color] menu:text-white font-bold uppercase text-base tracking-[1.6px] flex items-center;
   }
-  .mobile-nav__inner {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    width: 75%;
+  .pmm-dropdown-trigger {
+    @apply gap-1;
+    @variant after {
+      @apply bg-gray-900 icon-caret/sm rotate-90;
+    }
+    &[aria-expanded='true'] {
+      @apply text-gray-900;
+    }
   }
+  .pmm-dropdown {
+    &.is-open {
+      top: calc(100% + 25px);
+    }
+  }
+}
+
+/* Layout Builder Layout. */
+.layout-pmm {
+  /* Styles here */
 }
 
 /* Hide and Show the container for the mobile menu. */
@@ -59,9 +55,11 @@
 #mobile-nav-wrapper.is-open {
   display: block;
   position: fixed;
-  height: 100vh;
-  top: calc(var(--gin-toolbar-secondary-height, 0px) + 58px);
+  top: initial;
+  height: calc(100vh - 63px - var(--drupal-displace-offset-top, 0px));
+  overflow: hidden;
   left: 0;
   right: 0;
+  background: white;
   z-index: 100;
 }

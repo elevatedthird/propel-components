@@ -4,9 +4,12 @@
 {% set gap = gap|default(24) %}
 {% set direction = direction|default('horizontal') %}
 {% set reverse = reverse == true ? 'true' : 'false' %}
-{% set attributes = create_attribute() %}
 
-<div {{ attributes.setAttribute('data-gap', gap).setAttribute('data-direction', direction).addClass(['marquee', 'overflow-hidden', 'relative']).setAttribute('data-reverse', reverse) }}>
+<div {{ attributes.addClass('marquee overflow-hidden relative')
+  .setAttribute('data-reverse', reverse)
+  .setAttribute('data-duration', duration|default(40000))
+  .setAttribute('data-gap', gap)
+  .setAttribute('data-direction', direction) }}>
   {% set classes = [
     'flex',
     'items-center',
@@ -15,10 +18,7 @@
     direction == 'vertical' ? 'flex-col' : ''
   ] %}
 
-  {# Debugging #}
-  {# <button class="absolute top-0 left-0 w-[100px] p-2 bg-[lightblue] z-10"> pause/play </button> #}
-
-  <div class="marquee-wrapper {{ classes|join(' ') }}" style="gap:{{ gap }}px">
+  <div {{ focusable == true ? 'tabindex="0"' : '' }} class="marquee-wrapper {{ classes|join(' ') }}" style="gap:{{ gap }}px">
     <div class="marquee-items {{ classes|join(' ') }}" style="gap:{{ gap }}px">
       {# Should be an array of items to apply the animation to #}
       {{ items }}

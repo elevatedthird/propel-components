@@ -1,4 +1,7 @@
-<div class="glide__arrows" data-glide-el="controls">
+{% set arrow_left_classes  = arrow_left_classes|default('rotate-90 flex after:bg-gray-900 after:icon-caret/[40px]') %}
+{% set arrow_right_classes = arrow_right_classes|default('rotate-270 flex after:bg-gray-900 after:icon-caret/[40px]') %}
+
+<div class="glide__arrows flex" data-glide-el="controls">
   <button class="glide__arrow glide__arrow--left {{ arrow_left_classes }}" data-glide-dir="<"><span class='sr-only'>Previous Step</span></button>
   <button class="glide__arrow glide__arrow--right {{ arrow_right_classes }}" data-glide-dir=">"><span class='sr-only'>Next Step</span></button>
 </div>

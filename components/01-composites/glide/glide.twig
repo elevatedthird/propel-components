@@ -9,23 +9,21 @@
   {# Slides #}
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
-      {{ items }}
+      {% for item in slide_count %}
+        <li class="glide__slide">
+          {{ item }}
+        </li>
+      {% endfor %}
     </ul>
   </div>
 
   {# Glide bullets #}
-  {% if controls %}
-    {{ include('kinetic:glide-bullets', {
-      bullet_classes: 'bg-primary icon-circle-sm',
-      slide_count: slide_count
-    }, with_context: false) }}
+  {% if bullets is defined %}
+    {{ bullets }}
   {% endif %}
 
   {# Glide arrows #}
-  {% if show_arrows %}
-    {{ include('kinetic:glide-arrows', {
-      arrow_right_classes: 'bg-primary rotate-90 icon-caret/md',
-      arrow_left_classes: 'bg-primary rotate-270 icon-caret/md'
-    }, with_context: false) }}
+  {% if arrows is defined %}
+    {{ arrows }}
   {% endif %}
 </div>

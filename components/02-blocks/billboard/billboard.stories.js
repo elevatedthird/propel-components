@@ -1,31 +1,76 @@
-import billboard from "./billboard.twig";
+
+import billboard from './billboard.twig';
 
 export default {
-  title: "02-blocks/billboard",
-  tags: ["autodocs"],
+  title: '02-blocks/billboard',
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
-        component:
-          "A component like a hero that can be displayed in the middle of a page.",
+        component: 'A Hero like component that can be displayed in the middle of a page.',
       },
       source: {
-        code: "drush propel:add billboard",
-      },
+        code: 'drush propel:add billboard',
+      }
     },
   },
   argTypes: {
-    items: {
-      control: { type: "object" },
-      type: { required: false, name: "" },
-      table: { type: { summary: "array" } },
+  eyebrow: {
+    control: {
+      type: "text"
     },
+    type: {
+      required: false,
+      name: ""
+    },
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
   },
-  component: billboard,
+  heading: {
+    control: {
+      type: "text"
+    },
+    type: {
+      required: false,
+      name: ""
+    },
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
+  },
+  description: {
+    control: {
+      type: "text"
+    },
+    type: {
+      required: false,
+      name: ""
+    },
+    table: {
+      type: {
+        summary: "text"
+      }
+    }
+  }
+},
 };
 
 export const Default = {
   args: {
-    items: {},
+    eyebrow: "eyebrow",
+    heading: "Billboard heading",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+},
+  render: (args) => {
+    return billboard({
+      ...args,
+      image: () => '<img src="https://placehold.co/1000x700" alt="Placeholder Image" />',
+      ctas: () => '<a class="btn-primary" href="#">Call to Action</a>',
+    });
   },
 };

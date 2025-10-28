@@ -20,6 +20,14 @@ props:
       type: integer
       title: Spacing to use between items
       default: 24
+    duration:
+      type: integer
+      title: Scroll Duration (in milliseconds)
+      default: 40000
+    focusable:
+      type: boolean
+      title: Tab Focusable
+      default: true
     reverse:
       type: boolean
       title: Reverse Scroll

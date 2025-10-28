@@ -17,7 +17,7 @@ form.kinetic-form {
     @apply radio-[2px];
   }
   input[type="radio"] {
-    @apply radio-full;
+    @apply radio-[999px];
   }
   input[type="submit"] {
     @apply btn-secondary w-full md:w-auto;

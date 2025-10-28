@@ -47,13 +47,6 @@
     @apply dark:text-white;
   }
 
-  .bg-gray-950,
-  .bg-black {
-    p, ul, ol, li, textarea, small, figcaption, div {
-      @apply text-gray-400;
-    }
-  }
-
   [class*='icon-'][class*='mask-'] {
     @apply dark:bg-white;
   }

@@ -1,10 +1,31 @@
-@reference '@base/global/css/index.pcss.css';
+@reference "@base/global/css/index.pcss.css";
 
-.layout__region {
-  .block {
-    @apply mb-24;
-  }
-  .block:last-child {
-    @apply mb-0;
-  }
+.block.block-layout-builder + .block.block-layout-builder {
+  @apply mt-block;
+}
+
+.block.block-layout-builder.block--section-intro + .block.block-layout-builder {
+  @apply mt-8;
+}
+
+.layout {
+  @apply py-block;
+}
+
+.layout.content-header {
+  @apply pt-0 pb-0;
+}
+
+.layout:first-child {
+  @apply pt-0;
+}
+
+/* All the solid bg colors on a section */
+/* See KineticLayout.php */
+.layout.bg-white + .layout.bg-white,
+.layout.bg-gray-100 + .layout.bg-gray-100,
+.layout.bg-blue-100 + .layout.bg-blue-100,
+.layout.bg-blue + .layout.bg-blue,
+.layout.bg-blue-500 + .layout.bg-blue-500 {
+  @apply pt-0;
 }

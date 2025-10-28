@@ -9,11 +9,8 @@ const preview = {
         icon: 'paintbrush',
         // These are the section background colors.
         items: [
-          { value: 'bg-white', title: 'White' },
-          { value: 'bg-navy', title: 'Navy' },
-          { value: 'bg-dark-navy', title: 'Dark Navy' },
-          { value: 'bg-blue', title: 'Blue' },
-          { value: 'bg-dark-blue', title: 'Dark Blue' },
+          { value: 'bg-white', title: 'Light' },
+          { value: 'bg-gray-900', title: 'Dark' },
         ],
        title: 'Surfaces',
       },

@@ -1,16 +1,31 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Hero Banner
 status: stable
-description: A Hero like component that can be displayed in the middle of a page.
+description: A simple hero with text overlayed on an image or solid color.
 slots:
   media:
     title: Media
+  ctas:
+    title: "Call to Action links"
 props:
   type: object
   properties:
-    items:
-      type: array
-      title: Array of breadcrumb items
+    eyebrow:
+      type: string
+      title: "Eyebrow Text"
+    heading:
+      type: string
+      title: "Heading Text"
+    description:
+      type: string
+      title: "Description Text"
+    height:
+      type: string
+      title: "Banner Height"
+      enum:
+        - "default"
+        - "short"
+      default: "short"
 libraryOverrides:
   css:
     component:

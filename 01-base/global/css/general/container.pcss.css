@@ -6,7 +6,6 @@
   --container-small: 752px;
   --container-wide: 1426px;
   --container-full: 100%;
-  --container-max-width: var(--container-default);
 }
 
 @utility container-* {
