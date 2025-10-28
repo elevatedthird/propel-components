@@ -1,0 +1,27 @@
+import{t as y,D as g,T as r,a as w}from"./twig--J2y2TUI.js";import"./_commonjsHelpers-D6-XlEtG.js";const v=e=>{e.extendFunction("include",(t,o)=>{const i=window.SDC_MANIFEST[t];if(!i)throw new Error(`Template ${t} not found`);const{id:s,href:m}=i;try{const n=e.twig({ref:s});if(n)return n.render(o);throw new Error(`Template ${t} not found`)}catch{const p=e.twig({id:s,href:m,async:!1});if(p)return p.render(o);throw new Error(`Template ${t} not found`)}})};v(r);const h=e=>e.extendFilter("clean_unique_id",t=>t);h(r);w(r);r.cache(!1);const d=e=>e,b=(e={})=>{const t=y.twig({id:"/home/runner/work/propel-components/propel-components/components/00-elements/dialog/dialog.twig",data:[{type:"logic",token:{type:"Twig.logic.type.set",key:"attributes",expression:[{type:"Twig.expression.type._function",fn:"create_attribute",params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("]},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],expression:!1}]}],position:{start:0,end:41}},position:{start:0,end:41}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"behavior_name",match:["behavior_name"]},{type:"Twig.expression.type.test",filter:"defined"}],position:{start:42,end:75},output:[{type:"raw",value:"  ",position:{start:76,end:78}},{type:"logic",token:{type:"Twig.logic.type.set",key:"attributes",expression:[{type:"Twig.expression.type.variable",value:"attributes",match:["attributes"]},{type:"Twig.expression.type.key.period",key:"setAttribute"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.string",value:"data-behavior-name"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.variable",value:"behavior_name",match:["behavior_name"]}]}],position:{start:78,end:161}},position:{start:78,end:161}}]},position:{open:{start:42,end:75},close:{start:162,end:173}}},{type:"raw",value:'<div aria-hidden="true" ',position:{start:174,end:198}},{type:"output",position:{start:198,end:283},stack:[{type:"Twig.expression.type.variable",value:"attributes",match:["attributes"],position:{start:198,end:283}},{type:"Twig.expression.type.key.period",position:{start:198,end:283},key:"setAttribute"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:198,end:283},expression:!0,params:[{type:"Twig.expression.type.string",value:"id",position:{start:198,end:283}},{type:"Twig.expression.type.comma",position:{start:198,end:283}},{type:"Twig.expression.type.variable",value:"modal_id",match:["modal_id"],position:{start:198,end:283}}]},{type:"Twig.expression.type.key.period",position:{start:198,end:283},key:"setAttribute"},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:198,end:283},expression:!0,params:[{type:"Twig.expression.type.string",value:"data-micromodal",position:{start:198,end:283}},{type:"Twig.expression.type.comma",position:{start:198,end:283}},{type:"Twig.expression.type.string",value:"true",position:{start:198,end:283}}]}]},{type:"raw",value:`>
+  `,position:{start:283,end:287}},{type:"raw",value:`
+  <div tabindex="-1" data-micromodal-close class="fixed inset-0 z-10 bg-black/50 h-full grid place-items-center">
+    `,position:{start:300,end:419}},{type:"raw",value:`
+    <div role="dialog" aria-modal="true" class="fixed z-50 bg-white p-4">
+      <header class="mb-4">
+        `,position:{start:438,end:549}},{type:"output",position:{start:549,end:568},stack:[{type:"Twig.expression.type.variable",value:"modal_heading",match:["modal_heading"],position:{start:549,end:568}}]},{type:"raw",value:`
+        <button aria-label="Close modal" data-micromodal-close class="flex justify-self-end after:icon-close/md after:bg-black"></button>
+      </header>
+      <div>
+        `,position:{start:568,end:743}},{type:"output",position:{start:743,end:762},stack:[{type:"Twig.expression.type.variable",value:"modal_content",match:["modal_content"],position:{start:743,end:762}}]},{type:"raw",value:`
+      </div>
+    </div>
+  </div>
+</div>`,position:{start:762,end:762}}],precompiled:!0});t.options.allowInlineIncludes=!0;try{let o=e.defaultAttributes?e.defaultAttributes:[];return Array.isArray(o)||(o=Object.entries(o)),d(t.render({attributes:new g(o),...e}))}catch(o){return d("An error occurred whilst rendering /home/runner/work/propel-components/propel-components/components/00-elements/dialog/dialog.twig: "+o.toString())}},T={title:"00-elements/dialog",tags:["autodocs"],parameters:{docs:{description:{component:"A Micromodal dialog."},source:{code:"drush propel:add dialog"}}},argTypes:{modal_id:{control:{type:"text"},type:{required:!1,name:""},description:"Unique ID for the modal.",table:{type:{summary:"text"}}},behavior_name:{control:{type:"text"},type:{required:!1,name:""},table:{type:{summary:"text"}}}}},a={args:{modal_id:"",behavior_name:""},render:e=>b({...e,modal_header:()=>"<!-- modal_header slot content -->",modal_content:()=>"<!-- modal_content slot content -->"})};var l,c,u;a.parameters={...a.parameters,docs:{...(l=a.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    modal_id: "",
+    behavior_name: ""
+  },
+  render: args => {
+    return dialog({
+      ...args,
+      modal_header: () => '<!-- modal_header slot content -->',
+      modal_content: () => '<!-- modal_content slot content -->'
+    });
+  }
+}`,...(u=(c=a.parameters)==null?void 0:c.docs)==null?void 0:u.source}}};const _=["Default"];export{a as Default,_ as __namedExportsOrder,T as default};
